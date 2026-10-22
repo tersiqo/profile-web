@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tersiqo Alfarezel — Digital Product Designer & Strategist</title>
+  <meta name="description" content="Portfolio of Tersiqo Alfarezel. Digital Product Designer & Strategist crafting high-performance interfaces with brutalist minimalism and strategic precision.">
+  <meta name="theme-color" content="#080808">
+
+  <!-- Tailwind CSS via CDN with custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#080808',
+              card: '#121214',
+              surface: '#18181B',
+              border: '#27272A',
+              accent: '#E11D48',
+              'accent-hover': '#F43F5E',
+              text: '#FFFFFF',
+              muted: '#A1A1AA'
+            }
+          },
+          fontFamily: {
+            sans: ['Hanken Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body class="bg-[#080808] text-white antialiased min-h-screen selection:bg-[#E11D48] selection:text-white bg-grid-pattern">
+
+  <!-- Navigation Bar -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 nav-glass transition-all duration-300 border-b border-[#18181B]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="text-xl md:text-2xl font-bold tracking-tight text-white hover:text-[#E11D48] transition-colors">
+        Tersiqo Alfarezel
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#A1A1AA]">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#work" class="hover:text-white transition-colors">Work</a>
+        <a href="#background" class="hover:text-white transition-colors">Background</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA Button Desktop -->
+      <div class="hidden md:flex items-center">
+        <button onclick="copyEmail()" class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white border border-[#27272A] rounded-lg hover:border-[#E11D48] hover:bg-[#E11D48] transition-all duration-300">
+          Work with me
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-[#A1A1AA] hover:text-white focus:outline-none p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0D0D0E] border-b border-[#27272A] px-6 py-6 space-y-4">
+      <a href="#about" class="block text-base font-medium text-[#A1A1AA] hover:text-white">About</a>
+      <a href="#work" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Work</a>
+      <a href="#background" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Background</a>
+      <a href="#contact" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Contact</a>
+      <button onclick="copyEmail()" class="w-full text-center px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#E11D48] rounded-lg">
+        Work with me
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-28 md:pt-36">
+
+    <!-- HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Left Column: Main Headline -->
+        <div class="lg:col-span-7 space-y-8 reveal-on-scroll">
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+            Tersiqo<br>Alfarezel
+          </h1>
+
+          <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-xl">
+            Digital Product Designer & Strategist. Crafting high-performance interfaces with obsessive attention to detail and absolute simplicity.
+          </p>
+
+          <div class="flex items-center gap-6 pt-2">
+            <a href="#work" class="inline-flex items-center gap-2 text-sm font-semibold text-white border-b-2 border-[#E11D48] pb-1 hover:text-[#E11D48] transition-colors">
+              View Work
+            </a>
+            <a href="#about" class="text-sm font-medium text-[#A1A1AA] hover:text-white transition-colors">
+              About Me
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Right Column: Profile Showcase Card -->
+        <div class="lg:col-span-5 reveal-on-scroll">
+          <div class="relative group rounded-2xl overflow-hidden bg-[#121214] border border-[#27272A] p-2 glow-card hero-frame-glow">
+            
+            <!-- Window top bar mockup -->
+            <div class="flex items-center justify-between px-4 py-3 border-b border-[#27272A] bg-[#0A0A0B]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#E11D48]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#27272A]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#27272A]"></span>
+              </div>
+              <span class="text-[11px] font-mono text-[#71717A] tracking-wider uppercase">TERSIQO ALFAREZEL // STUDIO</span>
+            </div>
+
+            <!-- Image with sleek overlay -->
+            <div class="relative aspect-square overflow-hidden rounded-xl">
+              <img src="./assets/images/hero_portrait.jpg" alt="Tersiqo Alfarezel Profile" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Bottom gradient dark overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent opacity-90"></div>
+              
+              <!-- Text banner on image -->
+              <div class="absolute bottom-6 left-6 right-6 text-center space-y-2">
+                <h3 class="text-xl font-bold tracking-widest text-white uppercase font-mono">TERSIQO ALFAREZEL</h3>
+                <p class="text-xs text-[#A1A1AA] font-light line-clamp-2 max-w-xs mx-auto leading-relaxed">
+                  Crafting high-performance digital experiences with obsessive attention to detail and brutalist visual architecture.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Badge Label -->
+        <div class="lg:col-span-4 reveal-on-scroll">
+          <div class="accent-line-badge text-sm font-semibold text-[#FFFFFF] tracking-wide">
+            About Me
+          </div>
+        </div>
+
+        <!-- Right Description & Competencies -->
+        <div class="lg:col-span-8 space-y-10 reveal-on-scroll">
+          <p class="text-lg md:text-xl text-[#A1A1AA] leading-relaxed font-light">
+            Systems Analyst & Full-Stack Developer. Designing end-to-end digital solutions with high-performance architectures and clean, functional simplicity.
+          </p>
+
+          <div class="space-y-4 pt-4">
+            <h4 class="text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase">
+              CORE COMPETENCIES
+            </h4>
+
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Software Engineering</span>
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Database Architecture</span>
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">ETL & Data Integration</span>
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">System Design</span>
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors"></span>
+              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Product Strategy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Stack & Tools 3-Category Section -->
+      <div class="mt-20 pt-16 border-t border-[#18181B] reveal-on-scroll">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          
+          <!-- Left Main Label -->
+          <div class="lg:col-span-4">
+            <div class="text-xs font-mono font-semibold text-[#E11D48] uppercase tracking-widest">
+              TECH STACK & TOOLS
+            </div>
+          </div>
+
+          <!-- Right Content: 3 Categories -->
+          <div class="lg:col-span-8 space-y-12">
+            
+            <!-- Category 01: Languages & Frameworks -->
+            <div class="space-y-4">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-semibold text-[#E11D48]">01 /</span>
+                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">LANGUAGES & FRAMEWORKS</span>
+              </div>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Java</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Python</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">SQL</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Dart</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Flutter</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Tailwind CSS</span>
+              </div>
+            </div>
+
+            <!-- Category 02: Data & Database -->
+            <div class="space-y-4 pt-8 border-t border-[#1C1C1F]">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-semibold text-[#E11D48]">02 /</span>
+                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">DATA & DATABASE</span>
+              </div>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">PostgreSQL</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">MySQL</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Pentaho ETL</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Data Warehouse</span>
+              </div>
+            </div>
+
+            <!-- Category 03: Systems & Tools -->
+            <div class="space-y-4 pt-8 border-t border-[#1C1C1F]">
+              <div class="flex items-center gap-6">
+                <span class="text-xs font-mono font-semibold text-[#E11D48]">03 /</span>
+                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">SYSTEMS & TOOLS</span>
+              </div>
+              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Ubuntu Linux</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Cloud Computing</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Git</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">GitHub</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Postman</span>
+                <span class="hover:text-[#E11D48] transition-colors cursor-default">Figma</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SELECTED WORKS SECTION -->
+    <section id="work" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 reveal-on-scroll">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">
+            Selected Works
+          </h2>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-mono text-[#A1A1AA] hover:text-[#E11D48] transition-colors tracking-wider uppercase">
+          VIEW ALL PROJECTS <span class="text-base">↗</span>
+        </a>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="space-y-12">
+
+        <!-- Project 1: Large Featured Card -->
+        <div onclick="openProjectModal('aura-banking')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
+          <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-[#0A0A0C]">
+            <img src="./assets/images/aura_banking.jpg" alt="Aura Banking App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+          </div>
+          
+          <div class="p-8 flex items-center justify-between">
+            <div class="space-y-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">Gaming Platform / 2026</span>
+              <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+                Booyahhub Tournament Platform
+              </h3>
+            </div>
+            <div class="w-12 h-12 rounded-full border border-[#27272A] flex items-center justify-center text-white group-hover:border-[#E11D48] group-hover:bg-[#E11D48] transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Column Grid for Projects 2 & 3 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Project 2 Card -->
+          <div onclick="openProjectModal('lumina-furniture')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[#0A0A0C]">
+              <img src="./assets/images/lumina_furniture.jpg" alt="Lumina Furniture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+            </div>
+            
+            <div class="p-6 space-y-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">E-Commerce / 2024</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+                Lumina Furniture
+              </h3>
+            </div>
+          </div>
+
+          <!-- Project 3 Card -->
+          <div onclick="openProjectModal('rentalbase')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[#0A0A0C]">
+              <img src="./assets/images/rentalbase_mockup.jpg" alt="RentalBase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+            </div>
+            
+            <div class="p-6 space-y-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">SaaS Platform / 2024</span>
+              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+                RentalBase
+              </h3>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BACKGROUND / EXPERIENCE SECTION -->
+    <section id="background" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left Badge Label -->
+        <div class="lg:col-span-4 reveal-on-scroll">
+          <div class="accent-line-badge text-sm font-semibold text-[#FFFFFF] tracking-wide">
+            Background
+          </div>
+        </div>
+
+        <!-- Experience Timeline -->
+        <div class="lg:col-span-8 space-y-12 reveal-on-scroll">
+          
+          <!-- Experience Item 1 -->
+          <div class="space-y-3 pb-8 border-b border-[#18181B] group">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">2024 - Present</span>
+              <span class="text-xs text-[#71717A]">Education</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+              Business Information Systems
+            </h3>
+            <p class="text-sm font-medium text-[#A1A1AA]">Politeknik Negeri Malang</p>
+            <p class="text-sm text-[#71717A] leading-relaxed font-light">
+              Focusing on the intersection of business strategy, software architecture, and data engineering. Building scalable web systems, data warehouse pipelines, and modular mobile applications to drive digital solutions.
+            </p>
+          </div>
+
+          <!-- Experience Item 2 -->
+          <div class="space-y-3 pb-8 border-b border-[#18181B] group">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">NOV 2023 - APR 2024</span>
+              <span class="text-xs text-[#71717A]">Internship</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+              IT Support & Systems Specialist
+            </h3>
+            <p class="text-sm font-medium text-[#A1A1AA]">Diskominfo — Balai Kota Among Tani Batu</p>
+            <p class="text-sm text-[#71717A] leading-relaxed font-light">
+              Maintained enterprise IT infrastructure, managed network diagnostics, and delivered high-availability technical support for municipal digital systems and public service operations.
+            </p>
+          </div>
+
+          <!-- Experience Item 3 -->
+          <div class="space-y-3 group">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">2021 - 2024</span>
+              <span class="text-xs text-[#71717A]">Education</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+              Computer & Network Engineering
+            </h3>
+            <p class="text-sm font-medium text-[#A1A1AA]">SMK Telkom Malang</p>
+            <p class="text-sm text-[#71717A] leading-relaxed font-light">
+              Mastered foundational network architecture, Linux server environments (Ubuntu), cloud computing infrastructure, and core software engineering principles.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- LET'S CONNECT / CTA SECTION -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-28 border-t border-[#18181B]">
+      <div class="text-center max-w-3xl mx-auto space-y-8 reveal-on-scroll">
+        <h2 class="text-5xl sm:text-6xl font-bold tracking-tight text-white">
+          Let's Connect
+        </h2>
+
+        <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed font-light">
+          Currently open for new opportunities and freelance projects. If you're looking for a partner to elevate your digital presence, let's talk.
+        </p>
+
+        <div class="pt-4">
+          <button onclick="copyEmail()" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold text-sm rounded-xl hover:bg-[#E11D48] hover:text-white transition-all duration-300 shadow-xl glow-accent">
+            <span>Get in Touch</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#18181B] py-12 bg-[#050505]">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand Name -->
+      <a href="#" class="text-lg font-bold text-white tracking-tight">
+        Tersiqo Alfarezel
+      </a>
+
+      <!-- Social Links -->
+      <div class="flex items-center gap-6 text-xs text-[#A1A1AA] font-mono uppercase tracking-wider">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">LinkedIn</a>
+        <a href="https://dribbble.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">Instagram</a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">GitHub</a>
+        <!-- <a href="https://behance.net" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">Behance</a> -->
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-xs text-[#71717A] font-mono">
+        © 2026 Tersiqo Alfarezel. All Rights Reserved.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- PROJECT LIGHTBOX MODAL -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 nav-glass">
+    <div class="relative w-full max-w-4xl bg-[#121214] border border-[#27272A] rounded-2xl overflow-hidden shadow-2xl space-y-6 p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button id="modal-close" class="absolute top-6 right-6 text-[#A1A1AA] hover:text-white p-2 rounded-lg bg-[#18181B] border border-[#27272A]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Modal Content Header -->
+      <div class="space-y-2">
+        <span id="modal-tag" class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">Category</span>
+        <h3 id="modal-title" class="text-3xl font-bold text-white">Project Title</h3>
+      </div>
+
+      <!-- Image Preview -->
+      <div class="aspect-video w-full rounded-xl overflow-hidden bg-[#0A0A0C] border border-[#27272A]">
+        <img id="modal-img" src="" alt="Project Preview" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Modal Description & Tech Specs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-[#18181B]">
+        <div class="md:col-span-2 space-y-3">
+          <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider">Overview</h4>
+          <p id="modal-desc" class="text-sm text-[#A1A1AA] leading-relaxed font-light"></p>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider mb-1">Client / Purpose</h4>
+            <p id="modal-client" class="text-sm font-medium text-white"></p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider mb-2">Technologies</h4>
+            <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- External Script -->
+  <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

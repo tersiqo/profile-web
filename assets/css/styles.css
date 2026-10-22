@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --color-primary: #050505;
+  --color-surface: #0f0f11;
+  --color-surface-hover: #17171a;
+  --color-border: #232328;
+  --color-accent: #E11D48;
+  --color-accent-hover: #f43f5e;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #A1A1AA;
+}
+
+* {
+  font-family: 'Hanken Grotesk', sans-serif;
+  scroll-behavior: smooth;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E11D48;
+}
+
+/* Text selection */
+::selection {
+  background-color: #E11D48;
+  color: #ffffff;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 35px -5px rgba(225, 29, 72, 0.3);
+}
+
+.glow-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  border-color: rgba(225, 29, 72, 0.4);
+  box-shadow: 0 10px 40px -10px rgba(225, 29, 72, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Red accent badge bullet line */
+.accent-line-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.accent-line-badge::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: #E11D48;
+}
+
+/* Hero Frame Glow */
+.hero-frame-glow {
+  position: relative;
+}
+.hero-frame-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(225, 29, 72, 0.4), transparent 60%);
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glassmorphism Navigation */
+.nav-glass {
+  background: rgba(8, 8, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom Grid Background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Scroll reveal utility */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
