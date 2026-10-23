@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tersiqo Alfarezel — Digital Product Designer & Strategist</title>
-  <meta name="description" content="Portfolio of Tersiqo Alfarezel. Digital Product Designer & Strategist crafting high-performance interfaces with brutalist minimalism and strategic precision.">
-  <meta name="theme-color" content="#080808">
+  <title>Tersiqo Alfarezel — Systems Analyst & Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Tersiqo Alfarezel. Systems Analyst & Full-Stack Developer crafting high-performance digital systems, data pipelines, and modern web applications.">
+  <meta name="theme-color" content="#050507">
 
   <!-- Tailwind CSS via CDN with custom config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -15,19 +15,20 @@
         extend: {
           colors: {
             brand: {
-              bg: '#080808',
-              card: '#121214',
-              surface: '#18181B',
-              border: '#27272A',
+              bg: '#050507',
+              card: '#0E0E12',
+              surface: '#15151B',
+              border: '#1F1F27',
               accent: '#E11D48',
               'accent-hover': '#F43F5E',
               text: '#FFFFFF',
-              muted: '#A1A1AA'
+              muted: '#94949E'
             }
           },
           fontFamily: {
             sans: ['Hanken Grotesk', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            mono: ['JetBrains Mono', 'monospace'],
+            display: ['Space Grotesk', 'Hanken Grotesk', 'sans-serif']
           }
         }
       }
@@ -37,33 +38,54 @@
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="bg-[#080808] text-white antialiased min-h-screen selection:bg-[#E11D48] selection:text-white bg-grid-pattern">
+<body class="bg-[#050507] text-white antialiased min-h-screen selection:bg-[#E11D48] selection:text-white bg-grid-pattern relative overflow-x-hidden">
+
+  <!-- Ambient Cinematic Background Glows (Pinterest / Linear Style) -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-[650px] h-[650px] bg-rose-600/10 rounded-full blur-[140px]"></div>
+    <div class="absolute top-[35%] -right-40 w-[550px] h-[550px] bg-purple-600/8 rounded-full blur-[150px]"></div>
+    <div class="absolute bottom-10 left-[20%] w-[600px] h-[600px] bg-rose-700/10 rounded-full blur-[160px]"></div>
+  </div>
+
+  <!-- Giant Background Watermark (Pinterest Editorial Style) -->
+  <div class="fixed top-24 left-1/2 -translate-x-1/2 text-center pointer-events-none select-none z-0">
+    <span class="text-[14vw] font-black tracking-tighter text-white/[0.015] leading-none uppercase font-display">TERSIQO</span>
+  </div>
 
   <!-- Navigation Bar -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-40 nav-glass transition-all duration-300 border-b border-[#18181B]">
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 nav-glass transition-all duration-300 border-b border-[#181820]">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#" class="text-xl md:text-2xl font-bold tracking-tight text-white hover:text-[#E11D48] transition-colors">
-        Tersiqo Alfarezel
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#E11D48] group-hover:scale-125 transition-transform"></span>
+        <span class="text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-[#E11D48] transition-colors">
+          Tersiqo Alfarezel
+        </span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#A1A1AA]">
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#94949E]">
         <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#stack" class="hover:text-white transition-colors">Stack</a>
         <a href="#work" class="hover:text-white transition-colors">Work</a>
         <a href="#background" class="hover:text-white transition-colors">Background</a>
         <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
 
-      <!-- CTA Button Desktop -->
-      <div class="hidden md:flex items-center">
-        <button onclick="copyEmail()" class="px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white border border-[#27272A] rounded-lg hover:border-[#E11D48] hover:bg-[#E11D48] transition-all duration-300">
+      <!-- Desktop Right: Status & CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400">
+          <span class="pulse-dot"></span>
+          <span>Available for work</span>
+        </div>
+        <button onclick="copyEmail()" class="btn-shimmer px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white border border-[#272733] rounded-xl hover:border-[#E11D48] hover:bg-[#E11D48] transition-all duration-300 shadow-lg">
           Work with me
         </button>
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-[#A1A1AA] hover:text-white focus:outline-none p-2" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden text-[#94949E] hover:text-white focus:outline-none p-2" aria-label="Toggle menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -71,71 +93,131 @@
     </div>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#0D0D0E] border-b border-[#27272A] px-6 py-6 space-y-4">
-      <a href="#about" class="block text-base font-medium text-[#A1A1AA] hover:text-white">About</a>
-      <a href="#work" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Work</a>
-      <a href="#background" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Background</a>
-      <a href="#contact" class="block text-base font-medium text-[#A1A1AA] hover:text-white">Contact</a>
-      <button onclick="copyEmail()" class="w-full text-center px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#E11D48] rounded-lg">
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0A0A0E] border-b border-[#22222C] px-6 py-6 space-y-4">
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 w-fit">
+        <span class="pulse-dot"></span>
+        <span>Available for work</span>
+      </div>
+      <a href="#about" class="block text-base font-medium text-[#94949E] hover:text-white">About</a>
+      <a href="#stack" class="block text-base font-medium text-[#94949E] hover:text-white">Stack</a>
+      <a href="#work" class="block text-base font-medium text-[#94949E] hover:text-white">Work</a>
+      <a href="#background" class="block text-base font-medium text-[#94949E] hover:text-white">Background</a>
+      <a href="#contact" class="block text-base font-medium text-[#94949E] hover:text-white">Contact</a>
+      <button onclick="copyEmail()" class="w-full text-center px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white bg-[#E11D48] rounded-xl">
         Work with me
       </button>
     </div>
   </header>
 
-  <main class="pt-28 md:pt-36">
 
-    <!-- HERO SECTION -->
-    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+  <main class="relative z-10 pt-28 md:pt-36">
+
+    <!-- HERO SECTION (Pinterest High-Impact Layout) -->
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         
-        <!-- Hero Left Column: Main Headline -->
+        <!-- Hero Left Column -->
         <div class="lg:col-span-7 space-y-8 reveal-on-scroll">
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
-            Tersiqo<br>Alfarezel
-          </h1>
+          
+          <!-- Status Pill Badge -->
+          <div class="status-pill">
+            <span class="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse"></span>
+            <span>SYSTEMS ANALYST & FULL-STACK DEVELOPER</span>
+          </div>
 
-          <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-xl">
-            Digital Product Designer & Strategist. Crafting high-performance interfaces with obsessive attention to detail and absolute simplicity.
+          <!-- Main Headline with Gradient Text -->
+          <div class="space-y-2">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.06]">
+              Tersiqo <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-rose-400">
+                Alfarezel
+              </span>
+            </h1>
+          </div>
+
+          <!-- Bio Description -->
+          <p class="text-base sm:text-lg text-[#94949E] leading-relaxed max-w-xl font-light">
+            Architecting high-performance digital systems, enterprise data pipelines, and scalable web platforms with precision engineering and brutalist minimalism.
           </p>
 
-          <div class="flex items-center gap-6 pt-2">
-            <a href="#work" class="inline-flex items-center gap-2 text-sm font-semibold text-white border-b-2 border-[#E11D48] pb-1 hover:text-[#E11D48] transition-colors">
-              View Work
+          <!-- Quick Metrics Bar (Pinterest Bento Style) -->
+          <div class="grid grid-cols-3 gap-4 pt-2 max-w-lg border-y border-[#181822] py-4">
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-white font-mono">3+</div>
+              <div class="text-xs text-[#94949E] font-mono mt-0.5">Years Journey</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-[#E11D48] font-mono">15+</div>
+              <div class="text-xs text-[#94949E] font-mono mt-0.5">Projects Built</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-bold text-white font-mono">100%</div>
+              <div class="text-xs text-[#94949E] font-mono mt-0.5">Architecture Focus</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-5 pt-2">
+            <a href="#work" class="btn-shimmer inline-flex items-center gap-2 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#E11D48] hover:bg-[#F43F5E] rounded-xl transition-all shadow-xl shadow-rose-950/40">
+              <span>View Selected Works</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
             </a>
-            <a href="#about" class="text-sm font-medium text-[#A1A1AA] hover:text-white transition-colors">
+            <a href="#about" class="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-white/90 border border-[#272733] hover:border-white rounded-xl bg-white/[0.02] backdrop-blur-sm transition-all">
               About Me
             </a>
           </div>
         </div>
 
-        <!-- Hero Right Column: Profile Showcase Card -->
+        <!-- Hero Right Column: Floating Profile Showcase (Tersiqo's Professional Portrait) -->
         <div class="lg:col-span-5 reveal-on-scroll">
-          <div class="relative group rounded-2xl overflow-hidden bg-[#121214] border border-[#27272A] p-2 glow-card hero-frame-glow">
+          <div class="relative group">
             
-            <!-- Window top bar mockup -->
-            <div class="flex items-center justify-between px-4 py-3 border-b border-[#27272A] bg-[#0A0A0B]">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#E11D48]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#27272A]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[#27272A]"></span>
-              </div>
-              <span class="text-[11px] font-mono text-[#71717A] tracking-wider uppercase">TERSIQO ALFAREZEL // STUDIO</span>
-            </div>
+            <!-- Ambient Behind-Card Glow -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-rose-600/20 to-purple-600/15 rounded-3xl blur-2xl group-hover:blur-3xl opacity-75 transition-all duration-700"></div>
 
-            <!-- Image with sleek overlay -->
-            <div class="relative aspect-square overflow-hidden rounded-xl">
-              <img src="./assets/images/hero_portrait.jpg" alt="Tersiqo Alfarezel Profile" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+            <!-- Bento Card Frame -->
+            <div class="relative bento-card rounded-2xl overflow-hidden p-2.5 border border-[#22222E]">
               
-              <!-- Bottom gradient dark overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0B] via-transparent to-transparent opacity-90"></div>
-              
-              <!-- Text banner on image -->
-              <div class="absolute bottom-6 left-6 right-6 text-center space-y-2">
-                <h3 class="text-xl font-bold tracking-widest text-white uppercase font-mono">TERSIQO ALFAREZEL</h3>
-                <p class="text-xs text-[#A1A1AA] font-light line-clamp-2 max-w-xs mx-auto leading-relaxed">
-                  Crafting high-performance digital experiences with obsessive attention to detail and brutalist visual architecture.
+              <!-- Window top bar mockup -->
+              <div class="flex items-center justify-between px-4 py-3 border-b border-[#1E1E28] bg-[#09090D] rounded-t-xl">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#E11D48]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#272733]"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#272733]"></span>
+                </div>
+                <span class="text-[11px] font-mono text-[#71717A] tracking-wider uppercase">TERSIQO // PORTFOLIO 2026</span>
+              </div>
+
+              <!-- Portrait Image Container -->
+              <div class="relative aspect-square overflow-hidden rounded-xl bg-[#09090D]">
+                <img src="./assets/images/hero_portrait.jpg" alt="Tersiqo Alfarezel Portrait" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                
+                <!-- Bottom Dark Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0E] via-transparent to-transparent opacity-80"></div>
+                
+                <!-- Floating Badge Top Left (Pinterest Aesthetic) -->
+                <div class="absolute top-4 left-4 floating-badge px-3 py-1.5 rounded-full flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#E11D48]"></span>
+                  <span class="text-[11px] font-mono font-medium text-white">Full-Stack Dev</span>
+                </div>
+
+                <!-- Floating Badge Bottom Right -->
+                <div class="absolute bottom-4 right-4 floating-badge px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                  <span class="text-xs">📍</span>
+                  <span class="text-[11px] font-mono text-[#D4D4D8]">Malang, ID</span>
+                </div>
+              </div>
+
+              <!-- Card Bottom Info Banner -->
+              <div class="p-4 text-center space-y-1">
+                <h3 class="text-base font-bold tracking-wider text-white uppercase font-mono">TERSIQO ALFAREZEL</h3>
+                <p class="text-xs text-[#94949E] font-light">
+                  Business Information Systems · Software & Data Engineering
                 </p>
               </div>
+
             </div>
           </div>
         </div>
@@ -144,142 +226,227 @@
     </section>
 
 
-    <!-- ABOUT ME SECTION -->
-    <section id="about" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
-        <!-- Left Badge Label -->
-        <div class="lg:col-span-4 reveal-on-scroll">
-          <div class="accent-line-badge text-sm font-semibold text-[#FFFFFF] tracking-wide">
-            About Me
-          </div>
-        </div>
-
-        <!-- Right Description & Competencies -->
-        <div class="lg:col-span-8 space-y-10 reveal-on-scroll">
-          <p class="text-lg md:text-xl text-[#A1A1AA] leading-relaxed font-light">
-            Systems Analyst & Full-Stack Developer. Designing end-to-end digital solutions with high-performance architectures and clean, functional simplicity.
-          </p>
-
-          <div class="space-y-4 pt-4">
-            <h4 class="text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase">
-              CORE COMPETENCIES
-            </h4>
-
-            <div class="flex flex-wrap gap-3">
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Software Engineering</span>
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Database Architecture</span>
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">ETL & Data Integration</span>
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">System Design</span>
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors"></span>
-              <span class="px-4 py-2 text-xs font-medium text-white bg-[#121214] border border-[#27272A] rounded-full hover:border-[#E11D48] transition-colors">Product Strategy</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Tech Stack & Tools 3-Category Section -->
-      <div class="mt-20 pt-16 border-t border-[#18181B] reveal-on-scroll">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-          
-          <!-- Left Main Label -->
-          <div class="lg:col-span-4">
-            <div class="text-xs font-mono font-semibold text-[#E11D48] uppercase tracking-widest">
-              TECH STACK & TOOLS
-            </div>
-          </div>
-
-          <!-- Right Content: 3 Categories -->
-          <div class="lg:col-span-8 space-y-12">
-            
-            <!-- Category 01: Languages & Frameworks -->
-            <div class="space-y-4">
-              <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-semibold text-[#E11D48]">01 /</span>
-                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">LANGUAGES & FRAMEWORKS</span>
-              </div>
-              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Java</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Python</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">SQL</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Dart</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Flutter</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Tailwind CSS</span>
-              </div>
-            </div>
-
-            <!-- Category 02: Data & Database -->
-            <div class="space-y-4 pt-8 border-t border-[#1C1C1F]">
-              <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-semibold text-[#E11D48]">02 /</span>
-                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">DATA & DATABASE</span>
-              </div>
-              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">PostgreSQL</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">MySQL</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Pentaho ETL</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Data Warehouse</span>
-              </div>
-            </div>
-
-            <!-- Category 03: Systems & Tools -->
-            <div class="space-y-4 pt-8 border-t border-[#1C1C1F]">
-              <div class="flex items-center gap-6">
-                <span class="text-xs font-mono font-semibold text-[#E11D48]">03 /</span>
-                <span class="text-xs font-mono font-semibold text-[#E11D48] tracking-wider uppercase">SYSTEMS & TOOLS</span>
-              </div>
-              <div class="flex flex-wrap gap-x-6 gap-y-3 text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-normal">
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Ubuntu Linux</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Cloud Computing</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Git</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">GitHub</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Postman</span>
-                <span class="hover:text-[#E11D48] transition-colors cursor-default">Figma</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- SELECTED WORKS SECTION -->
-    <section id="work" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
+    <!-- ABOUT ME & BENTO GRID SECTION (Pinterest Style) -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#181822]">
       
       <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 reveal-on-scroll">
+      <div class="mb-14 reveal-on-scroll">
+        <div class="accent-line-badge text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase mb-3">
+          ABOUT & PHILOSOPHY
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+          Where technical precision meets practical business value.
+        </h2>
+      </div>
+
+      <!-- Bento Grid (Pinterest Inspired) -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal-on-scroll">
+        
+        <!-- Bento 1: Philosophy Card (Span 7) -->
+        <div class="md:col-span-7 bento-card rounded-2xl p-8 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">01 // PHILOSOPHY</span>
+            <p class="text-lg md:text-xl text-[#D4D4D8] leading-relaxed font-light">
+              I believe great digital products exist at the intersection of robust backend architecture and effortless user experience. By combining rigorous systems analysis with clean engineering, every application is built to scale, perform, and command attention.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#1F1F2B] flex flex-wrap items-center gap-6 text-xs font-mono text-[#71717A]">
+            <span>POLITEKNIK NEGERI MALANG</span>
+            <span>•</span>
+            <span>BISNIS & SISTEM INFORMASI</span>
+          </div>
+        </div>
+
+        <!-- Bento 2: Now / Current Status Card (Span 5) -->
+        <div class="md:col-span-5 bento-card rounded-2xl p-8 space-y-6 flex flex-col justify-between bg-gradient-to-br from-[#121218] to-[#0A0A0E]">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">02 // CURRENT FOCUS</span>
+              <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <h3 class="text-xl font-bold text-white">
+              Engineering Enterprise SaaS & Data Pipelines
+            </h3>
+            <p class="text-sm text-[#94949E] leading-relaxed font-light">
+              Currently architecting multi-tenant web systems, conducting ETL workflows with Pentaho, and creating reactive interfaces with Tailwind CSS & modern web frameworks.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#1F1F2B]">
+            <span class="text-xs font-mono text-emerald-400">⚡ Status: Open for collaborations</span>
+          </div>
+        </div>
+
+        <!-- Bento 3: Core Competencies (Full Width Span 12) -->
+        <div class="md:col-span-12 bento-card rounded-2xl p-8 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">03 // CAPABILITIES</span>
+              <h3 class="text-xl font-bold text-white mt-1">Core Competencies</h3>
+            </div>
+            <span class="text-xs font-mono text-[#71717A]">6 Specialized Domains</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">Software Eng.</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">Full-Stack</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">Database Arch.</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">SQL / Relational</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">ETL Pipelines</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">Data Warehouse</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">System Design</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">Scalable SaaS</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">Mobile Dev</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">Flutter / Dart</div>
+            </div>
+            <div class="p-4 rounded-xl bg-[#0B0B0F] border border-[#1F1F2A] hover:border-[#E11D48] transition-colors text-center">
+              <div class="text-sm font-semibold text-white">UI/UX Strategy</div>
+              <div class="text-[11px] text-[#71717A] mt-1 font-mono">Figma / Systems</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TECH STACK & TOOLS (Pinterest 3-Category Layout) -->
+    <section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#181822]">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 reveal-on-scroll">
         <div>
-          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">
+          <div class="accent-line-badge text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase mb-3">
+            TECHNICAL ARSENAL
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            Tech Stack & Tools
+          </h2>
+        </div>
+        <div class="text-xs font-mono text-[#71717A]">
+          3 CORE CATEGORIES · INDUSTRY TESTED
+        </div>
+      </div>
+
+      <!-- 3-Category Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
+        
+        <!-- Category 01: Languages & Frameworks -->
+        <div class="bento-card rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-[#1F1F2A]">
+              <span class="text-xs font-mono font-bold text-[#E11D48]">01 /</span>
+              <span class="text-[11px] font-mono text-[#94949E] uppercase tracking-wider">LANGUAGES & FRAMEWORKS</span>
+            </div>
+            
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Java</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Python</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">SQL</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Dart</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Flutter</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-[#71717A]">Cross-platform & Scalable Core</div>
+        </div>
+
+        <!-- Category 02: Data & Database -->
+        <div class="bento-card rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-[#1F1F2A]">
+              <span class="text-xs font-mono font-bold text-[#E11D48]">02 /</span>
+              <span class="text-[11px] font-mono text-[#94949E] uppercase tracking-wider">DATA & DATABASE</span>
+            </div>
+            
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">PostgreSQL</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">MySQL</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Pentaho ETL</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Data Warehouse</span>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-[#71717A]">Structured Storage & ETL Ingestion</div>
+        </div>
+
+        <!-- Category 03: Systems & Tools -->
+        <div class="bento-card rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-[#1F1F2A]">
+              <span class="text-xs font-mono font-bold text-[#E11D48]">03 /</span>
+              <span class="text-[11px] font-mono text-[#94949E] uppercase tracking-wider">SYSTEMS & TOOLS</span>
+            </div>
+            
+            <div class="flex flex-wrap gap-2.5">
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Ubuntu Linux</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Cloud Computing</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Git</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">GitHub</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Postman</span>
+              <span class="px-3.5 py-1.5 rounded-lg bg-[#0A0A0E] border border-[#22222E] text-sm font-semibold text-white hover:border-[#E11D48] hover:text-[#E11D48] transition-colors">Figma</span>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-[#71717A]">DevOps, API & Design Tooling</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SELECTED WORKS SECTION (Pinterest Project Showcase) -->
+    <section id="work" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#181822]">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 reveal-on-scroll">
+        <div>
+          <div class="accent-line-badge text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase mb-3">
+            PORTFOLIO SHOWCASE
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
             Selected Works
           </h2>
         </div>
-        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-mono text-[#A1A1AA] hover:text-[#E11D48] transition-colors tracking-wider uppercase">
-          VIEW ALL PROJECTS <span class="text-base">↗</span>
+        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-mono text-[#94949E] hover:text-[#E11D48] transition-colors tracking-wider uppercase">
+          EXPLORE ALL CASE STUDIES <span class="text-base">↗</span>
         </a>
       </div>
 
       <!-- Projects Grid -->
-      <div class="space-y-12">
+      <div class="space-y-10">
 
-        <!-- Project 1: Large Featured Card -->
-        <div onclick="openProjectModal('aura-banking')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
-          <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-[#0A0A0C]">
+        <!-- Project 1: Featured Hero Card (Aura Banking App) -->
+        <div onclick="openProjectModal('aura-banking')" class="group cursor-pointer bento-card rounded-2xl overflow-hidden glow-card reveal-on-scroll border border-[#22222E]">
+          <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-[#070709]">
             <img src="./assets/images/aura_banking.jpg" alt="Aura Banking App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C10] via-transparent to-transparent opacity-90"></div>
+            
+            <!-- Floating Category Pill -->
+            <div class="absolute top-6 left-6 floating-badge px-3.5 py-1.5 rounded-full text-xs font-mono text-[#E11D48]">
+              Fintech Platform / 2024
+            </div>
           </div>
           
           <div class="p-8 flex items-center justify-between">
-            <div class="space-y-2">
-              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">Gaming Platform / 2026</span>
+            <div class="space-y-1.5">
               <h3 class="text-2xl md:text-3xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
-                Booyahhub Tournament Platform
+                Aura Banking App
               </h3>
+              <p class="text-sm text-[#94949E] font-light max-w-xl">
+                High-performance dark-mode fintech wealth management with real-time portfolio analytics.
+              </p>
             </div>
-            <div class="w-12 h-12 rounded-full border border-[#27272A] flex items-center justify-center text-white group-hover:border-[#E11D48] group-hover:bg-[#E11D48] transition-all">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 rounded-xl border border-[#272733] bg-[#0E0E14] flex items-center justify-center text-white group-hover:border-[#E11D48] group-hover:bg-[#E11D48] transition-all shrink-0">
+              <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
               </svg>
             </div>
@@ -289,33 +456,53 @@
         <!-- 2 Column Grid for Projects 2 & 3 -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <!-- Project 2 Card -->
-          <div onclick="openProjectModal('lumina-furniture')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
-            <div class="relative aspect-[16/10] overflow-hidden bg-[#0A0A0C]">
+          <!-- Project 2 Card: Lumina Furniture -->
+          <div onclick="openProjectModal('lumina-furniture')" class="group cursor-pointer bento-card rounded-2xl overflow-hidden glow-card reveal-on-scroll border border-[#22222E]">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[#070709]">
               <img src="./assets/images/lumina_furniture.jpg" alt="Lumina Furniture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C10] via-transparent to-transparent opacity-90"></div>
+              
+              <!-- Floating Tag -->
+              <div class="absolute top-4 left-4 floating-badge px-3 py-1 rounded-full text-xs font-mono text-[#E11D48]">
+                E-Commerce / 2024
+              </div>
             </div>
             
-            <div class="p-6 space-y-2">
-              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">E-Commerce / 2024</span>
-              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
-                Lumina Furniture
-              </h3>
+            <div class="p-6 flex items-center justify-between">
+              <div class="space-y-1">
+                <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+                  Lumina Furniture
+                </h3>
+                <p class="text-xs text-[#94949E]">Luxury architectural furniture web experience</p>
+              </div>
+              <div class="w-10 h-10 rounded-lg border border-[#272733] bg-[#0E0E14] flex items-center justify-center text-white group-hover:border-[#E11D48] group-hover:bg-[#E11D48] transition-all shrink-0">
+                <span class="text-sm">↗</span>
+              </div>
             </div>
           </div>
 
-          <!-- Project 3 Card -->
-          <div onclick="openProjectModal('rentalbase')" class="group cursor-pointer rounded-2xl bg-[#121214] border border-[#27272A] overflow-hidden glow-card reveal-on-scroll">
-            <div class="relative aspect-[16/10] overflow-hidden bg-[#0A0A0C]">
-              <img src="./assets/images/rentalbase_mockup.jpg" alt="RentalBase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-[#121214] via-transparent to-transparent opacity-80"></div>
+          <!-- Project 3 Card: RentalBase (with our newly generated monitor mockup) -->
+          <div onclick="openProjectModal('rentalbase')" class="group cursor-pointer bento-card rounded-2xl overflow-hidden glow-card reveal-on-scroll border border-[#22222E]">
+            <div class="relative aspect-[16/10] overflow-hidden bg-[#070709]">
+              <img src="./assets/images/rentalbase_mockup.jpg" alt="RentalBase Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0C0C10] via-transparent to-transparent opacity-90"></div>
+              
+              <!-- Floating Tag -->
+              <div class="absolute top-4 left-4 floating-badge px-3 py-1 rounded-full text-xs font-mono text-[#E11D48]">
+                SaaS Platform / 2024
+              </div>
             </div>
             
-            <div class="p-6 space-y-2">
-              <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">SaaS Platform / 2024</span>
-              <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
-                RentalBase
-              </h3>
+            <div class="p-6 flex items-center justify-between">
+              <div class="space-y-1">
+                <h3 class="text-xl md:text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
+                  RentalBase
+                </h3>
+                <p class="text-xs text-[#94949E]">Equipment Rental Management SaaS Platform</p>
+              </div>
+              <div class="w-10 h-10 rounded-lg border border-[#272733] bg-[#0E0E14] flex items-center justify-center text-white group-hover:border-[#E11D48] group-hover:bg-[#E11D48] transition-all shrink-0">
+                <span class="text-sm">↗</span>
+              </div>
             </div>
           </div>
 
@@ -325,62 +512,68 @@
     </section>
 
 
-    <!-- BACKGROUND / EXPERIENCE SECTION -->
-    <section id="background" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#18181B]">
+    <!-- BACKGROUND & EDUCATION / EXPERIENCE (Pinterest Timeline Style) -->
+    <section id="background" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#181822]">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         <!-- Left Badge Label -->
         <div class="lg:col-span-4 reveal-on-scroll">
-          <div class="accent-line-badge text-sm font-semibold text-[#FFFFFF] tracking-wide">
-            Background
+          <div class="accent-line-badge text-xs font-mono font-semibold text-[#E11D48] tracking-widest uppercase mb-3">
+            TRAJECTORY
           </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Background & Experience
+          </h2>
+          <p class="text-sm text-[#94949E] mt-4 font-light leading-relaxed max-w-sm">
+            Bridging academic foundation in business systems with real-world infrastructure and enterprise software engineering.
+          </p>
         </div>
 
-        <!-- Experience Timeline -->
-        <div class="lg:col-span-8 space-y-12 reveal-on-scroll">
+        <!-- Experience Timeline Cards -->
+        <div class="lg:col-span-8 space-y-6 reveal-on-scroll">
           
-          <!-- Experience Item 1 -->
-          <div class="space-y-3 pb-8 border-b border-[#18181B] group">
+          <!-- Experience Item 1: Polinema -->
+          <div class="bento-card rounded-2xl p-7 space-y-3 group border border-[#1F1F2B]">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">2024 - Present</span>
-              <span class="text-xs text-[#71717A]">Education</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-rose-500/10 text-rose-300 border border-rose-500/20">Higher Education</span>
             </div>
             <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
               Business Information Systems
             </h3>
-            <p class="text-sm font-medium text-[#A1A1AA]">Politeknik Negeri Malang</p>
-            <p class="text-sm text-[#71717A] leading-relaxed font-light">
-              Focusing on the intersection of business strategy, software architecture, and data engineering. Building scalable web systems, data warehouse pipelines, and modular mobile applications to drive digital solutions.
+            <p class="text-sm font-medium text-[#D4D4D8]">Politeknik Negeri Malang (POLINEMA)</p>
+            <p class="text-sm text-[#94949E] leading-relaxed font-light">
+              Focusing on business workflow automation, relational modeling, data warehousing, and full-stack software architecture. Developing multi-tiered applications to optimize complex organizational operations.
             </p>
           </div>
 
-          <!-- Experience Item 2 -->
-          <div class="space-y-3 pb-8 border-b border-[#18181B] group">
+          <!-- Experience Item 2: Diskominfo Batu -->
+          <div class="bento-card rounded-2xl p-7 space-y-3 group border border-[#1F1F2B]">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">NOV 2023 - APR 2024</span>
-              <span class="text-xs text-[#71717A]">Internship</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-blue-500/10 text-blue-300 border border-blue-500/20">Government IT Internship</span>
             </div>
             <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
               IT Support & Systems Specialist
             </h3>
-            <p class="text-sm font-medium text-[#A1A1AA]">Diskominfo — Balai Kota Among Tani Batu</p>
-            <p class="text-sm text-[#71717A] leading-relaxed font-light">
-              Maintained enterprise IT infrastructure, managed network diagnostics, and delivered high-availability technical support for municipal digital systems and public service operations.
+            <p class="text-sm font-medium text-[#D4D4D8]">Diskominfo — Balai Kota Among Tani Batu</p>
+            <p class="text-sm text-[#94949E] leading-relaxed font-light">
+              Delivered enterprise IT infrastructure maintenance, network monitoring, and system troubleshooting for municipal government digital services and mission-critical public workflows.
             </p>
           </div>
 
-          <!-- Experience Item 3 -->
-          <div class="space-y-3 group">
+          <!-- Experience Item 3: SMK Telkom Malang -->
+          <div class="bento-card rounded-2xl p-7 space-y-3 group border border-[#1F1F2B]">
             <div class="flex flex-wrap items-center justify-between gap-2">
               <span class="text-xs font-mono text-[#E11D48] uppercase tracking-wider">2021 - 2024</span>
-              <span class="text-xs text-[#71717A]">Education</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">Vocational Foundation</span>
             </div>
             <h3 class="text-2xl font-bold text-white group-hover:text-[#E11D48] transition-colors">
               Computer & Network Engineering
             </h3>
-            <p class="text-sm font-medium text-[#A1A1AA]">SMK Telkom Malang</p>
-            <p class="text-sm text-[#71717A] leading-relaxed font-light">
-              Mastered foundational network architecture, Linux server environments (Ubuntu), cloud computing infrastructure, and core software engineering principles.
+            <p class="text-sm font-medium text-[#D4D4D8]">SMK Telkom Malang</p>
+            <p class="text-sm text-[#94949E] leading-relaxed font-light">
+              Mastered foundational computer networking (TCP/IP, routing, switching), Linux server administration (Ubuntu), virtualization, and initial software development practices.
             </p>
           </div>
 
@@ -390,24 +583,41 @@
     </section>
 
 
-    <!-- LET'S CONNECT / CTA SECTION -->
-    <section id="contact" class="max-w-7xl mx-auto px-6 py-28 border-t border-[#18181B]">
-      <div class="text-center max-w-3xl mx-auto space-y-8 reveal-on-scroll">
-        <h2 class="text-5xl sm:text-6xl font-bold tracking-tight text-white">
-          Let's Connect
-        </h2>
+    <!-- LET'S CONNECT / CTA SECTION (Pinterest Magnetic Banner) -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-28 border-t border-[#181822]">
+      <div class="relative bento-card rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto space-y-8 reveal-on-scroll overflow-hidden border border-[#272738]">
+        
+        <!-- Background Ambient Accent -->
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-rose-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed font-light">
-          Currently open for new opportunities and freelance projects. If you're looking for a partner to elevate your digital presence, let's talk.
-        </p>
+        <div class="relative z-10 space-y-4">
+          <div class="status-pill mx-auto">
+            <span class="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse"></span>
+            <span>GET IN TOUCH</span>
+          </div>
 
-        <div class="pt-4">
-          <button onclick="copyEmail()" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold text-sm rounded-xl hover:bg-[#E11D48] hover:text-white transition-all duration-300 shadow-xl glow-accent">
-            <span>Get in Touch</span>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white font-display">
+            Let's build something commanding together.
+          </h2>
+
+          <p class="text-base sm:text-lg text-[#94949E] leading-relaxed font-light max-w-xl mx-auto">
+            Currently open for software engineering opportunities, internships, and freelance projects. Let's discuss how we can elevate your digital infrastructure.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="relative z-10 flex flex-wrap items-center justify-center gap-4 pt-4">
+          <button onclick="copyEmail()" class="btn-shimmer inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-semibold text-sm rounded-xl hover:bg-[#E11D48] hover:text-white transition-all duration-300 shadow-2xl glow-accent">
+            <span>Copy Email Address</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
           </button>
+
+          <a href="mailto:tersiqo.alfarezel@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 border border-[#2E2E3E] text-white font-semibold text-sm rounded-xl hover:border-white transition-all bg-[#121218]/80">
+            <span>Direct Email</span>
+            <span>↗</span>
+          </a>
         </div>
       </div>
     </section>
@@ -416,25 +626,24 @@
 
 
   <!-- FOOTER -->
-  <footer class="border-t border-[#18181B] py-12 bg-[#050505]">
+  <footer class="border-t border-[#181822] py-12 bg-[#050507]">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       
       <!-- Brand Name -->
-      <a href="#" class="text-lg font-bold text-white tracking-tight">
+      <a href="#" class="text-lg font-bold text-white tracking-tight hover:text-[#E11D48] transition-colors">
         Tersiqo Alfarezel
       </a>
 
-      <!-- Social Links -->
-      <div class="flex items-center gap-6 text-xs text-[#A1A1AA] font-mono uppercase tracking-wider">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">LinkedIn</a>
-        <a href="https://dribbble.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">Instagram</a>
-        <a href="https://github.com" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">GitHub</a>
-        <!-- <a href="https://behance.net" target="_blank" rel="noopener" class="hover:text-[#E11D48] transition-colors">Behance</a> -->
+      <!-- Social Links with Pills -->
+      <div class="flex items-center gap-4 text-xs font-mono uppercase tracking-wider">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-[#0E0E14] border border-[#22222E] text-[#94949E] hover:text-white hover:border-[#E11D48] transition-all">LinkedIn</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-[#0E0E14] border border-[#22222E] text-[#94949E] hover:text-white hover:border-[#E11D48] transition-all">Instagram</a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-[#0E0E14] border border-[#22222E] text-[#94949E] hover:text-white hover:border-[#E11D48] transition-all">GitHub</a>
       </div>
 
       <!-- Copyright -->
       <div class="text-xs text-[#71717A] font-mono">
-        © 2026 Tersiqo Alfarezel. All Rights Reserved.
+        © 2026 Tersiqo Alfarezel. Built with HTML5 & Tailwind.
       </div>
 
     </div>
@@ -443,10 +652,10 @@
 
   <!-- PROJECT LIGHTBOX MODAL -->
   <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 nav-glass">
-    <div class="relative w-full max-w-4xl bg-[#121214] border border-[#27272A] rounded-2xl overflow-hidden shadow-2xl space-y-6 p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-[#0E0E14] border border-[#272738] rounded-2xl overflow-hidden shadow-2xl space-y-6 p-6 md:p-8 max-h-[90vh] overflow-y-auto">
       
       <!-- Close Button -->
-      <button id="modal-close" class="absolute top-6 right-6 text-[#A1A1AA] hover:text-white p-2 rounded-lg bg-[#18181B] border border-[#27272A]">
+      <button id="modal-close" class="absolute top-6 right-6 text-[#94949E] hover:text-white p-2 rounded-lg bg-[#15151F] border border-[#272738] transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -459,25 +668,25 @@
       </div>
 
       <!-- Image Preview -->
-      <div class="aspect-video w-full rounded-xl overflow-hidden bg-[#0A0A0C] border border-[#27272A]">
+      <div class="aspect-video w-full rounded-xl overflow-hidden bg-[#070709] border border-[#22222E]">
         <img id="modal-img" src="" alt="Project Preview" class="w-full h-full object-cover">
       </div>
 
       <!-- Modal Description & Tech Specs -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-[#18181B]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-[#1F1F2B]">
         <div class="md:col-span-2 space-y-3">
-          <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider">Overview</h4>
-          <p id="modal-desc" class="text-sm text-[#A1A1AA] leading-relaxed font-light"></p>
+          <h4 class="text-xs font-mono text-[#94949E] uppercase tracking-wider">Overview</h4>
+          <p id="modal-desc" class="text-sm text-[#D4D4D8] leading-relaxed font-light"></p>
         </div>
 
         <div class="space-y-4">
           <div>
-            <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider mb-1">Client / Purpose</h4>
+            <h4 class="text-xs font-mono text-[#94949E] uppercase tracking-wider mb-1">Client / Purpose</h4>
             <p id="modal-client" class="text-sm font-medium text-white"></p>
           </div>
 
           <div>
-            <h4 class="text-xs font-mono text-[#A1A1AA] uppercase tracking-wider mb-2">Technologies</h4>
+            <h4 class="text-xs font-mono text-[#94949E] uppercase tracking-wider mb-2">Technologies</h4>
             <div id="modal-tech" class="flex flex-wrap gap-2"></div>
           </div>
         </div>

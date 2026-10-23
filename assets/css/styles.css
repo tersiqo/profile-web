@@ -1,18 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap');
 
 :root {
-  --color-primary: #050505;
-  --color-surface: #0f0f11;
-  --color-surface-hover: #17171a;
-  --color-border: #232328;
-  --color-accent: #E11D48;
-  --color-accent-hover: #f43f5e;
-  --color-text-main: #FFFFFF;
-  --color-text-muted: #A1A1AA;
+  --color-bg: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F4F2EC;
+  --color-border: #E8E5DD;
+  --color-text-main: #18181B;
+  --color-text-muted: #71717A;
+  --color-blue: #2563EB;
+  --color-orange: #EA580C;
+  --color-yellow: #F59E0B;
+  --color-emerald: #10B981;
+  --color-purple: #8B5CF6;
 }
 
 * {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -20,92 +23,133 @@ code, pre, .font-mono {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Custom Scrollbar */
+.font-display {
+  font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar - Bright Theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: #F4F2EC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272A;
-  border-radius: 4px;
+  background: #CBD5E1;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E11D48;
+  background: #2563EB;
 }
 
-/* Text selection */
+/* Text Selection - Cheerful Vibrant Blue */
 ::selection {
-  background-color: #E11D48;
-  color: #ffffff;
+  background-color: #FEF08A;
+  color: #18181B;
 }
 
-/* Glow effects */
-.glow-accent {
-  box-shadow: 0 0 35px -5px rgba(225, 29, 72, 0.3);
+/* Bright Ambient Glows (Pastel Aesthetic from Pinterest) */
+.ambient-glow-yellow {
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.45) 0%, rgba(253, 230, 138, 0.15) 50%, transparent 75%);
 }
 
-.glow-card {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.ambient-glow-blue {
+  background: radial-gradient(circle, rgba(191, 219, 254, 0.5) 0%, rgba(219, 234, 254, 0.15) 50%, transparent 75%);
 }
 
-.glow-card:hover {
-  border-color: rgba(225, 29, 72, 0.4);
-  box-shadow: 0 10px 40px -10px rgba(225, 29, 72, 0.15);
+.ambient-glow-orange {
+  background: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(255, 237, 213, 0.15) 50%, transparent 75%);
+}
+
+/* Bright Bento Card Style */
+.bento-card-light {
+  background: #FFFFFF;
+  border: 1px solid #EAE7DF;
+  box-shadow: 0 4px 20px -2px rgba(24, 24, 27, 0.04), 0 2px 6px -1px rgba(24, 24, 27, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card-light:hover {
   transform: translateY(-4px);
+  border-color: #CBD5E1;
+  box-shadow: 0 20px 35px -8px rgba(37, 99, 235, 0.08), 0 10px 15px -3px rgba(24, 24, 27, 0.03);
 }
 
-/* Red accent badge bullet line */
-.accent-line-badge {
+/* Playful Sticker Badge */
+.sticker-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-}
-.accent-line-badge::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background-color: #E11D48;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  transition: all 0.25s ease;
 }
 
-/* Hero Frame Glow */
-.hero-frame-glow {
-  position: relative;
+/* Shimmer Button */
+.btn-playful {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hero-frame-glow::after {
+.btn-playful:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(37, 99, 235, 0.25);
+}
+
+/* Pulse Dot */
+.pulse-dot-green {
+  position: relative;
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #10B981;
+}
+.pulse-dot-green::after {
   content: '';
   position: absolute;
-  inset: -1px;
-  background: linear-gradient(135deg, rgba(225, 29, 72, 0.4), transparent 60%);
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
+  inset: -3px;
+  border-radius: 9999px;
+  background-color: #10B981;
+  opacity: 0.6;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* Glassmorphism Navigation */
-.nav-glass {
-  background: rgba(8, 8, 8, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 
-/* Custom Grid Background */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* Glassmorphism Navigation Light */
+.nav-glass-light {
+  background: rgba(250, 249, 246, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Subtle Cheerful Dot Background Pattern */
+.bg-dots-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.25) 1px, transparent 1px);
 }
 
 /* Scroll reveal utility */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Wavy underline decoration */
+.wavy-underline {
+  text-decoration: underline wavy;
+  text-decoration-color: #F97316;
+  text-underline-offset: 6px;
 }

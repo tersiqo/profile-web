@@ -154,11 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Copy Email Functionality
   window.copyEmail = function() {
-    const email = "contact@tersiqo.dev";
+    const email = "tersiqo.alfarezel@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
-      showToast("Email address copied to clipboard!");
+      showToast("Email tersiqo.alfarezel@gmail.com copied to clipboard!");
     }).catch(() => {
-      showToast("Contact: contact@tersiqo.dev");
+      showToast("Email: tersiqo.alfarezel@gmail.com");
     });
   };
 });
