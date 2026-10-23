@@ -37,10 +37,18 @@
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="bg-[#F8FAFC] text-[#0F172A] antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900 bg-subtle-dots relative overflow-x-hidden">
+<body class="bg-[#F8FAFC] text-[#0F172A] antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900 bg-engineering-grid relative overflow-x-hidden">
+
+  <!-- Architectural Background Guide Lines (Pinterest Editorial Layout) -->
+  <div class="fixed inset-0 max-w-7xl mx-auto pointer-events-none z-0 px-6 flex justify-between">
+    <div class="w-px h-full bg-slate-200/60"></div>
+    <div class="w-px h-full bg-slate-200/30 hidden lg:block"></div>
+    <div class="w-px h-full bg-slate-200/30 hidden lg:block"></div>
+    <div class="w-px h-full bg-slate-200/60"></div>
+  </div>
 
   <!-- Navigation Bar (Clean & Crisp Light Glass) -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-40 nav-glass-light transition-all duration-300 border-b border-slate-200/80">
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 nav-glass-light transition-all duration-300 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
       <!-- Brand Logo -->
@@ -101,14 +109,26 @@
 
   <main class="relative z-10 pt-28 md:pt-36">
 
-    <!-- HERO SECTION (Clean, Structured, and Well-Aligned) -->
-    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24">
+    <!-- Top Editorial Ticker Bar (Pinterest Architectural Vibe) -->
+    <div class="max-w-7xl mx-auto px-6 mb-8 reveal-on-scroll">
+      <div class="flex items-center justify-between py-2.5 px-4 rounded-lg bg-white/80 border border-slate-200/80 text-[11px] font-mono text-slate-500 shadow-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          <span>SYS.SPEC // 2026</span>
+        </div>
+        <div class="hidden sm:block">BUSINESS INFORMATION SYSTEMS · ENTERPRISE ARCHITECTURE</div>
+        <div class="text-slate-400">LOC: -7.98°S 112.63°E</div>
+      </div>
+    </div>
+
+    <!-- HERO SECTION (Clean, Structured & Editorial) -->
+    <section class="max-w-7xl mx-auto px-6 py-8 md:py-16 relative">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         
         <!-- Hero Left Column -->
         <div class="lg:col-span-7 space-y-8 reveal-on-scroll">
           
-          <!-- Role Pill Badge (Clean single color) -->
+          <!-- Role Pill Badge -->
           <div class="pill-badge">
             <span class="w-2 h-2 rounded-full bg-blue-600"></span>
             <span>SYSTEMS ANALYST & FULL-STACK DEVELOPER</span>
@@ -129,17 +149,17 @@
 
           <!-- Quick Stats Cards (Consistent clean neutral borders) -->
           <div class="grid grid-cols-3 gap-3.5 pt-2 max-w-lg">
-            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors">
               <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">3+</div>
-              <div class="text-xs font-semibold text-slate-500 mt-0.5">Years Journey</div>
+              <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Years Journey</div>
             </div>
-            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors">
               <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 font-display">15+</div>
-              <div class="text-xs font-semibold text-slate-500 mt-0.5">Projects Built</div>
+              <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Projects Built</div>
             </div>
-            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors">
               <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">100%</div>
-              <div class="text-xs font-semibold text-slate-500 mt-0.5">Commitment</div>
+              <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Commitment</div>
             </div>
           </div>
 
@@ -161,8 +181,14 @@
         <div class="lg:col-span-5 reveal-on-scroll">
           <div class="relative group">
             
+            <!-- Corner Crosshair Markers for Technical Vibe -->
+            <span class="crosshair-corner -top-3 -left-3">+</span>
+            <span class="crosshair-corner -top-3 -right-3">+</span>
+            <span class="crosshair-corner -bottom-3 -left-3">+</span>
+            <span class="crosshair-corner -bottom-3 -right-3">+</span>
+
             <!-- Clean Elevated Frame -->
-            <div class="relative bento-card-clean rounded-2xl overflow-hidden p-3 border border-slate-200 shadow-lg">
+            <div class="relative bento-card-clean rounded-2xl overflow-hidden p-3 border border-slate-200 shadow-md">
               
               <!-- Card Header -->
               <div class="flex items-center justify-between px-4 py-2.5 bg-slate-50 border-b border-slate-200 rounded-t-xl mb-2">
@@ -181,13 +207,13 @@
                 <!-- Floating Badge Top Left -->
                 <div class="absolute top-4 left-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-                  <span class="text-xs font-bold text-slate-800">Full-Stack Dev</span>
+                  <span class="text-xs font-bold text-slate-800 font-mono">Full-Stack Dev</span>
                 </div>
 
                 <!-- Floating Badge Bottom Right -->
                 <div class="absolute bottom-4 right-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-1.5">
                   <span class="text-xs">📍</span>
-                  <span class="text-xs font-bold text-slate-800">Malang, ID</span>
+                  <span class="text-xs font-bold text-slate-800 font-mono">Malang, ID</span>
                 </div>
               </div>
 
@@ -207,366 +233,384 @@
     </section>
 
 
-    <!-- ABOUT ME & BENTO SECTION (Clean, Solid, Consistent Borders) -->
-    <section id="about" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200">
-      
-      <!-- Section Header -->
-      <div class="mb-14 reveal-on-scroll">
-        <div class="pill-badge mb-3">
-          ✦ ABOUT & PHILOSOPHY
-        </div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
-          Where technical precision meets practical business value.
-        </h2>
-      </div>
-
-      <!-- Bento Grid (Consistent Neutral Styling) -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal-on-scroll">
+    <!-- ABOUT ME & BENTO SECTION (Crisp White Section with Editorial Number) -->
+    <section id="about" class="bg-white py-24 border-y border-slate-200 relative">
+      <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Bento 1: Philosophy Card (Span 7) -->
-        <div class="md:col-span-7 bento-card-clean rounded-2xl p-8 space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">01 // MY CORE PHILOSOPHY</span>
-            <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-normal">
-              I believe that great software is neither bloated nor purely aesthetic—it is fast, reliable, and deeply functional. By combining systems analysis with clean engineering, every product is built to scale smoothly and deliver genuine utility.
-            </p>
+        <!-- Section Header with Watermark Number -->
+        <div class="flex items-start justify-between mb-14 reveal-on-scroll relative">
+          <div>
+            <div class="pill-badge mb-3">
+              ✦ ABOUT & PHILOSOPHY
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
+              Where technical precision meets practical business value.
+            </h2>
           </div>
-
-          <div class="pt-4 border-t border-slate-200 flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500">
-            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-semibold">POLITEKNIK NEGERI MALANG</span>
-            <span>•</span>
-            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-semibold">BUSINESS INFORMATION SYSTEMS</span>
-          </div>
+          <!-- Editorial Watermark Number -->
+          <div class="watermark-number hidden md:block">01</div>
         </div>
 
-        <!-- Bento 2: Current Focus (Span 5) -->
-        <div class="md:col-span-5 bento-card-clean rounded-2xl p-8 space-y-6 flex flex-col justify-between bg-slate-50">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">02 // CURRENT FOCUS</span>
-              <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 font-display">
-              Enterprise SaaS Platforms & Data Warehousing
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed font-normal">
-              Currently engineering multi-tenant systems, building ETL workflows with Pentaho, and developing reactive frontends using Tailwind CSS and modular web frameworks.
-            </p>
-          </div>
-
-          <div class="pt-4 border-t border-slate-200">
-            <span class="text-xs font-mono font-bold text-emerald-700">⚡ Status: Open for collaborations</span>
-          </div>
-        </div>
-
-        <!-- Bento 3: Capabilities (Gambar 3 Fix: Consistent Neutral Borders, No Rainbow Borders) -->
-        <div class="md:col-span-12 bento-card-clean rounded-2xl p-8 space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">03 // CAPABILITIES</span>
-              <h3 class="text-xl font-extrabold text-slate-900 mt-1 font-display">Core Competencies</h3>
-            </div>
-            <span class="text-xs font-mono text-slate-500 font-semibold">6 Specialized Skill Sets</span>
-          </div>
-
-          <!-- Clean, Consistent, Neutral Cards (No rainbow borders) -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">Software Eng.</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">Full-Stack</div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">Database Arch.</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">SQL / Relational</div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">ETL Pipelines</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">Data Warehouse</div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">System Design</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">Scalable SaaS</div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">Mobile Dev</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">Flutter / Dart</div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
-              <div class="text-sm font-bold text-slate-900">UI/UX Strategy</div>
-              <div class="text-xs text-slate-500 mt-1 font-mono">Figma / Systems</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- TECH STACK & TOOLS (Consistent Clean Borders) -->
-    <section id="stack" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 reveal-on-scroll">
-        <div>
-          <div class="pill-badge mb-3">
-            🛠️ TECHNICAL ARSENAL
-          </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
-            Tech Stack & Tools
-          </h2>
-        </div>
-        <div class="text-xs font-mono font-semibold text-slate-500">
-          3 CATEGORIES · BATTLE-TESTED TECHNOLOGIES
-        </div>
-      </div>
-
-      <!-- 3-Category Cards (Consistent Clean Neutral Styling) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
-        
-        <!-- Category 01: Languages & Frameworks -->
-        <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-              <span class="text-xs font-mono font-extrabold text-blue-600">01 /</span>
-              <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">LANGUAGES & FRAMEWORKS</span>
-            </div>
-            
-            <div class="flex flex-wrap gap-2.5">
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Java</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Python</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">SQL</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Dart</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Flutter</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Tailwind CSS</span>
-            </div>
-          </div>
-          <div class="text-xs font-mono text-slate-500 font-medium">Cross-platform & Scalable Core</div>
-        </div>
-
-        <!-- Category 02: Data & Database -->
-        <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-              <span class="text-xs font-mono font-extrabold text-blue-600">02 /</span>
-              <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">DATA & DATABASE</span>
-            </div>
-            
-            <div class="flex flex-wrap gap-2.5">
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">PostgreSQL</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">MySQL</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Pentaho ETL</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Data Warehouse</span>
-            </div>
-          </div>
-          <div class="text-xs font-mono text-slate-500 font-medium">Structured Storage & ETL Ingestion</div>
-        </div>
-
-        <!-- Category 03: Systems & Tools -->
-        <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-200">
-              <span class="text-xs font-mono font-extrabold text-blue-600">03 /</span>
-              <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">SYSTEMS & TOOLS</span>
-            </div>
-            
-            <div class="flex flex-wrap gap-2.5">
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Ubuntu Linux</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Cloud Computing</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Git</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">GitHub</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Postman</span>
-              <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Figma</span>
-            </div>
-          </div>
-          <div class="text-xs font-mono text-slate-500 font-medium">DevOps, API & Design Tooling</div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- SELECTED WORKS SECTION -->
-    <section id="work" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 reveal-on-scroll">
-        <div>
-          <div class="pill-badge mb-3">
-            🚀 FEATURED PROJECTS
-          </div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
-            Selected Works
-          </h2>
-        </div>
-        <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors tracking-wider uppercase font-mono">
-          Explore All Case Studies ↗
-        </a>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="space-y-10">
-
-        <!-- Project 1: Featured Hero Card (Aura Banking App) -->
-        <div onclick="openProjectModal('aura-banking')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
-          <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-slate-900">
-            <img src="./assets/images/aura_banking.jpg" alt="Aura Banking App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
-            
-            <!-- Category Pill -->
-            <div class="absolute top-6 left-6 bg-white/95 px-4 py-1.5 rounded-lg text-xs font-bold text-blue-700 shadow-md border border-slate-200">
-              Fintech Platform / 2024
-            </div>
-          </div>
+        <!-- Bento Grid (Consistent Neutral Styling) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 reveal-on-scroll">
           
-          <div class="p-8 flex items-center justify-between">
-            <div class="space-y-1.5">
-              <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                Aura Banking App
-              </h3>
-              <p class="text-sm text-slate-600 max-w-xl">
-                High-performance wealth management platform featuring encrypted transaction records and real-time portfolio analytics.
+          <!-- Bento 1: Philosophy Card (Span 7) -->
+          <div class="md:col-span-7 bento-card-clean rounded-2xl p-8 space-y-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">01 // MY CORE PHILOSOPHY</span>
+              <p class="text-lg md:text-xl text-slate-700 leading-relaxed font-normal">
+                I believe that great software is neither bloated nor purely aesthetic—it is fast, reliable, and deeply functional. By combining systems analysis with clean engineering, every product is built to scale smoothly and deliver genuine utility.
               </p>
             </div>
-            <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-xs shrink-0">
-              <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-wrap items-center gap-3 text-xs font-mono text-slate-500">
+              <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-semibold">POLITEKNIK NEGERI MALANG</span>
+              <span>•</span>
+              <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-semibold">BUSINESS INFORMATION SYSTEMS</span>
             </div>
           </div>
+
+          <!-- Bento 2: Current Focus (Span 5) -->
+          <div class="md:col-span-5 bento-card-clean rounded-2xl p-8 space-y-6 flex flex-col justify-between bg-slate-50">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">02 // CURRENT FOCUS</span>
+                <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 font-display">
+                Enterprise SaaS Platforms & Data Warehousing
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                Currently engineering multi-tenant systems, building ETL workflows with Pentaho, and developing reactive frontends using Tailwind CSS and modular web frameworks.
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200">
+              <span class="text-xs font-mono font-bold text-emerald-700">⚡ Status: Open for collaborations</span>
+            </div>
+          </div>
+
+          <!-- Bento 3: Capabilities (Consistent Neutral Cards) -->
+          <div class="md:col-span-12 bento-card-clean rounded-2xl p-8 space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">03 // CAPABILITIES</span>
+                <h3 class="text-xl font-extrabold text-slate-900 mt-1 font-display">Core Competencies</h3>
+              </div>
+              <span class="text-xs font-mono text-slate-500 font-semibold">6 Specialized Domains</span>
+            </div>
+
+            <!-- Clean, Consistent, Neutral Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">Software Eng.</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">Full-Stack</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">Database Arch.</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">SQL / Relational</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">ETL Pipelines</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">Data Warehouse</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">System Design</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">Scalable SaaS</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">Mobile Dev</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">Flutter / Dart</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-400 hover:bg-white transition-all text-center shadow-xs">
+                <div class="text-sm font-bold text-slate-900">UI/UX Strategy</div>
+                <div class="text-xs text-slate-500 mt-1 font-mono">Figma / Systems</div>
+              </div>
+            </div>
+          </div>
+
         </div>
-
-        <!-- 2 Column Grid for Projects 2 & 3 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- Project 2 Card: Lumina Furniture -->
-          <div onclick="openProjectModal('lumina-furniture')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
-            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
-              <img src="./assets/images/lumina_furniture.jpg" alt="Lumina Furniture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
-              
-              <!-- Tag -->
-              <div class="absolute top-4 left-4 bg-white/95 px-3.5 py-1 rounded-md text-xs font-bold text-slate-800 shadow-sm border border-slate-200">
-                E-Commerce / 2024
-              </div>
-            </div>
-            
-            <div class="p-6 flex items-center justify-between">
-              <div class="space-y-1">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                  Lumina Furniture
-                </h3>
-                <p class="text-xs text-slate-500">Luxury architectural furniture web experience</p>
-              </div>
-              <div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shrink-0">
-                <span class="text-sm font-bold">↗</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 Card: RentalBase (Monitor Mockup) -->
-          <div onclick="openProjectModal('rentalbase')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
-            <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
-              <img src="./assets/images/rentalbase_mockup.jpg" alt="RentalBase Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
-              
-              <!-- Tag -->
-              <div class="absolute top-4 left-4 bg-white/95 px-3.5 py-1 rounded-md text-xs font-bold text-slate-800 shadow-sm border border-slate-200">
-                SaaS Platform / 2024
-              </div>
-            </div>
-            
-            <div class="p-6 flex items-center justify-between">
-              <div class="space-y-1">
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                  RentalBase
-                </h3>
-                <p class="text-xs text-slate-500">Equipment Rental Management SaaS Platform</p>
-              </div>
-              <div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shrink-0">
-                <span class="text-sm font-bold">↗</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
 
-    <!-- BACKGROUND & EXPERIENCE (Clean & Solid Timeline) -->
-    <section id="background" class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <!-- TECH STACK & TOOLS (Blueprint Grid Tone with Watermark 02) -->
+    <section id="stack" class="py-24 border-b border-slate-200 relative">
+      <div class="max-w-7xl mx-auto px-6">
         
-        <!-- Left Badge Label -->
-        <div class="lg:col-span-4 reveal-on-scroll">
-          <div class="pill-badge mb-3">
-            📚 JOURNEY
+        <!-- Section Header -->
+        <div class="flex items-start justify-between mb-16 reveal-on-scroll">
+          <div>
+            <div class="pill-badge mb-3">
+              🛠️ TECHNICAL ARSENAL
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
+              Tech Stack & Tools
+            </h2>
+            <div class="text-xs font-mono font-semibold text-slate-500 mt-2">
+              3 CATEGORIES · BATTLE-TESTED TECHNOLOGIES
+            </div>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
-            Background & Education
-          </h2>
-          <p class="text-sm text-slate-600 mt-4 leading-relaxed max-w-sm">
-            Bridging an academic foundation in business systems with real-world infrastructure and software engineering practice.
-          </p>
+          <!-- Editorial Watermark Number -->
+          <div class="watermark-number hidden md:block">02</div>
         </div>
 
-        <!-- Experience Timeline Cards -->
-        <div class="lg:col-span-8 space-y-5 reveal-on-scroll">
+        <!-- 3-Category Cards (Consistent Clean Neutral Styling) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
           
-          <!-- Experience Item 1: Polinema -->
-          <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">2024 - Present</span>
-              <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-blue-50 text-blue-800 border border-blue-200">Higher Education</span>
+          <!-- Category 01: Languages & Frameworks -->
+          <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <span class="text-xs font-mono font-extrabold text-blue-600">01 /</span>
+                <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">LANGUAGES & FRAMEWORKS</span>
+              </div>
+              
+              <div class="flex flex-wrap gap-2.5">
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Java</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Python</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">SQL</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Dart</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Flutter</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Tailwind CSS</span>
+              </div>
             </div>
-            <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-              Business Information Systems
-            </h3>
-            <p class="text-sm font-semibold text-slate-700">Politeknik Negeri Malang (POLINEMA)</p>
-            <p class="text-sm text-slate-600 leading-relaxed font-normal">
-              Focusing on business workflow automation, relational modeling, data warehousing, and full-stack software architecture. Developing multi-tiered applications to optimize complex organizational operations.
-            </p>
+            <div class="text-xs font-mono text-slate-500 font-medium">Cross-platform & Scalable Core</div>
           </div>
 
-          <!-- Experience Item 2: Diskominfo Batu -->
-          <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">NOV 2023 - APR 2024</span>
-              <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Government IT Internship</span>
+          <!-- Category 02: Data & Database -->
+          <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <span class="text-xs font-mono font-extrabold text-blue-600">02 /</span>
+                <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">DATA & DATABASE</span>
+              </div>
+              
+              <div class="flex flex-wrap gap-2.5">
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">PostgreSQL</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">MySQL</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Pentaho ETL</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Data Warehouse</span>
+              </div>
             </div>
-            <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-              IT Support & Systems Specialist
-            </h3>
-            <p class="text-sm font-semibold text-slate-700">Diskominfo — Balai Kota Among Tani Batu</p>
-            <p class="text-sm text-slate-600 leading-relaxed font-normal">
-              Delivered enterprise IT infrastructure maintenance, network monitoring, and system troubleshooting for municipal government digital services and mission-critical public workflows.
-            </p>
+            <div class="text-xs font-mono text-slate-500 font-medium">Structured Storage & ETL Ingestion</div>
           </div>
 
-          <!-- Experience Item 3: SMK Telkom Malang -->
-          <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">2021 - 2024</span>
-              <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Vocational Foundation</span>
+          <!-- Category 03: Systems & Tools -->
+          <div class="bento-card-clean rounded-2xl p-7 space-y-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-200">
+                <span class="text-xs font-mono font-extrabold text-blue-600">03 /</span>
+                <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">SYSTEMS & TOOLS</span>
+              </div>
+              
+              <div class="flex flex-wrap gap-2.5">
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Ubuntu Linux</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Cloud Computing</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Git</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">GitHub</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Postman</span>
+                <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-sm font-bold text-slate-800 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors cursor-default">Figma</span>
+              </div>
             </div>
-            <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-              Computer & Network Engineering
-            </h3>
-            <p class="text-sm font-semibold text-slate-700">SMK Telkom Malang</p>
-            <p class="text-sm text-slate-600 leading-relaxed font-normal">
-              Mastered foundational computer networking (TCP/IP, routing, switching), Linux server administration (Ubuntu), virtualization, and initial software development practices.
-            </p>
+            <div class="text-xs font-mono text-slate-500 font-medium">DevOps, API & Design Tooling</div>
           </div>
 
         </div>
-
       </div>
     </section>
 
 
-    <!-- LET'S CONNECT (Gambar 1 Fix: Clean Solid Card, Zero Harsh Gradients) -->
-    <section id="contact" class="max-w-7xl mx-auto px-6 py-28 border-t border-slate-200">
+    <!-- SELECTED WORKS SECTION (Crisp White Tone with Watermark 03) -->
+    <section id="work" class="bg-white py-24 border-b border-slate-200 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="flex items-start justify-between mb-16 reveal-on-scroll">
+          <div>
+            <div class="pill-badge mb-3">
+              🚀 FEATURED PROJECTS
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 font-display">
+              Selected Works
+            </h2>
+            <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors tracking-wider uppercase font-mono mt-2">
+              Explore All Case Studies ↗
+            </a>
+          </div>
+          <!-- Editorial Watermark Number -->
+          <div class="watermark-number hidden md:block">03</div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="space-y-10">
+
+          <!-- Project 1: Featured Hero Card (Aura Banking App) -->
+          <div onclick="openProjectModal('aura-banking')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
+            <div class="relative aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-slate-900">
+              <img src="./assets/images/aura_banking.jpg" alt="Aura Banking App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
+              
+              <!-- Category Pill -->
+              <div class="absolute top-6 left-6 bg-white/95 px-4 py-1.5 rounded-lg text-xs font-bold text-blue-700 shadow-md border border-slate-200 font-mono">
+                Fintech Platform / 2024
+              </div>
+            </div>
+            
+            <div class="p-8 flex items-center justify-between">
+              <div class="space-y-1.5">
+                <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                  Aura Banking App
+                </h3>
+                <p class="text-sm text-slate-600 max-w-xl font-normal">
+                  High-performance wealth management platform featuring encrypted transaction records and real-time portfolio analytics.
+                </p>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-xs shrink-0">
+                <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 Column Grid for Projects 2 & 3 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Project 2 Card: Lumina Furniture -->
+            <div onclick="openProjectModal('lumina-furniture')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
+              <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                <img src="./assets/images/lumina_furniture.jpg" alt="Lumina Furniture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
+                
+                <!-- Tag -->
+                <div class="absolute top-4 left-4 bg-white/95 px-3.5 py-1 rounded-md text-xs font-bold text-slate-800 shadow-sm border border-slate-200 font-mono">
+                  E-Commerce / 2024
+                </div>
+              </div>
+              
+              <div class="p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                    Lumina Furniture
+                  </h3>
+                  <p class="text-xs text-slate-500 font-normal">Luxury architectural furniture web experience</p>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shrink-0">
+                  <span class="text-sm font-bold">↗</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 Card: RentalBase (Monitor Mockup) -->
+            <div onclick="openProjectModal('rentalbase')" class="group cursor-pointer bento-card-clean rounded-2xl overflow-hidden reveal-on-scroll border border-slate-200">
+              <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                <img src="./assets/images/rentalbase_mockup.jpg" alt="RentalBase Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-80"></div>
+                
+                <!-- Tag -->
+                <div class="absolute top-4 left-4 bg-white/95 px-3.5 py-1 rounded-md text-xs font-bold text-slate-800 shadow-sm border border-slate-200 font-mono">
+                  SaaS Platform / 2024
+                </div>
+              </div>
+              
+              <div class="p-6 flex items-center justify-between">
+                <div class="space-y-1">
+                  <h3 class="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                    RentalBase
+                  </h3>
+                  <p class="text-xs text-slate-500 font-normal">Equipment Rental Management SaaS Platform</p>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shrink-0">
+                  <span class="text-sm font-bold">↗</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- BACKGROUND & EXPERIENCE (Clean & Solid Timeline with Watermark 04) -->
+    <section id="background" class="py-24 border-b border-slate-200 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Badge Label with Watermark 04 -->
+          <div class="lg:col-span-4 reveal-on-scroll relative">
+            <div class="pill-badge mb-3">
+              📚 JOURNEY
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
+              Background & Education
+            </h2>
+            <p class="text-sm text-slate-600 mt-4 leading-relaxed max-w-sm font-normal">
+              Bridging an academic foundation in business systems with real-world infrastructure and software engineering practice.
+            </p>
+            <div class="watermark-number mt-4 hidden lg:block">04</div>
+          </div>
+
+          <!-- Experience Timeline Cards -->
+          <div class="lg:col-span-8 space-y-5 reveal-on-scroll">
+            
+            <!-- Experience Item 1: Polinema -->
+            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">2024 - Present</span>
+                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-blue-50 text-blue-800 border border-blue-200">Higher Education</span>
+              </div>
+              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                Business Information Systems
+              </h3>
+              <p class="text-sm font-semibold text-slate-700">Politeknik Negeri Malang (POLINEMA)</p>
+              <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                Focusing on business workflow automation, relational modeling, data warehousing, and full-stack software architecture. Developing multi-tiered applications to optimize complex organizational operations.
+              </p>
+            </div>
+
+            <!-- Experience Item 2: Diskominfo Batu -->
+            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">NOV 2023 - APR 2024</span>
+                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Government IT Internship</span>
+              </div>
+              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                IT Support & Systems Specialist
+              </h3>
+              <p class="text-sm font-semibold text-slate-700">Diskominfo — Balai Kota Among Tani Batu</p>
+              <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                Delivered enterprise IT infrastructure maintenance, network monitoring, and system troubleshooting for municipal government digital services and mission-critical public workflows.
+              </p>
+            </div>
+
+            <!-- Experience Item 3: SMK Telkom Malang -->
+            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">2021 - 2024</span>
+                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Vocational Foundation</span>
+              </div>
+              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                Computer & Network Engineering
+              </h3>
+              <p class="text-sm font-semibold text-slate-700">SMK Telkom Malang</p>
+              <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                Mastered foundational computer networking (TCP/IP, routing, switching), Linux server administration (Ubuntu), virtualization, and initial software development practices.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- LET'S CONNECT (Solid Card, Zero Harsh Gradients) -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-28 relative">
       <div class="relative rounded-2xl p-10 md:p-16 text-center max-w-4xl mx-auto space-y-8 reveal-on-scroll bg-slate-900 text-white shadow-xl border border-slate-800">
         
         <div class="relative z-10 space-y-4">
