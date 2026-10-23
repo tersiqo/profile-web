@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar.classList.add('border-b', 'border-[#27272A]', 'shadow-2xl');
+      navbar.classList.add('shadow-sm', 'border-slate-300');
     } else {
-      navbar.classList.remove('border-b', 'border-[#27272A]', 'shadow-2xl');
+      navbar.classList.remove('shadow-sm', 'border-slate-300');
     }
   });
 

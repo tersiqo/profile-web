@@ -156,13 +156,115 @@ code, pre, .font-mono {
   pointer-events: none;
 }
 
-/* Scroll reveal utility */
+/* =========================================================
+   PAGE LOAD INITIAL ANIMATIONS (Staggered Entrance Suite)
+   ========================================================= */
+
+@keyframes loadFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadFadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loadScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes loadPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(8px);
+  }
+  70% {
+    transform: scale(1.06) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animation trigger classes */
+.animate-load-up {
+  opacity: 0;
+  animation: loadFadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-load-down {
+  opacity: 0;
+  animation: loadFadeInDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-load-scale {
+  opacity: 0;
+  animation: loadScaleUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-load-pop {
+  opacity: 0;
+  animation: loadPopIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger delay helpers */
+.delay-75 { animation-delay: 75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-650 { animation-delay: 650ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-750 { animation-delay: 750ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-900 { animation-delay: 900ms; }
+
+/* Scroll reveal utility (for sections below the fold) */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-load-up,
+  .animate-load-down,
+  .animate-load-scale,
+  .animate-load-pop,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }
