@@ -39,12 +39,12 @@
 </head>
 <body class="bg-[#F8FAFC] text-[#0F172A] antialiased min-h-screen selection:bg-blue-100 selection:text-blue-900 bg-engineering-grid relative overflow-x-hidden">
 
-  <!-- Architectural Background Guide Lines (Pinterest Editorial Layout) -->
+  <!-- Architectural Background Guide Lines (CAD Blueprint Drawing Effect) -->
   <div class="fixed inset-0 max-w-7xl mx-auto pointer-events-none z-0 px-6 flex justify-between">
-    <div class="w-px h-full bg-slate-200/60"></div>
-    <div class="w-px h-full bg-slate-200/30 hidden lg:block"></div>
-    <div class="w-px h-full bg-slate-200/30 hidden lg:block"></div>
-    <div class="w-px h-full bg-slate-200/60"></div>
+    <div class="w-px h-full bg-slate-200/60 guide-line-draw"></div>
+    <div class="w-px h-full bg-slate-200/30 hidden lg:block guide-line-draw delay-150"></div>
+    <div class="w-px h-full bg-slate-200/30 hidden lg:block guide-line-draw delay-150"></div>
+    <div class="w-px h-full bg-slate-200/60 guide-line-draw"></div>
   </div>
 
   <!-- Navigation Bar (Clean & Crisp Light Glass) -->
@@ -109,36 +109,42 @@
 
   <main class="relative z-10 pt-28 md:pt-36">
 
-    <!-- Top Editorial Ticker Bar (Pinterest Architectural Vibe) -->
+    <!-- Top Editorial Ticker Bar (Pinterest Architectural Vibe with Cyber Decrypt) -->
     <div class="max-w-7xl mx-auto px-6 mb-8 animate-load-up delay-100">
       <div class="flex items-center justify-between py-2.5 px-4 rounded-lg bg-white/80 border border-slate-200/80 text-[11px] font-mono text-slate-500 shadow-xs">
         <div class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-          <span>SYS.SPEC // 2026</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-ping"></span>
+          <span data-scramble="SYS.SPEC // 2026">SYS.SPEC // 2026</span>
         </div>
-        <div class="hidden sm:block">BUSINESS INFORMATION SYSTEMS · ENTERPRISE ARCHITECTURE</div>
-        <div class="text-slate-400">LOC: -7.98°S 112.63°E</div>
+        <div class="hidden sm:block tracking-wide">
+          <span data-scramble="BUSINESS INFORMATION SYSTEMS · ENTERPRISE ARCHITECTURE">BUSINESS INFORMATION SYSTEMS · ENTERPRISE ARCHITECTURE</span>
+        </div>
+        <div class="text-slate-400 font-mono">LOC: -7.98°S 112.63°E</div>
       </div>
     </div>
 
-    <!-- HERO SECTION (Clean, Structured & Editorial) -->
+    <!-- HERO SECTION (Clean, Structured & Kinetic Editorial) -->
     <section class="max-w-7xl mx-auto px-6 py-8 md:py-16 relative">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         
         <!-- Hero Left Column -->
         <div class="lg:col-span-7 space-y-8">
           
-          <!-- Role Pill Badge -->
+          <!-- Role Pill Badge with Cyber Decrypt -->
           <div class="pill-badge animate-load-up delay-150">
-            <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-            <span>SYSTEMS ANALYST & FULL-STACK DEVELOPER</span>
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span data-scramble="SYSTEMS ANALYST & FULL-STACK DEVELOPER">SYSTEMS ANALYST &amp; FULL-STACK DEVELOPER</span>
           </div>
 
-          <!-- Headline: Clean, Neatly Arranged, Structured -->
-          <div class="space-y-3 animate-load-up delay-200">
+          <!-- Headline: Kinetic Masked Skew Roll-Up (Editorial magazine cut reveal) -->
+          <div class="space-y-1">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.14] font-display">
-              Building Scalable Software & <br class="hidden sm:inline">
-              <span class="text-blue-600">High-Performance Digital Systems.</span>
+              <span class="block overflow-hidden pb-1">
+                <span class="animate-mask-reveal delay-200">Building Scalable Software &amp;</span>
+              </span>
+              <span class="block overflow-hidden pb-1">
+                <span class="animate-mask-reveal text-blue-600 delay-350">High-Performance Digital Systems.</span>
+              </span>
             </h1>
           </div>
 
@@ -147,18 +153,24 @@
             Specializing in enterprise SaaS architectures, database engineering, and modern web applications with precision logic and reliable performance.
           </p>
 
-          <!-- Quick Stats Cards (Consistent clean neutral borders) -->
+          <!-- Quick Stats Cards with Rapid Odometer Counters -->
           <div class="grid grid-cols-3 gap-3.5 pt-2 max-w-lg">
             <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors animate-load-up delay-400">
-              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">3+</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">
+                <span class="counter-number font-display" data-target="3" data-suffix="+">0+</span>
+              </div>
               <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Years Journey</div>
             </div>
             <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors animate-load-up delay-500">
-              <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 font-display">15+</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 font-display">
+                <span class="counter-number font-display" data-target="15" data-suffix="+">0+</span>
+              </div>
               <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Projects Built</div>
             </div>
             <div class="p-4 rounded-xl bg-white border border-slate-200 text-center shadow-xs hover:border-slate-400 transition-colors animate-load-up delay-600">
-              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">100%</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">
+                <span class="counter-number font-display" data-target="100" data-suffix="%">0%</span>
+              </div>
               <div class="text-xs font-semibold text-slate-500 mt-0.5 font-mono">Commitment</div>
             </div>
           </div>
@@ -177,9 +189,9 @@
           </div>
         </div>
 
-        <!-- Hero Right Column: Profile Showcase Card -->
+        <!-- Hero Right Column: Profile Showcase Card with 3D Tilt & Laser Scan Wipe -->
         <div class="lg:col-span-5 animate-load-scale delay-250">
-          <div class="relative group">
+          <div class="relative group tilt-card-wrapper">
             
             <!-- Corner Crosshair Markers for Technical Vibe -->
             <span class="crosshair-corner -top-3 -left-3">+</span>
@@ -187,8 +199,8 @@
             <span class="crosshair-corner -bottom-3 -left-3">+</span>
             <span class="crosshair-corner -bottom-3 -right-3">+</span>
 
-            <!-- Clean Elevated Frame -->
-            <div class="relative bento-card-clean rounded-2xl overflow-hidden p-3 border border-slate-200 shadow-md">
+            <!-- Clean Elevated Frame with 3D Parallax Inner -->
+            <div class="relative bento-card-clean rounded-2xl overflow-hidden p-3 border border-slate-200 shadow-md tilt-card-inner">
               
               <!-- Card Header -->
               <div class="flex items-center justify-between px-4 py-2.5 bg-slate-50 border-b border-slate-200 rounded-t-xl mb-2">
@@ -197,21 +209,27 @@
                   <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
                   <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
                 </div>
-                <span class="text-[11px] font-mono font-semibold text-slate-500 tracking-wider">TERSIQO ALFAREZEL // 2026</span>
+                <span class="text-[11px] font-mono font-semibold text-slate-500 tracking-wider">
+                  <span data-scramble="TERSIQO ALFAREZEL // 2026">TERSIQO ALFAREZEL // 2026</span>
+                </span>
               </div>
 
-              <!-- Portrait Container -->
+              <!-- Portrait Container with Laser Scan Wipe -->
               <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 border border-slate-200/60">
-                <img src="./assets/images/hero_portrait.jpg" alt="Tersiqo Alfarezel Portrait" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                <!-- Royal Blue Laser Scanline Sweeper -->
+                <div class="laser-scan-line"></div>
+
+                <!-- Shutter-wiped Portrait Image -->
+                <img src="./assets/images/hero_portrait.jpg" alt="Tersiqo Alfarezel Portrait" class="w-full h-full object-cover object-center shutter-image group-hover:scale-105 transition-transform duration-700">
                 
-                <!-- Floating Badge Top Left -->
-                <div class="absolute top-4 left-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-2 animate-load-pop delay-600">
+                <!-- Floating Badge Top Left: Mechanical Stamp Slam -->
+                <div class="absolute top-4 left-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-2 animate-stamp delay-600">
                   <span class="w-2 h-2 rounded-full bg-blue-600"></span>
                   <span class="text-xs font-bold text-slate-800 font-mono">Full-Stack Dev</span>
                 </div>
 
-                <!-- Floating Badge Bottom Right -->
-                <div class="absolute bottom-4 right-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-1.5 animate-load-pop delay-750">
+                <!-- Floating Badge Bottom Right: Mechanical Stamp Slam -->
+                <div class="absolute bottom-4 right-4 bg-white/95 px-3 py-1.5 rounded-lg border border-slate-200 shadow-md flex items-center gap-1.5 animate-stamp delay-750">
                   <span class="text-xs">📍</span>
                   <span class="text-xs font-bold text-slate-800 font-mono">Malang, ID</span>
                 </div>

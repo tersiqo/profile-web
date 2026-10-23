@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'toast';
-      toast.className = 'fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-[#18181B] text-white border border-[#E11D48] shadow-2xl flex items-center gap-3 transform translate-y-10 opacity-0 transition-all duration-300';
-      toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse"></span> <span id="toast-text"></span>`;
+      toast.className = 'fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-slate-900 text-white border border-slate-700 shadow-2xl flex items-center gap-3 transform translate-y-10 opacity-0 transition-all duration-300';
+      toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> <span id="toast-text" class="text-xs font-mono font-medium"></span>`;
       document.body.appendChild(toast);
     }
     
@@ -161,4 +161,125 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast("Email: tersiqo.alfarezel@gmail.com");
     });
   };
+
+  // =========================================================
+  // ANTI-MAINSTREAM ANIMATIONS: CYBER DECODER & SCRAMBLE EFFECT
+  // =========================================================
+  class TextScramble {
+    constructor(el) {
+      this.el = el;
+      this.chars = '!<>-_\\/[]{}—=+*^?#________010101';
+      this.update = this.update.bind(this);
+    }
+    setText(newText) {
+      const oldText = this.el.innerText || '';
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise((resolve) => this.resolve = resolve);
+      this.queue = [];
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || '';
+        const to = newText[i] || '';
+        const start = Math.floor(Math.random() * 20);
+        const end = start + Math.floor(Math.random() * 22);
+        this.queue.push({ from, to, start, end });
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+    update() {
+      let output = '';
+      let complete = 0;
+      for (let i = 0, n = this.queue.length; i < n; i++) {
+        let { from, to, start, end, char } = this.queue[i];
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.chars[Math.floor(Math.random() * this.chars.length)];
+            this.queue[i].char = char;
+          }
+          output += `<span class="text-blue-600 font-mono">${char}</span>`;
+        } else {
+          output += from;
+        }
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+  }
+
+  // Trigger Scramble on elements with data-scramble
+  const scrambleElements = document.querySelectorAll('[data-scramble]');
+  scrambleElements.forEach((el, index) => {
+    const originalText = el.getAttribute('data-scramble') || el.innerText;
+    el.innerText = '';
+    const fx = new TextScramble(el);
+    setTimeout(() => {
+      fx.setText(originalText);
+    }, 250 + (index * 220));
+  });
+
+  // =========================================================
+  // ANTI-MAINSTREAM ANIMATIONS: RAPID NUMERIC ODOMETER TICKER
+  // =========================================================
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter-number');
+    counters.forEach((counter, idx) => {
+      const target = parseInt(counter.getAttribute('data-target'), 10);
+      const suffix = counter.getAttribute('data-suffix') || '';
+      const duration = 1400; // ms
+      let startTime = null;
+
+      function updateNumber(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing curve (ease-out cubic)
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentVal = Math.floor(easeProgress * target);
+        counter.textContent = currentVal + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        } else {
+          counter.textContent = target + suffix;
+        }
+      }
+
+      setTimeout(() => {
+        requestAnimationFrame(updateNumber);
+      }, 500 + (idx * 150));
+    });
+  }
+  initCounters();
+
+  // =========================================================
+  // ANTI-MAINSTREAM ANIMATIONS: 3D PARALLAX TILT ON HERO PORTRAIT
+  // =========================================================
+  const tiltCard = document.querySelector('.tilt-card-wrapper');
+  const tiltInner = document.querySelector('.tilt-card-inner');
+  if (tiltCard && tiltInner) {
+    tiltCard.addEventListener('mousemove', (e) => {
+      const rect = tiltCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+      tiltInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    tiltCard.addEventListener('mouseleave', () => {
+      tiltInner.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  }
 });
