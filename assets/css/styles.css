@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap');
 
 :root {
-  --color-bg: #FAF9F6;
+  --color-bg: #F8FAFC;
   --color-surface: #FFFFFF;
-  --color-surface-soft: #F4F2EC;
-  --color-border: #E8E5DD;
-  --color-text-main: #18181B;
-  --color-text-muted: #71717A;
+  --color-border: #E2E8F0;
+  --color-border-hover: #94A3B8;
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
   --color-blue: #2563EB;
-  --color-orange: #EA580C;
-  --color-yellow: #F59E0B;
-  --color-emerald: #10B981;
-  --color-purple: #8B5CF6;
 }
 
 * {
@@ -27,12 +23,12 @@ code, pre, .font-mono {
   font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Custom Scrollbar - Bright Theme */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F2EC;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
   background: #CBD5E1;
@@ -42,41 +38,28 @@ code, pre, .font-mono {
   background: #2563EB;
 }
 
-/* Text Selection - Cheerful Vibrant Blue */
+/* Text Selection */
 ::selection {
-  background-color: #FEF08A;
-  color: #18181B;
+  background-color: #DBEAFE;
+  color: #1E3A8A;
 }
 
-/* Bright Ambient Glows (Pastel Aesthetic from Pinterest) */
-.ambient-glow-yellow {
-  background: radial-gradient(circle, rgba(254, 240, 138, 0.45) 0%, rgba(253, 230, 138, 0.15) 50%, transparent 75%);
-}
-
-.ambient-glow-blue {
-  background: radial-gradient(circle, rgba(191, 219, 254, 0.5) 0%, rgba(219, 234, 254, 0.15) 50%, transparent 75%);
-}
-
-.ambient-glow-orange {
-  background: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(255, 237, 213, 0.15) 50%, transparent 75%);
-}
-
-/* Bright Bento Card Style */
-.bento-card-light {
+/* Crisp Clean Bento Card */
+.bento-card-clean {
   background: #FFFFFF;
-  border: 1px solid #EAE7DF;
-  box-shadow: 0 4px 20px -2px rgba(24, 24, 27, 0.04), 0 2px 6px -1px rgba(24, 24, 27, 0.02);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bento-card-light:hover {
-  transform: translateY(-4px);
+.bento-card-clean:hover {
+  transform: translateY(-3px);
   border-color: #CBD5E1;
-  box-shadow: 0 20px 35px -8px rgba(37, 99, 235, 0.08), 0 10px 15px -3px rgba(24, 24, 27, 0.03);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
-/* Playful Sticker Badge */
-.sticker-badge {
+/* Playful Pill Badge */
+.pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -85,16 +68,18 @@ code, pre, .font-mono {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.025em;
-  transition: all 0.25s ease;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
 }
 
-/* Shimmer Button */
-.btn-playful {
+/* Button Playful Hover */
+.btn-primary {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-playful:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px -6px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
 }
 
 /* Pulse Dot */
@@ -125,31 +110,24 @@ code, pre, .font-mono {
 
 /* Glassmorphism Navigation Light */
 .nav-glass-light {
-  background: rgba(250, 249, 246, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
-/* Subtle Cheerful Dot Background Pattern */
-.bg-dots-pattern {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+/* Subtle Clean Dot Background Pattern */
+.bg-subtle-dots {
+  background-size: 28px 28px;
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.2) 1px, transparent 1px);
 }
 
 /* Scroll reveal utility */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Wavy underline decoration */
-.wavy-underline {
-  text-decoration: underline wavy;
-  text-decoration-color: #F97316;
-  text-underline-offset: 6px;
 }
