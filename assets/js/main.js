@@ -57,37 +57,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Project Modal Data
   const projectsData = {
-    'aura-banking': {
-      title: 'Aura Banking App',
-      tag: 'Fintech / 2024',
-      image: './assets/images/aura_banking.jpg',
-      description: 'A revolutionary dark-themed mobile banking and investment platform designed to make complex wealth management intuitive, real-time, and ultra-responsive. Features high-frequency market updates, encrypted transaction ledgers, and custom portfolio analytics.',
-      tech: ['Figma', 'React Native', 'Tailwind CSS', 'Redux Toolkit', 'WebSockets'],
-      client: 'Aura Financial Inc.'
+    'banteng-squad': {
+      title: 'Banteng Squad Scrim',
+      tag: 'Mobile Platform / 2024',
+      image: './assets/images/banteng_squad_mockup.png',
+      description: 'Aplikasi mobile pendaftaran dan manajemen turnamen esports scrim. Memudahkan komunitas esports dalam menemukan jadwal scrim aktif, pendaftaran slot tim, verifikasi pembayaran biaya registrasi secara instan, serta pelacakan riwayat turnamen secara terstruktur.',
+      tech: ['Flutter', 'Dart', 'Tailwind CSS', 'REST API', 'Figma'],
+      client: 'Banteng Squad Esports'
     },
-    'lumina-furniture': {
-      title: 'Lumina Furniture',
-      tag: 'E-Commerce / 2024',
-      image: './assets/images/lumina_furniture.jpg',
-      description: 'Minimalist luxury e-commerce experience crafted for architectural furniture designers. Implements dynamic 3D asset previews, seamless checkout flows, and tailored moodboard creation suites.',
-      tech: ['Webflow', 'React', 'Three.js', 'Tailwind CSS', 'Stripe'],
-      client: 'Lumina Atelier'
+    'lab-se': {
+      title: 'LAB SE Polinema',
+      tag: 'Web Application / 2024',
+      image: './assets/images/lab_se_mockup.png',
+      description: 'Portal resmi Laboratorium Software Engineering Politeknik Negeri Malang. Menampilkan profil laboratorium, visi misi pusat unggulan pengembangan keilmuan rekayasa perangkat lunak berdaya saing global, direktori tim dosen, artikel riset ilmiah, dan komunitas mahasiswa SE Geeks.',
+      tech: ['Laravel', 'Tailwind CSS', 'MySQL', 'JavaScript', 'Blade'],
+      client: 'Politeknik Negeri Malang'
     },
     'rentalbase': {
       title: 'RentalBase',
       tag: 'SaaS Platform / 2024',
-      image: './assets/images/rentalbase_mockup.jpg',
-      description: 'Platform manajemen bisnis rental peralatan all-in-one. Dilengkapi dengan pemantauan ketersediaan barang, jadwal booking, transaksi otomatis, dan manajemen inventaris unit secara real-time.',
+      image: './assets/images/rentalbase_mockup.png',
+      description: 'Platform manajemen bisnis rental peralatan fisik all-in-one. Menyediakan fitur kalender booking terintegrasi, pemantauan ketersediaan unit kamera & alat secara real-time, invoice otomatis, status peminjaman, serta proteksi deposit rental.',
       tech: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'PostgreSQL'],
       client: 'RentalBase Platform'
     },
-    'void-os': {
-      title: 'RentalBase',
-      tag: 'SaaS Platform / 2024',
-      image: './assets/images/rentalbase_mockup.jpg',
-      description: 'Platform manajemen bisnis rental peralatan all-in-one. Dilengkapi dengan pemantauan ketersediaan barang, jadwal booking, transaksi otomatis, dan manajemen inventaris unit secara real-time.',
-      tech: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'PostgreSQL'],
-      client: 'RentalBase Platform'
+    // Fallback aliases
+    'aura-banking': {
+      title: 'Banteng Squad Scrim',
+      tag: 'Mobile Platform / 2024',
+      image: './assets/images/banteng_squad_mockup.png',
+      description: 'Aplikasi mobile pendaftaran dan manajemen turnamen esports scrim.',
+      tech: ['Flutter', 'Dart', 'Tailwind CSS', 'REST API'],
+      client: 'Banteng Squad Esports'
+    },
+    'lumina-furniture': {
+      title: 'LAB SE Polinema',
+      tag: 'Web Application / 2024',
+      image: './assets/images/lab_se_mockup.png',
+      description: 'Portal resmi Laboratorium Software Engineering Politeknik Negeri Malang.',
+      tech: ['Laravel', 'Tailwind CSS', 'MySQL'],
+      client: 'Politeknik Negeri Malang'
     }
   };
 
@@ -108,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const techContainer = document.getElementById('modal-tech');
     techContainer.innerHTML = data.tech.map(item => 
-      `<span class="px-3 py-1 text-xs font-medium rounded-full bg-[#18181B] text-[#A1A1AA] border border-[#27272A]">${item}</span>`
+      `<span class="px-3 py-1 text-xs font-semibold rounded-lg bg-slate-100 text-slate-800 border border-slate-200">${item}</span>`
     ).join('');
 
     modal.classList.remove('hidden');
