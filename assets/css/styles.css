@@ -89,19 +89,20 @@ code, pre, .font-mono {
   pointer-events: none;
 }
 
-/* Playful Pill Badge */
+/* Architectural Technical Badge (Minimalist & Non-Pastel) */
 .pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.025em;
-  background: #EFF6FF;
-  border: 1px solid #BFDBFE;
-  color: #1D4ED8;
+  letter-spacing: 0.05em;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #334155;
 }
 
 /* Button Playful Hover */
