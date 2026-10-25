@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'banteng-squad': {
       title: 'BooyahHub — Esports Scrim Platform',
       tag: 'Mobile Application / 2026',
-      role: '👑 Lead Mobile Developer',
-      team: '👥 4-Member Team',
+      role: '📋 Assistant Project Manager',
+      team: '👥 4-Member PBL Team',
       tagline: 'Platform mobile manajemen turnamen esports scrim dengan sinkronisasi slot real-time dan verifikasi pembayaran instan.',
       github: 'https://github.com/azariaamanda/Mobile_BooyahHub.git',
       demo: '',
@@ -94,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'High-Performance UI', desc: 'Antarmuka responsif berbasis Flutter dengan performa konsisten 60fps di berbagai tipe smartphone Android.' }
       ],
       contributions: [
-        'Memimpin tim pengembang beranggotakan 4 orang dalam perancangan arsitektur sistem dan pembagian modul aplikasi.',
+        'Mendampingi Project Manager dalam mengawal linimasa proyek (PBL), koordinasi 4 anggota tim, serta penyusunan dokumen manual book dan SRS.',
         'Mengintegrasikan backend Supabase untuk manajemen basis data PostgreSQL, autentikasi pengguna, dan Row-Level Security (RLS).',
         'Membangun logika sinkronisasi data real-time untuk ketersediaan slot scrim agar terhindar dari kondisi race condition.',
-        'Mengimplementasikan seluruh komponen antarmuka (UI/UX) di Flutter berdasarkan rancangan kustom di Figma.'
+        'Mengembangkan dan memastikan keselarasan komponen antarmuka pengguna (UI/UX) di Flutter dengan alur operasional aplikasi.'
       ],
       tech: ['Flutter', 'Dart', 'Supabase', 'PostgreSQL', 'Figma', 'REST API']
     },
