@@ -70,11 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
       image: './assets/images/banteng_squad_mockup.png',
       caption: 'BooyahHub Mobile Scrim Platform Showcase',
       gallery: [
-        { title: 'Main Mockup', src: './assets/images/banteng_squad_mockup.png' },
-        { title: 'Home & Banner', src: './assets/images/booyahhub/screen1.png' },
-        { title: 'Scrim Catalog', src: './assets/images/booyahhub/screen2.png' },
-        { title: 'Slot Booking Flow', src: './assets/images/booyahhub/screen3.png' },
-        { title: 'Schedule & Profile', src: './assets/images/booyahhub/screen4.png' }
+        { title: 'Device Mockup', src: './assets/images/banteng_squad_mockup.png' },
+        { title: 'Beranda / Home', src: './assets/images/booyahhub/booyah_home.png' },
+        { title: 'Katalog Semua Scrim', src: './assets/images/booyahhub/booyah_scrim_list.png' },
+        { title: 'Detail & Syarat Scrim', src: './assets/images/booyahhub/booyah_detail_scrim.png' },
+        { title: 'Pilih Jadwal Sesi', src: './assets/images/booyahhub/booyah_schedule_picker.png' },
+        { title: 'Form Registrasi Tim', src: './assets/images/booyahhub/booyah_team_registration.png' },
+        { title: 'Pembayaran QRIS & Bukti', src: './assets/images/booyahhub/booyah_payment_qris.png' },
+        { title: 'Status Daftar Pesanan', src: './assets/images/booyahhub/booyah_order_status.png' },
+        { title: 'Rincian Pesanan Pop-up', src: './assets/images/booyahhub/booyah_order_popup.png' },
+        { title: 'Hasil Match & Skor Kills', src: './assets/images/booyahhub/booyah_match_result.png' },
+        { title: 'Leaderboard Turnamen', src: './assets/images/booyahhub/booyah_leaderboard.png' },
+        { title: 'Dashboard Admin Scrim', src: './assets/images/booyahhub/booyah_admin_dashboard.png' },
+        { title: 'Verifikasi Peserta Admin', src: './assets/images/booyahhub/booyah_admin_verification.png' },
+        { title: 'Kelola Scrim Admin', src: './assets/images/booyahhub/booyah_admin_scrim_mgmt.png' },
+        { title: 'Dashboard Owner Platform', src: './assets/images/booyahhub/booyah_owner_dashboard.png' }
       ],
       description: 'Komunitas esports sering kali menghadapi kendala saat mengelola turnamen scrim: pendaftaran manual via chat yang rawan bentrok slot tim, bukti pembayaran palsu, serta pencatatan klasemen yang lambat. BooyahHub hadir sebagai platform mobile terpusat untuk mengotomatiskan seluruh alur turnamen esports dari reservasi slot hingga papan klasemen.',
       features: [
