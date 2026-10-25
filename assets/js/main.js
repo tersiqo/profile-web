@@ -131,15 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
       demo: 'https://tersiqo.my.id',
       client: 'RentalBase SaaS Ecosystem',
       architecture: 'Multi-Tenant Modular Monolith with Docker',
-      image: './assets/images/rentalbase/rentalbase_dashboard.png',
-      caption: 'A-01: Admin Dashboard Operasional (KameraKu Studio Malang)',
+      image: './assets/images/rentalbase_mockup.png',
+      caption: 'RentalBase Desktop Workspace Mockup',
       gallery: [
+        { title: 'Monitor Setup', src: './assets/images/rentalbase_mockup.png' },
         { title: 'Admin Dashboard', src: './assets/images/rentalbase/rentalbase_dashboard.png' },
         { title: 'Official Landing Page', src: './assets/images/rentalbase/rentalbase_landing.png' },
         { title: 'Tenant Catalog', src: './assets/images/rentalbase/rentalbase_catalog.png' },
-        { title: 'Cross-Branch Analytics', src: './assets/images/rentalbase/rentalbase_analytics.png' },
-        { title: 'Orders & Return Penalty', src: './assets/images/rentalbase/rentalbase_orders.png' },
-        { title: 'Desktop Setup Mockup', src: './assets/images/rentalbase_mockup.png' }
+        { title: 'Tenant Management', src: './assets/images/rentalbase/rentalbase_tenants.png' },
+        { title: 'Store Theme Setup', src: './assets/images/rentalbase/rentalbase_store_setup.png' },
+        { title: 'Orders & Return Penalty', src: './assets/images/rentalbase/rentalbase_orders.png' }
       ],
       description: 'Bisnis rental peralatan fisik skala menengah sering mengalami kerugian akibat pencatatan ketersediaan barang yang tumpang tindih, denda pengembalian yang tidak terkontrol, serta isolasi data antar cabang yang rumit. RentalBase dirancang sebagai platform SaaS multi-tenant yang memungkinkan pemilik usaha rental mengoperasikan portal toko dan dashboard operasional mandiri secara efisien.',
       features: [
@@ -208,9 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (data.gallery && data.gallery.length > 0) {
       gallerySection.classList.remove('hidden');
       galleryContainer.innerHTML = data.gallery.map((item, idx) => `
-        <button type="button" onclick="switchModalPreview('${item.src}', '${item.title.replace(/'/g, "\\'")}')" class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-900 aspect-video hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-left">
+        <button type="button" onclick="switchModalPreview('${item.src}', '${item.title.replace(/'/g, "\\'")}')" class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-100 aspect-video hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-left">
           <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-transparent transition-colors"></div>
+          <div class="absolute inset-0 bg-slate-950/25 group-hover:bg-transparent transition-colors"></div>
           <span class="absolute bottom-1 left-1.5 right-1.5 text-[10px] font-mono text-white truncate drop-shadow-sm font-semibold">${item.title}</span>
         </button>
       `).join('');
