@@ -134,13 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
       image: './assets/images/rentalbase_mockup.png',
       caption: 'RentalBase Desktop Workspace Mockup',
       gallery: [
-        { title: 'Monitor Setup', src: './assets/images/rentalbase_mockup.png' },
+        { title: 'Monitor Workspace', src: './assets/images/rentalbase_mockup.png' },
         { title: 'Admin Dashboard', src: './assets/images/rentalbase/rentalbase_dashboard.png' },
         { title: 'Official Landing Page', src: './assets/images/rentalbase/rentalbase_landing.png' },
         { title: 'Tenant Catalog', src: './assets/images/rentalbase/rentalbase_catalog.png' },
+        { title: 'Product Detail & Booking', src: './assets/images/rentalbase/rentalbase_product_detail.png' },
+        { title: 'Return & Penalty Popup', src: './assets/images/rentalbase/rentalbase_return_popup.png' },
+        { title: 'Master Orders List', src: './assets/images/rentalbase/rentalbase_orders.png' },
         { title: 'Tenant Management', src: './assets/images/rentalbase/rentalbase_tenants.png' },
+        { title: 'Tenant Registration', src: './assets/images/rentalbase/rentalbase_tenant_requests.png' },
         { title: 'Store Theme Setup', src: './assets/images/rentalbase/rentalbase_store_setup.png' },
-        { title: 'Orders & Return Penalty', src: './assets/images/rentalbase/rentalbase_orders.png' }
+        { title: 'Store Info Setup', src: './assets/images/rentalbase/rentalbase_store_info.png' },
+        { title: 'Customer Order Detail', src: './assets/images/rentalbase/rentalbase_customer_order.png' },
+        { title: 'Authentication / Login', src: './assets/images/rentalbase/rentalbase_login.png' },
+        { title: 'Design System & Colors', src: './assets/images/rentalbase/rentalbase_style_guide.png' }
       ],
       description: 'Bisnis rental peralatan fisik skala menengah sering mengalami kerugian akibat pencatatan ketersediaan barang yang tumpang tindih, denda pengembalian yang tidak terkontrol, serta isolasi data antar cabang yang rumit. RentalBase dirancang sebagai platform SaaS multi-tenant yang memungkinkan pemilik usaha rental mengoperasikan portal toko dan dashboard operasional mandiri secara efisien.',
       features: [
