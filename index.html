@@ -183,8 +183,9 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
               </svg>
             </a>
-            <a href="#about" class="inline-flex items-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-blue-600 border border-slate-300 hover:border-slate-400 rounded-lg bg-white transition-all shadow-xs">
-              About Me ↗
+            <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-blue-600 border border-slate-300 hover:border-blue-600 rounded-lg bg-white transition-all shadow-xs group">
+              <span>View Resume / CV</span>
+              <span class="text-sm group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
             </a>
           </div>
         </div>
@@ -577,48 +578,90 @@
           <div class="lg:col-span-8 space-y-5 reveal-on-scroll">
             
             <!-- Experience Item 1: Polinema -->
-            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">2024 - Present</span>
-                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-blue-50 text-blue-800 border border-blue-200">Higher Education</span>
+            <div class="bento-card-clean rounded-2xl p-6 md:p-7 group border border-slate-200 flex flex-col md:flex-row gap-6 items-stretch">
+              <!-- Preview Image -->
+              <div class="md:w-56 lg:w-64 shrink-0 h-48 md:h-auto rounded-xl overflow-hidden border border-slate-200 bg-slate-100 relative">
+                <img src="./assets/images/journey/polinema_jti.jpg" alt="Gedung Jurusan Teknologi Informasi Polinema" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                <div class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-slate-900/85 backdrop-blur-xs text-[10px] font-mono font-bold text-white tracking-wider border border-white/20">
+                  POLINEMA · JTI
+                </div>
               </div>
-              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                Business Information Systems
-              </h3>
-              <p class="text-sm font-semibold text-slate-700">Politeknik Negeri Malang (POLINEMA)</p>
-              <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                Focusing on business workflow automation, relational modeling, data warehousing, and full-stack software architecture. Developing multi-tiered applications to optimize complex organizational operations.
-              </p>
+
+              <!-- Content -->
+              <div class="flex-1 space-y-2.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider">2024 - Present</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-blue-50 text-blue-800 border border-blue-200">Higher Education</span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                    Business Information Systems
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-0.5">Politeknik Negeri Malang (POLINEMA)</p>
+                  <p class="text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                    Focusing on business workflow automation, relational modeling, data warehousing, and full-stack software architecture. Developing multi-tiered applications to optimize complex organizational operations.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <!-- Experience Item 2: Diskominfo Batu -->
-            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">NOV 2023 - APR 2024</span>
-                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Government IT Internship</span>
+            <div class="bento-card-clean rounded-2xl p-6 md:p-7 group border border-slate-200 flex flex-col md:flex-row gap-6 items-stretch">
+              <!-- Preview Image -->
+              <div class="md:w-56 lg:w-64 shrink-0 h-48 md:h-auto rounded-xl overflow-hidden border border-slate-200 bg-slate-100 relative">
+                <img src="./assets/images/journey/diskominfo_batu.jpg" alt="Balai Kota Among Tani Batu - Diskominfo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                <div class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-slate-900/85 backdrop-blur-xs text-[10px] font-mono font-bold text-white tracking-wider border border-white/20">
+                  DISKOMINFO · BATU
+                </div>
               </div>
-              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                IT Support & Systems Specialist
-              </h3>
-              <p class="text-sm font-semibold text-slate-700">Diskominfo — Balai Kota Among Tani Batu</p>
-              <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                Delivered enterprise IT infrastructure maintenance, network monitoring, and system troubleshooting for municipal government digital services and mission-critical public workflows.
-              </p>
+
+              <!-- Content -->
+              <div class="flex-1 space-y-2.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">NOV 2023 - APR 2024</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Government IT Internship</span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                    IT Support & Systems Specialist
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-0.5">Diskominfo — Balai Kota Among Tani Batu</p>
+                  <p class="text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                    Delivered enterprise IT infrastructure maintenance, network monitoring, and system troubleshooting for municipal government digital services and mission-critical public workflows.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <!-- Experience Item 3: SMK Telkom Malang -->
-            <div class="bento-card-clean rounded-2xl p-7 space-y-3 group border border-slate-200">
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">2021 - 2024</span>
-                <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Vocational Foundation</span>
+            <div class="bento-card-clean rounded-2xl p-6 md:p-7 group border border-slate-200 flex flex-col md:flex-row gap-6 items-stretch">
+              <!-- Preview Image -->
+              <div class="md:w-56 lg:w-64 shrink-0 h-48 md:h-auto rounded-xl overflow-hidden border border-slate-200 bg-slate-100 relative">
+                <img src="./assets/images/journey/smk_telkom_malang.jpg" alt="Gerbang Utama SMK Telkom Malang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                <div class="absolute bottom-2.5 left-2.5 px-2.5 py-1 rounded-md bg-slate-900/85 backdrop-blur-xs text-[10px] font-mono font-bold text-white tracking-wider border border-white/20">
+                  SMK TELKOM · MOKLET
+                </div>
               </div>
-              <h3 class="text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
-                Computer & Network Engineering
-              </h3>
-              <p class="text-sm font-semibold text-slate-700">SMK Telkom Malang</p>
-              <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                Mastered foundational computer networking (TCP/IP, routing, switching), Linux server administration (Ubuntu), virtualization, and initial software development practices.
-              </p>
+
+              <!-- Content -->
+              <div class="flex-1 space-y-2.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider">2021 - 2024</span>
+                    <span class="px-3 py-1 rounded-md text-xs font-bold font-mono bg-slate-100 text-slate-800 border border-slate-200">Vocational Foundation</span>
+                  </div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors font-display">
+                    Computer & Network Engineering
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-700 mt-0.5">SMK Telkom Malang</p>
+                  <p class="text-sm text-slate-600 leading-relaxed font-normal mt-2">
+                    Mastered foundational computer networking (TCP/IP, routing, switching), Linux server administration (Ubuntu), virtualization, and initial software development practices.
+                  </p>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -675,11 +718,12 @@
         Tersiqo Alfarezel<span class="text-blue-600">.</span>
       </a>
 
-      <!-- Social Links with Clean Neutral Pills -->
-      <div class="flex items-center gap-3 text-xs font-bold font-mono">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">LinkedIn</a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">Instagram</a>
-        <a href="https://github.com" target="_blank" rel="noopener" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">GitHub</a>
+      <!-- Social Links & CV with Clean Technical Markers -->
+      <div class="flex flex-wrap items-center gap-3 text-xs font-bold font-mono">
+        <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white transition-all shadow-2xs">Resume / CV ↗</a>
+        <a href="https://www.linkedin.com/in/tersiqo" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">LinkedIn</a>
+        <a href="https://github.com/tersiqo" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">GitHub</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-md bg-slate-100 border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 transition-all">Instagram</a>
       </div>
 
       <!-- Copyright -->
