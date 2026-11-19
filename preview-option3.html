@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Opsi 3: Full 3D Scrollytelling Fly World | Tersiqo Alfarezel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+    .font-mono { font-family: 'JetBrains+Mono', monospace; }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP SWITCHER BAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+        <span class="text-xs font-bold font-mono tracking-wider uppercase text-slate-200">3D Prototype Switcher</span>
+      </div>
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="preview-option1.html" class="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors">Opsi 1: Linear Core</a>
+        <a href="preview-option2.html" class="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 transition-colors">Opsi 2: Isometric Desk</a>
+        <a href="preview-option3.html" class="px-3 py-1.5 text-xs font-mono font-bold rounded-lg bg-cyan-500 text-slate-950 font-bold shadow-xs">Opsi 3: 3D Fly World</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FIXED 3D CANVAS BACKGROUND -->
+  <div id="three-fly-canvas" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+  <!-- FIXED HUD NAVIGATION OVERLAY -->
+  <div class="fixed bottom-6 left-6 z-40 hidden md:block pointer-events-none">
+    <div class="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800 space-y-1 font-mono text-xs">
+      <div class="text-cyan-400 font-bold flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>CAMERA FLIGHT TELEMETRY</span>
+      </div>
+      <div class="text-slate-400 text-[11px]" id="telemetry-info">CAM_POS_Z: 0.00 | SCROLL: 0%</div>
+      <div class="text-[10px] text-slate-500">SCROLL DOWN TO FLY THROUGH 3D NODES ↓</div>
+    </div>
+  </div>
+
+  <!-- SCROLLABLE HTML CONTENT (DRIVES THE 3D CAMERA) -->
+  <div class="relative z-10">
+
+    <!-- SECTION 1: SYSTEM ENTRY -->
+    <section class="h-screen flex items-center justify-center px-6">
+      <div class="max-w-2xl bg-slate-900/70 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-slate-700 shadow-2xl space-y-5 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-400">
+          <span>01 // SYSTEM ENTRY</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+          Tersiqo Alfarezel
+        </h1>
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+          Business Information Systems at Politeknik Negeri Malang. Welcome to the full-canvas 3D flight experience.
+        </p>
+        <div class="pt-4 flex items-center justify-center gap-2 text-xs font-mono text-slate-400">
+          <span>Scroll down to accelerate forward</span>
+          <span class="text-cyan-400 font-bold animate-bounce text-base">↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TECH ARSENAL IN 3D -->
+    <section class="h-screen flex items-center justify-center px-6">
+      <div class="max-w-2xl bg-slate-900/70 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-blue-500/40 shadow-2xl space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-xs font-mono font-bold text-blue-400">
+          <span>02 // CORE INFRASTRUCTURE</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          The Engineering Stack
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Kamera 3D sekarang terbang melewati gerbang data kedua. Setiap node merepresentasikan arsitektur backend, multi-tenancy, dan alur integrasi data.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 font-mono text-xs text-center">
+          <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-blue-300 font-bold">Laravel 11</div>
+          <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-cyan-300 font-bold">Docker CI/CD</div>
+          <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-emerald-300 font-bold">PostgreSQL</div>
+          <div class="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-amber-300 font-bold">Flutter UI</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FLAGSHIP PROJECTS -->
+    <section class="h-screen flex items-center justify-center px-6">
+      <div class="max-w-2xl bg-slate-900/70 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-emerald-500/40 shadow-2xl space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-400">
+          <span>03 // SHIPPED PLATFORMS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          RentalBase & BooyahHub
+        </h2>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          Kamera 3D telah tiba di terminal proyek akhir. Menghadirkan software nyata dengan kode repositori publik dan sistem multi-tenant terisolasi.
+        </p>
+        <div class="flex flex-wrap gap-3 pt-2 font-mono text-xs">
+          <a href="https://github.com/tersiqo/RentalBase" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-colors">
+            Explore RentalBase Repo ↗
+          </a>
+          <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" class="px-5 py-3 rounded-xl bg-white hover:bg-slate-200 text-slate-900 font-bold transition-colors">
+            View Resume / CV ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- THREE.JS SCROLLYTELLING WORLD SCRIPT -->
+  <script>
+    const canvasContainer = document.getElementById('three-fly-canvas');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    // Scene, Camera, Renderer
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x020617, 0.03);
+
+    const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+    camera.position.set(0, 2, 5);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    canvasContainer.appendChild(renderer.domElement);
+
+    // 1. INFINITE CYBER GRID FLOOR
+    const gridGeo = new THREE.PlaneGeometry(60, 200, 40, 100);
+    const gridMat = new THREE.MeshBasicMaterial({
+      color: 0x0284c7,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.25
+    });
+    const gridFloor = new THREE.Mesh(gridGeo, gridMat);
+    gridFloor.rotation.x = -Math.PI / 2;
+    gridFloor.position.set(0, -2, -50);
+    scene.add(gridFloor);
+
+    // 2. NEON GATEWAY ARCHES ALONG THE FLIGHT PATH
+    const gateZPositions = [0, -15, -30, -45, -60];
+    const gates = [];
+
+    gateZPositions.forEach((z, index) => {
+      const archGeo = new THREE.TorusGeometry(5, 0.06, 16, 50, Math.PI);
+      const color = index % 2 === 0 ? 0x06b6d4 : 0x3b82f6;
+      const archMat = new THREE.MeshBasicMaterial({
+        color: color,
+        transparent: true,
+        opacity: 0.7
+      });
+      const arch = new THREE.Mesh(archGeo, archMat);
+      arch.position.set(0, -2, z);
+      arch.rotation.z = 0;
+      scene.add(arch);
+      gates.push(arch);
+    });
+
+    // 3. FLOATING MONOLITHS (BILLBOARDS IN 3D SPACE)
+    const monolithGeo = new THREE.BoxGeometry(1.2, 3.5, 1.2);
+    for (let i = 0; i < 24; i++) {
+      const monolithMat = new THREE.MeshStandardMaterial({
+        color: 0x0f172a,
+        emissive: (i % 3 === 0) ? 0x0284c7 : 0x1e3a8a,
+        emissiveIntensity: 0.5,
+        roughness: 0.2,
+        metalness: 0.8
+      });
+      const monolith = new THREE.Mesh(monolithGeo, monolithMat);
+      const side = (i % 2 === 0) ? -7 : 7;
+      monolith.position.set(side + (Math.random() - 0.5) * 2, (Math.random() * 4) - 1, -i * 3.5);
+      scene.add(monolith);
+    }
+
+    // 4. STARFIELD PARTICLES
+    const starsCount = 800;
+    const starGeo = new THREE.BufferGeometry();
+    const starPos = new Float32Array(starsCount * 3);
+
+    for (let i = 0; i < starsCount * 3; i += 3) {
+      starPos[i] = (Math.random() - 0.5) * 40;
+      starPos[i + 1] = (Math.random() - 0.5) * 30;
+      starPos[i + 2] = -Math.random() * 80;
+    }
+
+    starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+    const starMat = new THREE.PointsMaterial({
+      color: 0x38bdf8,
+      size: 0.08,
+      transparent: true,
+      opacity: 0.8
+    });
+    const starField = new THREE.Points(starGeo, starMat);
+    scene.add(starField);
+
+    // Ambient Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+
+    const flightLight = new THREE.PointLight(0x06b6d4, 4, 25);
+    scene.add(flightLight);
+
+    // SCROLL LISTENER (FLIGHT CONTROL)
+    let scrollProgress = 0;
+    let targetCameraZ = 5;
+
+    window.addEventListener('scroll', () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress = Math.max(0, Math.min(1, window.scrollY / maxScroll));
+      
+      // Camera flies from Z = 5 to Z = -60
+      targetCameraZ = 5 - (scrollProgress * 65);
+
+      // Update Telemetry HUD
+      document.getElementById('telemetry-info').textContent = 
+        `CAM_POS_Z: ${camera.position.z.toFixed(2)} | SCROLL: ${Math.round(scrollProgress * 100)}%`;
+    });
+
+    // Resize
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    });
+
+    // Animation Loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Smooth camera interpolation towards scroll target
+      camera.position.z += (targetCameraZ - camera.position.z) * 0.08;
+      flightLight.position.set(camera.position.x, camera.position.y + 1, camera.position.z - 2);
+
+      // Subtle wobble for immersion
+      camera.position.x = Math.sin(Date.now() * 0.001) * 0.3;
+      camera.position.y = 2 + Math.cos(Date.now() * 0.0012) * 0.15;
+
+      // Pulse gates
+      gates.forEach((gate, idx) => {
+        gate.rotation.z += 0.002 * (idx % 2 === 0 ? 1 : -1);
+      });
+
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>

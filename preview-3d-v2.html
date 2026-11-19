@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tersiqo Alfarezel — Enterprise Cloud & 3D Data Pipeline Portfolio</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & Three.js via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus+Jakarta+Sans', sans-serif;
+      background-color: #050811;
+    }
+    .font-mono {
+      font-family: 'JetBrains+Mono', monospace;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050811;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
+    .glass-card {
+      background: rgba(11, 17, 32, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(51, 65, 85, 0.65);
+    }
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+  </style>
+</head>
+<body class="text-slate-100 overflow-x-hidden selection:bg-blue-600 selection:text-white antialiased">
+
+  <!-- INITIAL TECHNICAL BOOT LOADER (< 0.5s) -->
+  <div id="init-loader" class="fixed inset-0 z-50 bg-[#050811] flex flex-col items-center justify-center transition-opacity duration-500">
+    <div class="space-y-3 text-center">
+      <div class="flex items-center justify-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-blue-500 animate-ping"></span>
+        <span class="text-sm font-mono font-bold tracking-widest text-white">INITIALIZING 3D PIPELINE</span>
+      </div>
+      <div class="text-[11px] font-mono text-slate-500">TERSIQO ALFAREZEL // ENTERPRISE ARCHITECTURE</div>
+    </div>
+  </div>
+
+  <!-- FIXED THREE.JS 3D BACKGROUND CANVAS -->
+  <div id="three-fly-canvas" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header class="fixed top-0 left-0 w-full z-40 bg-[#050811]/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold font-mono shadow-xs group-hover:scale-105 transition-transform">
+          T
+        </div>
+        <span class="text-lg font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors">
+          Tersiqo Alfarezel<span class="text-blue-500">.</span>
+        </span>
+      </a>
+
+      <!-- Quick Switcher to Compare Other Options or Classic -->
+      <div class="hidden md:flex items-center gap-2 text-xs font-mono">
+        <span class="text-slate-500 mr-1 text-[11px]">Compare:</span>
+        <a href="index.html" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">Classic 2D</a>
+        <a href="preview-option1.html" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">Opsi 1 (Linear)</a>
+        <a href="preview-option2.html" class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors">Opsi 2 (Room)</a>
+        <span class="px-2.5 py-1 rounded bg-blue-600 text-white font-bold">Opsi 3 (Fly-Through v2)</span>
+      </div>
+
+      <!-- Resume Button & Status -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800 text-xs font-mono text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Open for Roles</span>
+        </div>
+        <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-bold font-mono uppercase tracking-wider rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-sm">
+          Resume / CV ↗
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- RIGHT VERTICAL WAYPOINT RAIL (Instant Jump to Sector) -->
+  <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4 font-mono text-xs">
+    <button onclick="navigateToZone(0)" class="group flex items-center gap-3 text-right">
+      <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-slate-400">01 // ENTRY</span>
+      <span class="waypoint-dot w-2.5 h-2.5 rounded-full bg-slate-700 transition-all duration-300"></span>
+    </button>
+    <button onclick="navigateToZone(1)" class="group flex items-center gap-3 text-right">
+      <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-slate-400">02 // JOURNEY</span>
+      <span class="waypoint-dot w-2.5 h-2.5 rounded-full bg-slate-700 transition-all duration-300"></span>
+    </button>
+    <button onclick="navigateToZone(2)" class="group flex items-center gap-3 text-right">
+      <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-slate-400">03 // ARCHITECTURE</span>
+      <span class="waypoint-dot w-2.5 h-2.5 rounded-full bg-slate-700 transition-all duration-300"></span>
+    </button>
+    <button onclick="navigateToZone(3)" class="group flex items-center gap-3 text-right">
+      <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-slate-400">04 // SHIPPED WORKS</span>
+      <span class="waypoint-dot w-2.5 h-2.5 rounded-full bg-slate-700 transition-all duration-300"></span>
+    </button>
+    <button onclick="navigateToZone(4)" class="group flex items-center gap-3 text-right">
+      <span class="opacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-slate-400">05 // TERMINAL</span>
+      <span class="waypoint-dot w-2.5 h-2.5 rounded-full bg-slate-700 transition-all duration-300"></span>
+    </button>
+  </aside>
+
+  <!-- FIXED BOTTOM TELEMETRY DOCK -->
+  <div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-4xl bg-[#0B1120]/85 backdrop-blur-md px-5 py-2.5 rounded-2xl border border-slate-800 shadow-2xl flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+    <div class="flex items-center gap-3">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+      </span>
+      <span id="hud-zone-name" class="font-bold text-slate-200">ZONE 01 // SYSTEM ENTRY</span>
+    </div>
+
+    <!-- Active telemetry data -->
+    <div class="flex items-center gap-4 text-slate-400 text-[11px]">
+      <span id="hud-coords" class="hidden sm:inline">X:0.0 Y:3.2 Z:18.0</span>
+      <span>PROGRESS: <strong id="hud-progress" class="text-blue-400">0%</strong></span>
+      <span id="hud-fps" class="text-emerald-400 font-bold">60 FPS</span>
+      <span id="hud-boost-badge" class="hidden px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/40 animate-pulse">BOOSTING</span>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- SCROLLABLE STORYTELLING CONTENT (Drives 3D Spline Path)  -->
+  <!-- ======================================================== -->
+  <main class="relative z-10">
+
+    <!-- ==================================================== -->
+    <!-- ZONE 01: SYSTEM ENTRY & IDENTITY (Hero)             -->
+    <!-- ==================================================== -->
+    <section id="sec-entry" class="min-h-screen flex items-center px-6 pt-24 pb-16">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Editorial & Bio -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-xs font-mono font-bold text-blue-400">
+              ■ 01 // ENTERPRISE ARCHITECTURE
+            </span>
+            <span class="text-xs font-mono text-slate-500 hidden sm:inline">POLITEKNIK NEGERI MALANG</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.12]">
+            Engineering multi-tenant systems with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">technical precision</span>.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+            Business Information Systems student specializing in Laravel Livewire, PostgreSQL modeling, Dockerized cloud infrastructure, and data warehousing. Translating complex organizational workflows into reliable, scalable software.
+          </p>
+
+          <!-- Metrics Ticker -->
+          <div class="grid grid-cols-3 gap-3.5 max-w-lg pt-2">
+            <div class="p-4 rounded-xl glass-card">
+              <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">15+</div>
+              <div class="text-xs font-mono text-slate-400 mt-1">Projects Built</div>
+            </div>
+            <div class="p-4 rounded-xl glass-card">
+              <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">100%</div>
+              <div class="text-xs font-mono text-slate-400 mt-1">Commitment</div>
+            </div>
+            <div class="p-4 rounded-xl glass-card">
+              <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">D4</div>
+              <div class="text-xs font-mono text-slate-400 mt-1">Polinema BIS</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <button onclick="navigateToZone(1)" class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2">
+              <span>Explore Data Pipeline</span>
+              <span>↓</span>
+            </button>
+            <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl glass-card text-slate-200 hover:text-white font-bold text-xs uppercase tracking-wider hover:border-blue-400 transition-all flex items-center gap-2">
+              <span>View Resume / CV</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column intentionally left spacious for 3D Core View -->
+        <div class="lg:col-span-4 hidden lg:block text-right pointer-events-none">
+          <div class="inline-block p-4 rounded-xl bg-slate-900/60 backdrop-blur-md border border-slate-800 text-left space-y-1">
+            <div class="text-[10px] font-mono text-slate-500 uppercase">Interactive Node</div>
+            <div class="text-xs font-mono font-bold text-cyan-400">DUAL ICOSAHEDRON CORE</div>
+            <div class="text-[11px] font-mono text-slate-400">Move mouse to tilt & rotate 3D geometry</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- ZONE 02: SERVER CORRIDOR & JOURNEY (Education)      -->
+    <!-- ==================================================== -->
+    <section id="sec-journey" class="min-h-screen flex items-center px-6 py-24">
+      <div class="max-w-7xl mx-auto w-full space-y-8">
+        
+        <div class="max-w-2xl">
+          <span class="px-3 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-xs font-mono font-bold text-blue-400">
+            ■ 02 // HARDWARE & ACADEMIC INFRASTRUCTURE
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
+            Background & Education
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 mt-2">
+            Kamera 3D melintasi koridor rak server bersuhu dingin. Menggabungkan pondasi hardware & jaringan SMK Telkom dengan analisa sistem tingkat lanjut di Polinema.
+          </p>
+        </div>
+
+        <!-- 3 Journey Cards with Authentic Photos -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Card 1: Polinema -->
+          <div class="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="./assets/images/journey/polinema_jti.jpg" alt="Jurusan Teknologi Informasi Polinema" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent"></div>
+              <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-blue-600/90 text-white font-mono text-[10px] font-bold">
+                2024 - PRESENT
+              </span>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                Business Information Systems
+              </h3>
+              <p class="text-xs font-semibold text-slate-400 font-mono">Politeknik Negeri Malang (POLINEMA)</p>
+              <p class="text-xs text-slate-300 leading-relaxed pt-1">
+                Fokus pada otomasi workflow bisnis, pemodelan relasional, data warehouse, dan arsitektur web modern full-stack.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Diskominfo Batu -->
+          <div class="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="./assets/images/journey/diskominfo_batu.jpg" alt="Balai Kota Among Tani Batu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent"></div>
+              <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 font-mono text-[10px] font-bold">
+                NOV 2023 - APR 2024
+              </span>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                IT Support & Systems Specialist
+              </h3>
+              <p class="text-xs font-semibold text-slate-400 font-mono">Diskominfo — Balai Kota Among Tani Batu</p>
+              <p class="text-xs text-slate-300 leading-relaxed pt-1">
+                Pemeliharaan infrastruktur IT pemerintahan, monitoring kestabilan jaringan, dan troubleshooting perangkat layanan publik digital.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: SMK Telkom Malang -->
+          <div class="glass-card rounded-2xl overflow-hidden group flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="./assets/images/journey/smk_telkom_malang.jpg" alt="Gerbang SMK Telkom Malang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] to-transparent"></div>
+              <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-slate-800 text-slate-200 border border-slate-700 font-mono text-[10px] font-bold">
+                2021 - 2024
+              </span>
+            </div>
+            <div class="p-6 space-y-2">
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                Computer & Network Engineering
+              </h3>
+              <p class="text-xs font-semibold text-slate-400 font-mono">SMK Telkom Malang (Moklet)</p>
+              <p class="text-xs text-slate-300 leading-relaxed pt-1">
+                Pondasi kuat jaringan komputer (TCP/IP, routing, switching), administrasi server Linux (Ubuntu), dan dasar-dasar software engineering.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- ZONE 03: DATA ARCHITECTURE & TECH ARSENAL           -->
+    <!-- ==================================================== -->
+    <section id="sec-stack" class="min-h-screen flex items-center px-6 py-24">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-5 space-y-5">
+          <span class="px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-bold text-cyan-400">
+            ■ 03 // ARCHITECTURAL CHAMBER
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Core Competencies & Stack
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Kamera meluncur ke ruang database prisma 3D di tengah layar. Setiap node yang mengorbit merepresentasikan stack engineering aktif untuk memproses data dan membangun sistem web.
+          </p>
+
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 font-mono text-xs text-slate-400 space-y-1.5">
+            <div class="text-cyan-400 font-bold">DATA WAREHOUSE & PIPELINE CAPABILITIES:</div>
+            <div>• Relational Database Views & Star Schemas (PostgreSQL)</div>
+            <div>• Automated ETL Extraction & Transformation (Pentaho)</div>
+            <div>• Scalable Containerized Web Services (Docker)</div>
+          </div>
+        </div>
+
+        <!-- Right Stack Matrix -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="p-6 rounded-2xl glass-card space-y-3">
+            <div class="text-xs font-mono font-bold text-blue-400 uppercase">Full-Stack Development</div>
+            <div class="text-lg font-bold text-white">Laravel 11 & Livewire</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Arsitektur aplikasi reactive modular, multi-tenancy auth, REST APIs, dan Tailwind CSS.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl glass-card space-y-3">
+            <div class="text-xs font-mono font-bold text-cyan-400 uppercase">Database & Cloud</div>
+            <div class="text-lg font-bold text-white">PostgreSQL & Docker</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Normalisasi schema tingkat tinggi, concurrent transaction lock, dan CI/CD cloud container deployment.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl glass-card space-y-3">
+            <div class="text-xs font-mono font-bold text-emerald-400 uppercase">Cross-Platform Mobile</div>
+            <div class="text-lg font-bold text-white">Flutter & Supabase</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              State management bersih, integrasi real-time database, dan otomasi alur transaksi mobile.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl glass-card space-y-3">
+            <div class="text-xs font-mono font-bold text-amber-400 uppercase">Systems & Governance</div>
+            <div class="text-lg font-bold text-white">Agile Project Mgmt</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Analisis kebutuhan sistem (SRS), sprint planning, koordinasi multi-disiplin, dan dokumentasi teknis.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- ZONE 04: SHIPPED CLOUD DECK (Projects Showcase)      -->
+    <!-- ==================================================== -->
+    <section id="sec-works" class="min-h-screen flex items-center px-6 py-24">
+      <div class="max-w-7xl mx-auto w-full space-y-10">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-400">
+              ■ 04 // SHIPPED PRODUCTION PLATFORMS
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
+              Selected Works
+            </h2>
+            <p class="text-sm text-slate-300 mt-1 max-w-xl">
+              Billboard 3D di background menampilkan mockup langsung dari aplikasi yang telah dibangun dan di-deploy.
+            </p>
+          </div>
+          <span class="text-xs font-mono text-slate-500">3 FEATURED CASE STUDIES</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Project 1: RentalBase -->
+          <div class="glass-card rounded-2xl p-7 space-y-5 flex flex-col justify-between border-t-2 border-t-orange-500">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-orange-400 font-bold">PROJECT MANAGER & DEV</span>
+                <span class="text-slate-500">SEP 2026</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">RentalBase SaaS</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Platform SaaS persewaan alat multi-tenant. Dilengkapi penjadwalan booking otomatis, tracking unit, kalkulasi denda, dan laporan omset cabang.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Laravel 11</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">PostgreSQL</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Docker</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+              <a href="https://github.com/tersiqo/RentalBase" target="_blank" class="text-xs font-mono font-bold text-white hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                <span>GitHub Repo</span>
+                <span>↗</span>
+              </a>
+              <button onclick="openCaseStudy('rentalbase')" class="px-3.5 py-1.5 rounded-lg bg-orange-600/20 hover:bg-orange-600 border border-orange-500/40 hover:border-orange-500 text-orange-300 hover:text-white font-mono text-xs font-bold transition-all">
+                Inspect 13 Screens ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: BooyahHub -->
+          <div class="glass-card rounded-2xl p-7 space-y-5 flex flex-col justify-between border-t-2 border-t-blue-500">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-blue-400 font-bold">ASSISTANT PM & DEV</span>
+                <span class="text-slate-500">JUN 2026</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">BooyahHub Platform</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Platform turnamen esports & scrim. Booking slot real-time, verifikasi pembayaran QRIS, kalkulasi leaderboard otomatis, dan dashboard owner.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Flutter</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Dart</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Supabase</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+              <a href="https://github.com/azariaamanda/Mobile_BooyahHub.git" target="_blank" class="text-xs font-mono font-bold text-white hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                <span>GitHub Repo</span>
+                <span>↗</span>
+              </a>
+              <button onclick="openCaseStudy('booyahhub')" class="px-3.5 py-1.5 rounded-lg bg-blue-600/20 hover:bg-blue-600 border border-blue-500/40 hover:border-blue-500 text-blue-300 hover:text-white font-mono text-xs font-bold transition-all">
+                Inspect 15 Screens ↗
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: Lab SE Polinema -->
+          <div class="glass-card rounded-2xl p-7 space-y-5 flex flex-col justify-between border-t-2 border-t-emerald-500">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-emerald-400 font-bold">FULL-STACK & DATABASE</span>
+                <span class="text-slate-500">2025</span>
+              </div>
+              <h3 class="text-2xl font-bold text-white">Software Engineer Lab CMS</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Portal profil resmi dan Content Management System (CMS) untuk laboratorium Software Engineer Polinema. Roadmap visualizer dan katalog publikasi dosen.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">PHP Native</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Tailwind CSS</span>
+                <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">MySQL</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+              <a href="https://github.com/jsofiah/PBL-LabSE.git" target="_blank" class="text-xs font-mono font-bold text-white hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                <span>GitHub Repo</span>
+                <span>↗</span>
+              </a>
+              <span class="text-[11px] font-mono text-slate-500">5-Member PBL Team</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- ZONE 05: COMMAND TERMINAL & CONTACT (Overview)      -->
+    <!-- ==================================================== -->
+    <section id="sec-contact" class="min-h-screen flex items-center justify-center px-6 py-24">
+      <div class="max-w-3xl w-full glass-card rounded-3xl p-8 sm:p-14 text-center space-y-8 border border-slate-800 shadow-2xl relative">
+        
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 border border-slate-800">
+            <span>■ 05 // COMMAND TERMINAL</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            Have a system to build? Let's connect.
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-normal">
+            Currently open for engineering opportunities, internships, and scalable SaaS collaborations. Kamera 3D berada di posisi overview terminal akhir.
+          </p>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <button onclick="copyEmail()" id="btn-copy-email" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center gap-2 font-mono">
+            <span>Copy Email Address</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </button>
+
+          <a href="mailto:tersiqo.alfarezel@gmail.com" class="px-8 py-4 bg-slate-900 border border-slate-700 text-slate-200 hover:text-white hover:border-slate-500 font-bold text-xs uppercase tracking-wider rounded-xl transition-all font-mono flex items-center gap-2">
+            <span>Direct Email</span>
+            <span>↗</span>
+          </a>
+
+          <a href="https://docs.google.com/document/d/14TITLV7igBSCtNQ5gUIBgoStcAbhoPpAjeAHnMfLSTQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white text-slate-900 hover:bg-slate-200 font-bold text-xs uppercase tracking-wider rounded-xl transition-all font-mono shadow-sm flex items-center gap-2">
+            <span>View Resume / CV</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- Social Pills -->
+        <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
+          <a href="https://www.linkedin.com/in/tersiqo" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:text-blue-400 border border-slate-800 transition-colors">LinkedIn ↗</a>
+          <a href="https://github.com/tersiqo" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:text-blue-400 border border-slate-800 transition-colors">GitHub ↗</a>
+          <a href="https://instagram.com" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:text-blue-400 border border-slate-800 transition-colors">Instagram ↗</a>
+          <span class="text-slate-600">•</span>
+          <span class="text-slate-500">© 2026 Tersiqo Alfarezel</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================== -->
+  <!-- MODAL: HIGH-RESOLUTION SCREENSHOT INSPECTOR              -->
+  <!-- ======================================================== -->
+  <div id="case-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-950/85 backdrop-blur-md">
+    <div class="relative w-full max-w-5xl bg-[#0B1120] border border-slate-700 rounded-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto space-y-6 shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-slate-800 pb-4">
+        <div>
+          <span id="modal-tag" class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">PROJECT</span>
+          <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Project Details</h3>
+          <p id="modal-desc" class="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl"></p>
+        </div>
+        <button onclick="closeCaseStudy()" class="text-slate-400 hover:text-white p-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono">
+          ✕ Close
+        </button>
+      </div>
+
+      <!-- Main Display Image (No crop, adaptive container) -->
+      <div class="w-full h-[360px] sm:h-[460px] bg-slate-950/80 rounded-xl border border-slate-800 flex items-center justify-center overflow-hidden p-2">
+        <img id="modal-main-img" src="" alt="Project Screenshot Preview" class="max-h-full max-w-full object-contain rounded-lg shadow-md">
+      </div>
+
+      <!-- Thumbnail Tray -->
+      <div class="space-y-2">
+        <div class="text-[11px] font-mono text-slate-500 uppercase font-bold">Select Authentic Screenshot:</div>
+        <div id="modal-thumbnails" class="flex items-center gap-2.5 overflow-x-auto pb-2"></div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="flex items-center justify-between pt-2 border-t border-slate-800">
+        <a id="modal-github" href="#" target="_blank" class="px-4 py-2 text-xs font-mono font-bold rounded-lg bg-white text-slate-900 hover:bg-slate-200 transition-colors">
+          View Repository ↗
+        </a>
+        <button onclick="closeCaseStudy()" class="px-4 py-2 text-xs font-mono font-bold rounded-lg bg-slate-900 text-slate-300 hover:text-white border border-slate-800">
+          Done Inspecting
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT FOR CASE STUDY MODAL & UTILS -->
+  <script>
+    const caseStudies = {
+      rentalbase: {
+        title: "RentalBase — Multi-Tenant Equipment Rental SaaS",
+        tag: "LARAVEL 11 · LIVEWIRE · POSTGRESQL · DOCKER",
+        desc: "Platform manajemen persewaan alat multi-tenant dengan otomatisasi jadwal booking, tracking unit, perhitungan denda, dan multi-branch revenue reporting.",
+        github: "https://github.com/tersiqo/RentalBase",
+        screens: [
+          "./assets/images/rentalbase_mockup.png",
+          "./assets/images/rentalbase/rentalbase_dashboard.png",
+          "./assets/images/rentalbase/rentalbase_landing.png",
+          "./assets/images/rentalbase/rentalbase_catalog.png",
+          "./assets/images/rentalbase/rentalbase_product_detail.png",
+          "./assets/images/rentalbase/rentalbase_orders.png",
+          "./assets/images/rentalbase/rentalbase_customer_order.png",
+          "./assets/images/rentalbase/rentalbase_return_popup.png",
+          "./assets/images/rentalbase/rentalbase_tenants.png",
+          "./assets/images/rentalbase/rentalbase_tenant_requests.png",
+          "./assets/images/rentalbase/rentalbase_store_setup.png",
+          "./assets/images/rentalbase/rentalbase_store_info.png",
+          "./assets/images/rentalbase/rentalbase_style_guide.png"
+        ]
+      },
+      booyahhub: {
+        title: "BooyahHub — Esports Tournament & Scrim Platform",
+        tag: "ASSISTANT PROJECT MANAGER · FLUTTER · SUPABASE",
+        desc: "Platform mobile turnamen esports untuk booking slot real-time, verifikasi pembayaran QRIS otomatis, dan leaderboard match.",
+        github: "https://github.com/azariaamanda/Mobile_BooyahHub.git",
+        screens: [
+          "./assets/images/banteng_squad_mockup.png",
+          "./assets/images/booyahhub/booyah_home.png",
+          "./assets/images/booyahhub/booyah_scrim_list.png",
+          "./assets/images/booyahhub/booyah_detail_scrim.png",
+          "./assets/images/booyahhub/booyah_schedule_picker.png",
+          "./assets/images/booyahhub/booyah_team_registration.png",
+          "./assets/images/booyahhub/booyah_payment_qris.png",
+          "./assets/images/booyahhub/booyah_order_status.png",
+          "./assets/images/booyahhub/booyah_order_popup.png",
+          "./assets/images/booyahhub/booyah_match_result.png",
+          "./assets/images/booyahhub/booyah_leaderboard.png",
+          "./assets/images/booyahhub/booyah_admin_dashboard.png",
+          "./assets/images/booyahhub/booyah_admin_verification.png",
+          "./assets/images/booyahhub/booyah_admin_scrim_mgmt.png",
+          "./assets/images/booyahhub/booyah_owner_dashboard.png"
+        ]
+      }
+    };
+
+    function openCaseStudy(key) {
+      const data = caseStudies[key];
+      if (!data) return;
+
+      document.getElementById('modal-title').textContent = data.title;
+      document.getElementById('modal-tag').textContent = data.tag;
+      document.getElementById('modal-desc').textContent = data.desc;
+      document.getElementById('modal-github').href = data.github;
+
+      const mainImg = document.getElementById('modal-main-img');
+      mainImg.src = data.screens[0];
+
+      const tray = document.getElementById('modal-thumbnails');
+      tray.innerHTML = '';
+
+      data.screens.forEach((src, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `w-16 h-12 shrink-0 rounded-lg overflow-hidden border-2 transition-all ${idx === 0 ? 'border-blue-500 scale-105' : 'border-slate-800 opacity-60 hover:opacity-100'}`;
+        btn.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
+        btn.onclick = () => {
+          mainImg.src = src;
+          tray.querySelectorAll('button').forEach(b => {
+            b.classList.remove('border-blue-500', 'scale-105');
+            b.classList.add('border-slate-800', 'opacity-60');
+          });
+          btn.classList.add('border-blue-500', 'scale-105');
+          btn.classList.remove('border-slate-800', 'opacity-60');
+        };
+        tray.appendChild(btn);
+      });
+
+      const modal = document.getElementById('case-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCaseStudy() {
+      const modal = document.getElementById('case-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('tersiqo.alfarezel@gmail.com');
+      const btn = document.getElementById('btn-copy-email');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span>Copied to Clipboard!</span> <span>✓</span>`;
+      btn.classList.remove('bg-blue-600');
+      btn.classList.add('bg-emerald-600');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('bg-emerald-600');
+        btn.classList.add('bg-blue-600');
+      }, 2500);
+    }
+  </script>
+
+  <!-- LOAD 3D ENGINE -->
+  <script src="./assets/js/preview-3d-v2.js"></script>
+</body>
+</html>

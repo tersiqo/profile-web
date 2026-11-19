@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Opsi 2: TikTok Isometric 3D Dev Room | Tersiqo Alfarezel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus+Jakarta+Sans', sans-serif; }
+    .font-mono { font-family: 'JetBrains+Mono', monospace; }
+    canvas { outline: none; }
+  </style>
+</head>
+<body class="bg-[#0F172A] text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP SWITCHER BAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+        <span class="text-xs font-bold font-mono tracking-wider uppercase text-slate-200">3D Prototype Switcher</span>
+      </div>
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <a href="preview-option1.html" class="px-3 py-1.5 text-xs font-bold font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">Opsi 1: Linear Core</a>
+        <a href="preview-option2.html" class="px-3 py-1.5 text-xs font-bold font-mono rounded-lg bg-amber-500 text-slate-950 font-bold shadow-xs">Opsi 2: Isometric Desk</a>
+        <a href="preview-option3.html" class="px-3 py-1.5 text-xs font-bold font-mono rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">Opsi 3: 3D Fly World</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3D ROOM MAIN WORKSPACE -->
+  <main class="relative w-full h-screen pt-16 flex items-center justify-center">
+    
+    <!-- 3D Canvas -->
+    <div id="three-room-canvas" class="w-full h-full cursor-grab active:cursor-grabbing"></div>
+
+    <!-- FLOATING HUD OVERLAY (TikTok Aesthetic) -->
+    <div class="absolute top-20 left-6 z-20 pointer-events-none max-w-sm space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-800/80 backdrop-blur-md border border-slate-700 text-[11px] font-mono font-bold text-amber-400">
+        <span>✦ TIKTOK TREND // 3D ISOMETRIC ROOM</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+        Tersiqo's Digital Workspace
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+        Miniatur meja kerja isometrik 3D real-time. Render lampu ambient, keyboard mekanikal, server blade, dan monitor interaktif.
+      </p>
+      
+      <!-- Interactive Instructions -->
+      <div class="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700 space-y-1.5 pointer-events-auto shadow-lg">
+        <div class="text-[11px] font-mono text-amber-300 font-bold flex items-center gap-1.5">
+          <span>🖱️ Interaksi Kontrol 3D:</span>
+        </div>
+        <ul class="text-[11px] font-mono text-slate-300 space-y-1">
+          <li>• <strong>Drag Mouse</strong>: Putar kamera 360°</li>
+          <li>• <strong>Scroll Wheel</strong>: Zoom in & zoom out</li>
+          <li>• <strong>Klik Layar Monitor</strong>: Buka studi kasus project</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BOTTOM ACTION DOCK -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3 bg-slate-900/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-700 shadow-2xl">
+      <button id="reset-cam-btn" class="px-3.5 py-1.5 text-xs font-mono font-bold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+        Reset Camera
+      </button>
+      <button id="light-toggle-btn" class="px-3.5 py-1.5 text-xs font-mono font-bold text-amber-400 hover:text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-lg transition-colors">
+        💡 Lampu Meja: ON
+      </button>
+      <button onclick="openModal()" class="px-3.5 py-1.5 text-xs font-mono font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-colors shadow-xs">
+        Buka Monitor Proyek
+      </button>
+    </div>
+
+    <!-- POPUP MODAL (Simulated Monitor Click) -->
+    <div id="project-popup" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-lg bg-slate-900 border border-slate-700 rounded-2xl p-6 shadow-2xl space-y-4 animate-scale-up">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-xs font-mono font-bold text-emerald-400">DISPLAY TRIGGERED FROM 3D MONITOR</span>
+          </div>
+          <button onclick="closeModal()" class="text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800 text-xs font-mono">✕ Close</button>
+        </div>
+        
+        <div>
+          <span class="text-xs font-mono text-blue-400 uppercase tracking-wider font-bold">Featured Project</span>
+          <h3 class="text-2xl font-bold text-white mt-1">RentalBase SaaS Platform</h3>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+            Platform manajemen persewaan alat multi-tenant berbasis Laravel Livewire & Docker. Inilah cara portofolio 3D di TikTok menghubungkan model interaktif dengan data portofolio asli.
+          </p>
+        </div>
+
+        <div class="pt-2 flex items-center gap-3">
+          <a href="https://github.com/tersiqo/RentalBase" target="_blank" class="px-4 py-2 rounded-lg bg-white text-slate-900 font-bold text-xs font-mono hover:bg-slate-200 transition-colors">
+            View GitHub Repo ↗
+          </a>
+          <button onclick="closeModal()" class="px-4 py-2 rounded-lg border border-slate-700 text-slate-300 font-bold text-xs font-mono hover:bg-slate-800 transition-colors">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- THREE.JS PROCEDURAL ROOM GENERATOR -->
+  <script>
+    const container = document.getElementById('three-room-canvas');
+    let width = container.clientWidth;
+    let height = container.clientHeight;
+
+    // Scene & Renderer
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0a0f1d);
+    scene.fog = new THREE.FogExp2(0x0a0f1d, 0.02);
+
+    // Camera (Isometric 45-degree angle)
+    const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
+    const initialPos = { x: 12, y: 11, z: 12 };
+    camera.position.set(initialPos.x, initialPos.y, initialPos.z);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    container.appendChild(renderer.domElement);
+
+    // Orbit Controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxPolarAngle = Math.PI / 2.1; // Don't flip below floor
+    controls.minDistance = 6;
+    controls.maxDistance = 25;
+    controls.target.set(0, 1.8, 0);
+
+    // 1. FLOOR & CARPET
+    const floorGeo = new THREE.PlaneGeometry(16, 16);
+    const floorMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.8 });
+    const floor = new THREE.Mesh(floorGeo, floorMat);
+    floor.rotation.x = -Math.PI / 2;
+    floor.receiveShadow = true;
+    scene.add(floor);
+
+    // Grid on floor
+    const gridHelper = new THREE.GridHelper(16, 16, 0x1e293b, 0x1e293b);
+    gridHelper.position.y = 0.01;
+    scene.add(gridHelper);
+
+    // 2. MODERN DESK (Procedural)
+    const deskGroup = new THREE.Group();
+    scene.add(deskGroup);
+
+    // Tabletop
+    const topGeo = new THREE.BoxGeometry(6, 0.2, 3.2);
+    const topMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.4 });
+    const tabletop = new THREE.Mesh(topGeo, topMat);
+    tabletop.position.y = 2.4;
+    tabletop.castShadow = true;
+    tabletop.receiveShadow = true;
+    deskGroup.add(tabletop);
+
+    // Desk Pad
+    const padGeo = new THREE.BoxGeometry(4.2, 0.02, 1.8);
+    const padMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.9 });
+    const deskPad = new THREE.Mesh(padGeo, padMat);
+    deskPad.position.set(0, 2.51, 0.2);
+    deskGroup.add(deskPad);
+
+    // Legs (Steel frame)
+    const legGeo = new THREE.CylinderGeometry(0.08, 0.08, 2.4, 16);
+    const legMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.8, roughness: 0.2 });
+    
+    const legPositions = [
+      [-2.8, 1.2, -1.4],
+      [2.8, 1.2, -1.4],
+      [-2.8, 1.2, 1.4],
+      [2.8, 1.2, 1.4]
+    ];
+    legPositions.forEach(pos => {
+      const leg = new THREE.Mesh(legGeo, legMat);
+      leg.position.set(...pos);
+      leg.castShadow = true;
+      deskGroup.add(leg);
+    });
+
+    // 3. ULTRA-WIDE MONITOR WITH GLOWING CODE SCREEN
+    const monitorGroup = new THREE.Group();
+    monitorGroup.position.set(0, 2.5, -0.6);
+    deskGroup.add(monitorGroup);
+
+    // Stand
+    const standBaseGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.04, 32);
+    const standMat = new THREE.MeshStandardMaterial({ color: 0x475569, metalness: 0.7 });
+    const standBase = new THREE.Mesh(standBaseGeo, standMat);
+    monitorGroup.add(standBase);
+
+    const standArmGeo = new THREE.BoxGeometry(0.12, 1.2, 0.12);
+    const standArm = new THREE.Mesh(standArmGeo, standMat);
+    standArm.position.set(0, 0.6, 0);
+    monitorGroup.add(standArm);
+
+    // Monitor Frame
+    const frameGeo = new THREE.BoxGeometry(3.6, 1.6, 0.1);
+    const frameMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.3 });
+    const frame = new THREE.Mesh(frameGeo, frameMat);
+    frame.position.set(0, 1.4, 0);
+    monitorGroup.add(frame);
+
+    // Glowing Screen (Clickable Target!)
+    const screenGeo = new THREE.PlaneGeometry(3.4, 1.4);
+    const screenMat = new THREE.MeshStandardMaterial({
+      color: 0x0284c7,
+      emissive: 0x0284c7,
+      emissiveIntensity: 0.6,
+      roughness: 0.2
+    });
+    const screenMesh = new THREE.Mesh(screenGeo, screenMat);
+    screenMesh.position.set(0, 1.4, 0.06);
+    screenMesh.name = "interactive-screen";
+    monitorGroup.add(screenMesh);
+
+    // 4. MECHANICAL KEYBOARD
+    const kbGeo = new THREE.BoxGeometry(1.6, 0.08, 0.6);
+    const kbMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.6 });
+    const kb = new THREE.Mesh(kbGeo, kbMat);
+    kb.position.set(-0.3, 2.55, 0.4);
+    kb.castShadow = true;
+    deskGroup.add(kb);
+
+    // Mouse
+    const mouseGeo = new THREE.BoxGeometry(0.25, 0.08, 0.4);
+    const mouseMat = new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.3 });
+    const mouse = new THREE.Mesh(mouseGeo, mouseMat);
+    mouse.position.set(1.1, 2.55, 0.4);
+    deskGroup.add(mouse);
+
+    // 5. SERVER TOWER / GAMING PC (Glowing RGB internals)
+    const pcGeo = new THREE.BoxGeometry(0.8, 1.8, 1.6);
+    const pcMat = new THREE.MeshStandardMaterial({ color: 0x020617, roughness: 0.2, metalness: 0.8 });
+    const pc = new THREE.Mesh(pcGeo, pcMat);
+    pc.position.set(2.3, 3.4, -0.4);
+    pc.castShadow = true;
+    deskGroup.add(pc);
+
+    // PC Glass RGB Panel
+    const pcGlassGeo = new THREE.PlaneGeometry(1.4, 1.6);
+    const pcGlassMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.5 });
+    const pcGlass = new THREE.Mesh(pcGlassGeo, pcGlassMat);
+    pcGlass.rotation.y = -Math.PI / 2;
+    pcGlass.position.set(1.89, 3.4, -0.4);
+    deskGroup.add(pcGlass);
+
+    // 6. COFFEE MUG
+    const mugGeo = new THREE.CylinderGeometry(0.18, 0.16, 0.35, 16);
+    const mugMat = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.2 });
+    const mug = new THREE.Mesh(mugGeo, mugMat);
+    mug.position.set(-2.0, 2.68, 0.2);
+    deskGroup.add(mug);
+
+    // 7. LIGHTING
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+
+    // Screen Glow Light
+    const screenLight = new THREE.PointLight(0x38bdf8, 2.5, 6);
+    screenLight.position.set(0, 3.9, 0.5);
+    scene.add(screenLight);
+
+    // Warm Ambient Lamp Light
+    const lampLight = new THREE.PointLight(0xf59e0b, 2.8, 12);
+    lampLight.position.set(-2.8, 4.5, 0);
+    lampLight.castShadow = true;
+    scene.add(lampLight);
+
+    // PC RGB Light
+    const pcLight = new THREE.PointLight(0x06b6d4, 1.5, 4);
+    pcLight.position.set(2.3, 3.5, -0.4);
+    scene.add(pcLight);
+
+    // Raycaster for click interaction on monitor
+    const raycaster = new THREE.Raycaster();
+    const mouseVec = new THREE.Vector2();
+
+    container.addEventListener('click', (e) => {
+      const rect = container.getBoundingClientRect();
+      mouseVec.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      mouseVec.y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
+
+      raycaster.setFromCamera(mouseVec, camera);
+      const intersects = raycaster.intersectObjects(scene.children, true);
+
+      for (let hit of intersects) {
+        if (hit.object.name === "interactive-screen" || hit.object === frame) {
+          openModal();
+          break;
+        }
+      }
+    });
+
+    // Reset Camera
+    document.getElementById('reset-cam-btn').addEventListener('click', () => {
+      camera.position.set(initialPos.x, initialPos.y, initialPos.z);
+      controls.target.set(0, 1.8, 0);
+      controls.update();
+    });
+
+    // Toggle Lamp Light
+    let lightOn = true;
+    document.getElementById('light-toggle-btn').addEventListener('click', () => {
+      lightOn = !lightOn;
+      lampLight.intensity = lightOn ? 2.8 : 0;
+      document.getElementById('light-toggle-btn').textContent = lightOn ? '💡 Lampu Meja: ON' : '💡 Lampu Meja: OFF';
+    });
+
+    // Modal triggers
+    function openModal() {
+      const m = document.getElementById('project-popup');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeModal() {
+      const m = document.getElementById('project-popup');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    // Resize
+    window.addEventListener('resize', () => {
+      width = container.clientWidth;
+      height = container.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    });
+
+    // Animation loop (Gentle pulse of screen & PC lights)
+    let clock = new THREE.Clock();
+    function animate() {
+      requestAnimationFrame(animate);
+      const t = clock.getElapsedTime();
+
+      // Soft pulse on PC light
+      pcLight.intensity = 1.2 + Math.sin(t * 3) * 0.4;
+      screenLight.intensity = 2.4 + Math.sin(t * 2) * 0.3;
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>
