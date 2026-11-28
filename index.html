@@ -160,13 +160,14 @@
   }
   </script>
 
-  <!-- Instant Dark Mode Initializer (Zero FOUT / White Flash) -->
+  <!-- Instant Theme Initializer (Default: Light Mode / Putih) -->
   <script>
     (function() {
       const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (stored === 'dark' || (!stored && prefersDark)) {
+      if (stored === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     })();
   </script>
@@ -2315,24 +2316,14 @@
 
     (function initTheme() {
       const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isDark = stored === 'dark' || (!stored && prefersDark);
+      // Default to light mode (white) on first visit unless explicitly chosen 'dark'
+      const isDark = stored === 'dark';
       if (isDark) {
         document.documentElement.classList.add('dark');
       } else {
         document.documentElement.classList.remove('dark');
       }
       updateThemeToggleUI(isDark);
-
-      // Listen for OS theme changes if user hasn't explicitly set a preference
-      if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-            document.documentElement.classList.toggle('dark', e.matches);
-            updateThemeToggleUI(e.matches);
-          }
-        });
-      }
 
       // Hotkey 'D' to toggle theme instantly (isolated from Ctrl/Cmd/Alt browser shortcuts)
       document.addEventListener('keydown', (e) => {
