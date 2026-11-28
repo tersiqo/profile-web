@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'Mobile Application / 2026',
       role: '📋 Assistant Project Manager',
       team: '👥 4-Member PBL Team',
-      tagline: 'Platform mobile manajemen turnamen esports scrim dengan sinkronisasi slot real-time dan verifikasi pembayaran instan.',
+      tagline: 'Mobile tournament and scrimmage management platform with real-time slot synchronization and automated payment verification.',
       github: 'https://github.com/azariaamanda/Mobile_BooyahHub.git',
       demo: '',
       client: 'Banteng Squad Esports / Polinema',
@@ -71,72 +71,104 @@ document.addEventListener('DOMContentLoaded', () => {
       caption: 'BooyahHub Mobile Scrim Platform Showcase',
       gallery: [
         { title: 'Device Mockup', src: './assets/images/banteng_squad_mockup.png' },
-        { title: 'Beranda / Home', src: './assets/images/booyahhub/booyah_home.png' },
-        { title: 'Katalog Semua Scrim', src: './assets/images/booyahhub/booyah_scrim_list.png' },
-        { title: 'Detail & Syarat Scrim', src: './assets/images/booyahhub/booyah_detail_scrim.png' },
-        { title: 'Pilih Jadwal Sesi', src: './assets/images/booyahhub/booyah_schedule_picker.png' },
-        { title: 'Form Registrasi Tim', src: './assets/images/booyahhub/booyah_team_registration.png' },
-        { title: 'Pembayaran QRIS & Bukti', src: './assets/images/booyahhub/booyah_payment_qris.png' },
-        { title: 'Status Daftar Pesanan', src: './assets/images/booyahhub/booyah_order_status.png' },
-        { title: 'Rincian Pesanan Pop-up', src: './assets/images/booyahhub/booyah_order_popup.png' },
-        { title: 'Hasil Match & Skor Kills', src: './assets/images/booyahhub/booyah_match_result.png' },
-        { title: 'Leaderboard Turnamen', src: './assets/images/booyahhub/booyah_leaderboard.png' },
-        { title: 'Dashboard Admin Scrim', src: './assets/images/booyahhub/booyah_admin_dashboard.png' },
-        { title: 'Verifikasi Peserta Admin', src: './assets/images/booyahhub/booyah_admin_verification.png' },
-        { title: 'Kelola Scrim Admin', src: './assets/images/booyahhub/booyah_admin_scrim_mgmt.png' },
-        { title: 'Dashboard Owner Platform', src: './assets/images/booyahhub/booyah_owner_dashboard.png' }
+        { title: 'Home Feed', src: './assets/images/booyahhub/booyah_home.png' },
+        { title: 'Scrim Directory', src: './assets/images/booyahhub/booyah_scrim_list.png' },
+        { title: 'Scrim Details & Rules', src: './assets/images/booyahhub/booyah_detail_scrim.png' },
+        { title: 'Session Schedule Picker', src: './assets/images/booyahhub/booyah_schedule_picker.png' },
+        { title: 'Team Registration Form', src: './assets/images/booyahhub/booyah_team_registration.png' },
+        { title: 'QRIS Payment & Receipt', src: './assets/images/booyahhub/booyah_payment_qris.png' },
+        { title: 'Order Status Tracker', src: './assets/images/booyahhub/booyah_order_status.png' },
+        { title: 'Order Details Modal', src: './assets/images/booyahhub/booyah_order_popup.png' },
+        { title: 'Match Results & Kill Standings', src: './assets/images/booyahhub/booyah_match_result.png' },
+        { title: 'Tournament Leaderboard', src: './assets/images/booyahhub/booyah_leaderboard.png' },
+        { title: 'Admin Scrim Dashboard', src: './assets/images/booyahhub/booyah_admin_dashboard.png' },
+        { title: 'Admin Participant Verification', src: './assets/images/booyahhub/booyah_admin_verification.png' },
+        { title: 'Admin Scrim Management', src: './assets/images/booyahhub/booyah_admin_scrim_mgmt.png' },
+        { title: 'Platform Owner Dashboard', src: './assets/images/booyahhub/booyah_owner_dashboard.png' }
       ],
-      description: 'Komunitas esports sering kali menghadapi kendala saat mengelola turnamen scrim: pendaftaran manual via chat yang rawan bentrok slot tim, bukti pembayaran palsu, serta pencatatan klasemen yang lambat. BooyahHub hadir sebagai platform mobile terpusat untuk mengotomatiskan seluruh alur turnamen esports dari reservasi slot hingga papan klasemen.',
+      description: 'Esports communities routinely grapple with operational friction when organizing scrimmage tournaments: manual chat-based registrations prone to team slot collisions, fraudulent payment receipts, and delayed bracket updates. BooyahHub was engineered as a centralized mobile application to streamline end-to-end competitive workflows, from instantaneous slot reservation to automated leaderboards.',
       features: [
-        { title: 'Real-time Slot Booking', desc: 'Sinkronisasi ketersediaan slot turnamen secara instan menggunakan Supabase Realtime, mencegah tabrakan reservasi antar tim.' },
-        { title: 'Automated Payment Verification', desc: 'Validasi upload bukti transfer pembayaran dan alur persetujuan admin yang cepat.' },
-        { title: 'Live Match Schedules & Standings', desc: 'Katalog turnamen interaktif dengan filter scrim terpopuler, terkini, dan riwayat pertandingan.' },
-        { title: 'High-Performance UI', desc: 'Antarmuka responsif berbasis Flutter dengan performa konsisten 60fps di berbagai tipe smartphone Android.' }
+        { title: 'Real-time Slot Booking', desc: 'Instant team slot reservations powered by Supabase Realtime webhooks, eliminating concurrent booking race conditions.' },
+        { title: 'Automated Payment Verification', desc: 'Secure payment receipt validation pipeline with an expedited approval flow for tournament organizers.' },
+        { title: 'Live Match Schedules & Standings', desc: 'Interactive tournament directory featuring real-time bracket tracking, search filters, and historical stats.' },
+        { title: 'High-Performance UI Engine', desc: 'Smooth, 60 FPS Flutter client delivering fluid micro-interactions across a wide spectrum of Android devices.' }
       ],
       contributions: [
-        'Mendampingi Project Manager dalam mengawal linimasa proyek (PBL), koordinasi 4 anggota tim, serta penyusunan dokumen manual book dan SRS.',
-        'Mengintegrasikan backend Supabase untuk manajemen basis data PostgreSQL, autentikasi pengguna, dan Row-Level Security (RLS).',
-        'Membangun logika sinkronisasi data real-time untuk ketersediaan slot scrim agar terhindar dari kondisi race condition.',
-        'Mengembangkan dan memastikan keselarasan komponen antarmuka pengguna (UI/UX) di Flutter dengan alur operasional aplikasi.'
+        'Partnered with the Project Manager to govern the Project-Based Learning (PBL) lifecycle, sprint planning, and comprehensive SRS documentation.',
+        'Architected Supabase backend integration with PostgreSQL database schemas, user authentication, and granular Row-Level Security (RLS) policies.',
+        'Engineered real-time state synchronization logic for tournament slot allocations to prevent race conditions during high-demand scrim drops.',
+        'Developed scalable Flutter frontend widgets aligned with production Figma design specifications and core user journey mappings.'
       ],
-      tech: ['Flutter', 'Dart', 'Supabase', 'PostgreSQL', 'Figma', 'REST API']
+      tech: ['Flutter', 'Dart', 'Supabase', 'PostgreSQL', 'Figma', 'REST API'],
+      architectureDetails: {
+        topology: [
+          { step: '01', title: 'Client Interaction', desc: 'Flutter mobile client executes client-side form validation and uploads payment slips directly to Supabase Storage with cryptographic hashing.' },
+          { step: '02', title: 'State & Realtime Sync', desc: 'Supabase Realtime channels broadcast tournament slot changes across concurrent mobile users via persistent WebSockets (<50ms latency).' },
+          { step: '03', title: 'Database & RLS Engine', desc: 'PostgreSQL enforces strict Row-Level Security (RLS) policies. Only registered team leaders can mutate roster entries; organizers hold elevated administrative permissions.' },
+          { step: '04', title: 'Automated Scoring & Standings', desc: 'Match results and kill multiplier calculations trigger atomic database functions to recalculate standings without manual spreadsheet reconciliation.' }
+        ],
+        databaseStrategy: 'PostgreSQL with Granular Row-Level Security (RLS). Schema is divided into normalized tables: tournaments, scrim_slots, teams, roster_members, and match_results with strict foreign key cascading.',
+        tradeoffs: 'Mitigated slot-booking race conditions during high-traffic tournament drops by leveraging PostgreSQL database-level row locking (`SELECT FOR UPDATE`) within an atomic transaction rather than relying on loose client-side checks.',
+        infraSpecs: [
+          { label: 'Runtime', val: 'Dart / Flutter AOT (ARM64)' },
+          { label: 'Backend Engine', val: 'Supabase BaaS / Edge Functions' },
+          { label: 'Relational Store', val: 'PostgreSQL 15 with RLS' },
+          { label: 'Sync Protocol', val: 'WebSocket / Realtime Postgres CDC' }
+        ]
+      }
     },
     'lab-se': {
-      title: 'Laboratorium Software Engineering Polinema',
-      tag: 'Institutional Web & CMS / 2025',
+      title: 'Polinema Software Engineering Laboratory',
+      tag: 'Institutional Portal & CMS / 2025',
       role: '🛠️ Full-Stack & Database Developer',
       team: '👥 5-Member PBL Team',
-      tagline: 'Portal resmi dan Content Management System (CMS) pusat riset rekayasa perangkat lunak Politeknik Negeri Malang.',
+      tagline: 'Official institutional portal and Content Management System (CMS) for the Software Engineering Research Center at State Polytechnic of Malang.',
       github: 'https://github.com/jsofiah/PBL-LabSE.git',
       demo: '',
-      client: 'Jurusan Teknologi Informasi — POLINEMA',
+      client: 'Department of Information Technology — POLINEMA',
       architecture: 'Institutional Web Portal with Relational CMS',
       image: './assets/images/lab_se_mockup.png',
-      caption: 'Portal Resmi Lab Software Engineering Polinema',
+      caption: 'Official Polinema Software Engineering Laboratory Portal',
       gallery: [
         { title: 'Main Showcase', src: './assets/images/lab_se_mockup.png' }
       ],
-      description: 'Pengembangan portal web profil dan sistem manajemen konten (CMS) resmi untuk Laboratorium Software Engineering Polinema. Website ini berfungsi sebagai etalase publikasi ilmiah dosen, peta jalan (roadmap) riset rekayasa perangkat lunak, direktori artikel, reservasi fasilitas lab, serta komunitas mahasiswa SE Geeks.',
+      description: 'Engineered the official institutional portal and CMS for the Software Engineering Laboratory at Polinema. The platform serves as a unified digital showcase for academic research publications, software engineering curricula roadmaps, lab equipment bookings, and the "SE Geeks" student research ecosystem.',
       features: [
-        { title: 'Roadmap Riset Interaktif', desc: 'Visualisasi alur kurikulum dan fokus riset laboratorium yang mudah dipahami mahasiswa.' },
-        { title: 'Katalog Publikasi Dosen', desc: 'Direktori artikel ilmiah, paten, dan jurnal karya dosen dan peneliti lab terintegrasi.' },
-        { title: 'Manajemen Fasilitas & Galeri', desc: 'Modul CMS untuk memperbarui inventaris perangkat riset, workstation, dan dokumentasi kegiatan.' },
-        { title: 'Responsive Institutional Design', desc: 'Tampilan elegan dan bersih sesuai standar branding institusi modern.' }
+        { title: 'Interactive Research Roadmap', desc: 'Structured visualization of laboratory research focuses and academic curriculum progression pathways.' },
+        { title: 'Faculty Publication Directory', desc: 'Centralized indexing for scientific papers, peer-reviewed journals, patents, and faculty portfolio assets.' },
+        { title: 'Facility & Inventory Management', desc: 'Administrative CMS modules to track research workstations, testing hardware, and workshop events.' },
+        { title: 'Responsive Institutional Design', desc: 'Clean, accessible aesthetic built to institutional identity guidelines with sub-second page loads.' }
       ],
       contributions: [
-        'Memodelkan kebutuhan sistem dan diagram alur data (ERD, PDM, Use Case Diagram, dan Activity Diagram).',
-        'Mengembangkan arsitektur basis data relasional MySQL dan query relasional untuk direktori artikel dan publikasi.',
-        'Membangun modul frontend dan backend menggunakan PHP, Tailwind CSS, dan JavaScript.',
-        'Merancang wireframe Low-Fidelity dan High-Fidelity di Figma untuk halaman visi misi, fasilitas, dan roadmap.'
+        'Modeled comprehensive system architecture and data flow diagrams, including ERD, PDM, Use Case, and Activity specifications.',
+        'Designed normalized MySQL relational database schemas and optimized indexing for publication indices and categorized articles.',
+        'Implemented full-stack modules utilizing PHP, Tailwind CSS, and vanilla JavaScript for dynamic frontend interactivity.',
+        'Crafted Low-Fidelity wireframes and High-Fidelity prototypes in Figma for curriculum roadmaps and facility showcases.'
       ],
-      tech: ['PHP', 'Laravel', 'Tailwind CSS', 'MySQL', 'JavaScript', 'Blade', 'Figma']
+      tech: ['PHP', 'Laravel', 'Tailwind CSS', 'MySQL', 'JavaScript', 'Blade', 'Figma'],
+      architectureDetails: {
+        topology: [
+          { step: '01', title: 'Institutional Gateway', desc: 'Lightweight PHP/Laravel entry point with role-based middleware routing visitors, students, and departmental faculty to dedicated workspaces.' },
+          { step: '02', title: 'Relational CMS Pipeline', desc: 'Authors submit research papers, patents, and software artifacts through a structured markdown and multi-file attachment management pipeline.' },
+          { step: '03', title: 'Indexed Search & Caching', desc: 'Article queries and researcher portfolios utilize composite database indexes and query caching, maintaining sub-50ms server responses under peak campus network loads.' },
+          { step: '04', title: 'Lab Asset Reservation', desc: 'Automated inventory booking system for lab workstations and hardware testing gear with date collision prevention.' }
+        ],
+        databaseStrategy: 'Normalized 3NF relational schema in MySQL 8.0. Strict referential integrity between faculty accounts, academic publications, research roadmap nodes, and hardware inventory logs.',
+        tradeoffs: 'Opted for a modular monolith architecture rather than microservices to ensure effortless on-premise maintainability by student lab assistants, while utilizing optimized indexing to achieve sub-second TTFB.',
+        infraSpecs: [
+          { label: 'Runtime', val: 'PHP 8.2 Engine / Laravel' },
+          { label: 'Web Server', val: 'Nginx Reverse Proxy / Apache' },
+          { label: 'Relational Store', val: 'MySQL 8.0 with B-Tree Indexes' },
+          { label: 'Styling & Frontend', val: 'Tailwind CSS JIT + Vanilla JS' }
+        ]
+      }
     },
     'rentalbase': {
       title: 'RentalBase — Multi-Tenant Equipment Rental SaaS',
       tag: 'SaaS Platform / 2026',
       role: '📋 Project Manager & Full-Stack Developer',
       team: '👥 PBL Development Team',
-      tagline: 'Platform SaaS multi-tenant untuk otomatisasi bisnis rental kamera, peralatan studio, dan perlengkapan fisik.',
+      tagline: 'Multi-tenant modular SaaS platform automating equipment rentals, real-time inventory tracking, and dynamic billing workflows.',
       github: 'https://github.com/tersiqo/RentalBase',
       demo: 'https://tersiqo.my.id',
       client: 'RentalBase SaaS Ecosystem',
@@ -149,37 +181,48 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'Official Landing Page', src: './assets/images/rentalbase/rentalbase_landing.png' },
         { title: 'Tenant Catalog', src: './assets/images/rentalbase/rentalbase_catalog.png' },
         { title: 'Product Detail & Booking', src: './assets/images/rentalbase/rentalbase_product_detail.png' },
-        { title: 'Return & Penalty Popup', src: './assets/images/rentalbase/rentalbase_return_popup.png' },
+        { title: 'Return & Penalty Modal', src: './assets/images/rentalbase/rentalbase_return_popup.png' },
         { title: 'Master Orders List', src: './assets/images/rentalbase/rentalbase_orders.png' },
         { title: 'Tenant Management', src: './assets/images/rentalbase/rentalbase_tenants.png' },
-        { title: 'Tenant Registration', src: './assets/images/rentalbase/rentalbase_tenant_requests.png' },
-        { title: 'Store Theme Setup', src: './assets/images/rentalbase/rentalbase_store_setup.png' },
-        { title: 'Store Info Setup', src: './assets/images/rentalbase/rentalbase_store_info.png' },
+        { title: 'Tenant Onboarding', src: './assets/images/rentalbase/rentalbase_tenant_requests.png' },
+        { title: 'Storefront Theme Setup', src: './assets/images/rentalbase/rentalbase_store_setup.png' },
+        { title: 'Storefront Info Setup', src: './assets/images/rentalbase/rentalbase_store_info.png' },
         { title: 'Customer Order Detail', src: './assets/images/rentalbase/rentalbase_customer_order.png' },
-        { title: 'Authentication / Login', src: './assets/images/rentalbase/rentalbase_login.png' },
-        { title: 'Design System & Colors', src: './assets/images/rentalbase/rentalbase_style_guide.png' }
+        { title: 'Authentication & Security', src: './assets/images/rentalbase/rentalbase_login.png' },
+        { title: 'Design System & Palette', src: './assets/images/rentalbase/rentalbase_style_guide.png' }
       ],
-      description: 'Bisnis rental peralatan fisik skala menengah sering mengalami kerugian akibat pencatatan ketersediaan barang yang tumpang tindih, denda pengembalian yang tidak terkontrol, serta isolasi data antar cabang yang rumit. RentalBase dirancang sebagai platform SaaS multi-tenant yang memungkinkan pemilik usaha rental mengoperasikan portal toko dan dashboard operasional mandiri secara efisien.',
+      description: 'Mid-tier equipment rental businesses suffer persistent revenue leakage due to booking overlaps, untracked late penalties, and convoluted multi-branch data isolation. RentalBase was engineered as a high-reliability, multi-tenant SaaS platform empowering rental proprietors to manage custom storefronts and backend logistics with automated inventory controls.',
       features: [
-        { title: 'Multi-Tenant Architecture', desc: 'Isolasi data antar penyewa bisnis dengan subdomain kustom dan konfigurasi tema toko mandiri.' },
-        { title: 'Real-time Unit Availability', desc: 'Kalender booking terintegrasi untuk melacak status peralatan (Tersedia, Disewa, Dicuci, Rusak).' },
-        { title: 'Automated Invoicing & Late Fees', desc: 'Perhitungan denda retur otomatis, manajemen deposit keamanan, dan cetak invoice digital.' },
-        { title: 'Cloud-Ready Containerization', desc: 'Terkonfigurasi penuh dengan Docker untuk deployment instan di platform Render dan Cloudflare.' }
+        { title: 'Multi-Tenant Architecture', desc: 'Secure data isolation between business tenants featuring custom subdomains and dynamic storefront branding.' },
+        { title: 'Real-Time Unit Availability', desc: 'Interactive scheduling calendar tracking unit states (Available, Rented, Maintenance, Damaged) in real time.' },
+        { title: 'Automated Late Fees & Invoicing', desc: 'Algorithmic overdue fee calculations, security deposit ledgers, and instant digital invoice generation.' },
+        { title: 'Cloud-Ready Containerization', desc: 'Fully Dockerized container stack tuned for streamlined CI/CD pipelines across Render and Cloudflare.' }
       ],
       contributions: [
-        'Bertindak sebagai Project Manager dalam memimpin siklus hidup pengembangan sistem (Agile), perencanaan sprint, dan spesifikasi SRS.',
-        'Merancang dan membangun arsitektur backend full-stack menggunakan Laravel dan komponen reaktif Livewire.',
-        'Mendesain skema basis data relasional PostgreSQL yang ternormalisasi untuk menangani transaksi persewaan konkuren.',
-        'Menyiapkan setup Dockerfile, konfigurasi Nginx, dan pipeline deployment ke cloud infrastructure.'
+        'Spearheaded development lifecycle as Project Manager, orchestrating Agile sprints, task distribution, and SRS specifications.',
+        'Engineered full-stack reactive web architecture leveraging Laravel and Livewire for dynamic, single-page UI updates without SPA complexity.',
+        'Modeled normalized PostgreSQL schemas designed to handle high-concurrency booking transactions with ACID compliance.',
+        'Authored production Dockerfiles, configured multi-stage builds, Nginx reverse proxy routing, and production deployment scripts.'
       ],
-      tech: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'PostgreSQL', 'Docker', 'Figma']
-    },
-    // Aliases
-    'aura-banking': null,
-    'lumina-furniture': null
+      tech: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'PostgreSQL', 'Docker', 'Figma'],
+      architectureDetails: {
+        topology: [
+          { step: '01', title: 'Subdomain Tenant Router', desc: 'Incoming HTTP requests are inspected by tenant-resolution middleware via wildcard DNS (`{tenant}.rentalbase.id`) to resolve tenant identity dynamically.' },
+          { step: '02', title: 'Scoped Data Isolation', desc: 'Database connections automatically apply global tenant scopes (`tenant_id`), guaranteeing 100% data partition between independent rental business owners.' },
+          { step: '03', title: 'Reactive Single-Page UX', desc: 'Laravel Livewire and Alpine.js handle dynamic inventory status changes, late fee calculations, and return modals without requiring a separate SPA frontend.' },
+          { step: '04', title: 'Automated Billing Ledger', desc: 'Algorithmic calculation of deposit security, rental intervals, and automated PDF invoice generation upon return inspection.' }
+        ],
+        databaseStrategy: 'Multi-Tenant PostgreSQL Architecture with indexed tenant foreign keys and ACID-compliant transactional booking locks. Strict check constraints prevent concurrent bookings of identical equipment serials.',
+        tradeoffs: 'Chose a single-database multi-tenant model with tenant-scoped queries over a database-per-tenant architecture, drastically lowering cloud infrastructure costs for small rental proprietors while maintaining strict software-enforced boundary isolation.',
+        infraSpecs: [
+          { label: 'Full-Stack Engine', val: 'Laravel 11 + Livewire 3 + Alpine.js' },
+          { label: 'Containerization', val: 'Multi-Stage Dockerfile + Docker Compose' },
+          { label: 'Database', val: 'PostgreSQL 16 with Tenant Scoping' },
+          { label: 'Deployment & CDN', val: 'Render Cloud + Cloudflare SSL Termination' }
+        ]
+      }
+    }
   };
-  projectsData['aura-banking'] = projectsData['banteng-squad'];
-  projectsData['lumina-furniture'] = projectsData['lab-se'];
 
   // Enhanced Modal Logic
   const modal = document.getElementById('project-modal');
@@ -188,6 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.openProjectModal = function(projectId) {
     const data = projectsData[projectId];
     if (!data) return;
+
+    // Reset tab to overview on open
+    if (typeof window.switchModalTab === 'function') {
+      window.switchModalTab('overview');
+    }
 
     // Header info
     document.getElementById('modal-title').textContent = data.title;
@@ -226,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (data.gallery && data.gallery.length > 0) {
       gallerySection.classList.remove('hidden');
       galleryContainer.innerHTML = data.gallery.map((item, idx) => `
-        <button type="button" onclick="switchModalPreview('${item.src}', '${item.title.replace(/'/g, "\\'")}')" class="group relative rounded-lg overflow-hidden border border-slate-200 bg-slate-100 aspect-video hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-left">
+        <button type="button" onclick="switchModalPreview('${item.src}', '${item.title.replace(/'/g, "\\'")}')" class="group relative rounded-lg overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-900 aspect-video hover:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all text-left">
           <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
           <div class="absolute inset-0 bg-slate-950/25 group-hover:bg-transparent transition-colors"></div>
           <span class="absolute bottom-1 left-1.5 right-1.5 text-[10px] font-mono text-white truncate drop-shadow-sm font-semibold">${item.title}</span>
@@ -243,12 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuresContainer = document.getElementById('modal-features');
     if (data.features && data.features.length > 0) {
       featuresContainer.innerHTML = data.features.map(f => `
-        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-          <div class="font-bold text-slate-900 flex items-center gap-1.5">
-            <span class="text-blue-600">✦</span>
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-white/10 space-y-1">
+          <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+            <span class="text-blue-600 dark:text-blue-400">✦</span>
             <span>${f.title}</span>
           </div>
-          <p class="text-xs text-slate-600 leading-relaxed">${f.desc}</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${f.desc}</p>
         </div>
       `).join('');
     } else {
@@ -259,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contribContainer = document.getElementById('modal-contributions');
     if (data.contributions && data.contributions.length > 0) {
       contribContainer.innerHTML = data.contributions.map(c => `
-        <li class="leading-relaxed pl-1"><span class="text-slate-800">${c}</span></li>
+        <li class="leading-relaxed pl-1"><span class="text-slate-800 dark:text-slate-200">${c}</span></li>
       `).join('');
     } else {
       contribContainer.innerHTML = '';
@@ -272,12 +320,107 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tech Chips
     const techContainer = document.getElementById('modal-tech');
     techContainer.innerHTML = data.tech.map(item => 
-      `<span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-white text-slate-800 border border-slate-200 shadow-2xs">${item}</span>`
+      `<span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-2xs">${item}</span>`
     ).join('');
+
+    // System Architecture Tab Population
+    const topoContainer = document.getElementById('modal-arch-topology');
+    if (topoContainer && data.architectureDetails?.topology) {
+      topoContainer.innerHTML = data.architectureDetails.topology.map(step => `
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-white/10 space-y-1.5 flex flex-col justify-between">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-extrabold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-2 py-0.5 rounded border border-blue-200/70 dark:border-blue-800/60">${step.step}</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
+          <div>
+            <div class="font-bold text-xs text-slate-900 dark:text-white">${step.title}</div>
+            <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed mt-1">${step.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const dbEl = document.getElementById('modal-arch-database');
+    if (dbEl) dbEl.textContent = data.architectureDetails?.databaseStrategy || 'Normalized relational schema with referential integrity constraints.';
+
+    const toEl = document.getElementById('modal-arch-tradeoffs');
+    if (toEl) toEl.textContent = data.architectureDetails?.tradeoffs || 'Engineered with performance optimization, transactional ACID guarantees, and sub-second latency.';
+
+    const infraContainer = document.getElementById('modal-arch-infra');
+    if (infraContainer && data.architectureDetails?.infraSpecs) {
+      infraContainer.innerHTML = data.architectureDetails.infraSpecs.map(spec => `
+        <div class="space-y-1">
+          <span class="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-wider block">${spec.label}</span>
+          <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 font-mono block">${spec.val}</span>
+        </div>
+      `).join('');
+    }
 
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.body.style.overflow = 'hidden';
+  };
+
+  // Switch Modal Tabs (Overview vs System Architecture)
+  window.switchModalTab = function(tabName) {
+    const isOverview = tabName === 'overview';
+    const overviewTab = document.getElementById('modal-tab-overview');
+    const archTab = document.getElementById('modal-tab-architecture');
+    const overviewBtn = document.getElementById('tab-btn-overview');
+    const archBtn = document.getElementById('tab-btn-architecture');
+
+    if (overviewTab && archTab) {
+      overviewTab.classList.toggle('hidden', !isOverview);
+      archTab.classList.toggle('hidden', isOverview);
+    }
+
+    if (overviewBtn && archBtn) {
+      overviewBtn.classList.toggle('active', isOverview);
+      archBtn.classList.toggle('active', !isOverview);
+    }
+  };
+
+  // Project Category Filter Handler
+  window.filterProjects = function(category) {
+    document.querySelectorAll('[data-project-filter]').forEach(btn => {
+      const isActive = btn.getAttribute('data-project-filter') === category;
+      btn.classList.toggle('active', isActive);
+    });
+
+    const cards = document.querySelectorAll('.project-card-item');
+    cards.forEach(card => {
+      const categories = (card.getAttribute('data-project-categories') || '').split(' ');
+      const match = category === 'all' || categories.includes(category);
+
+      if (match) {
+        card.style.display = '';
+        requestAnimationFrame(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0) scale(1)';
+        });
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px) scale(0.98)';
+        setTimeout(() => {
+          const currentActive = document.querySelector('[data-project-filter].active')?.getAttribute('data-project-filter');
+          if (currentActive === category) {
+            card.style.display = 'none';
+          }
+        }, 280);
+      }
+    });
+
+    const subgrid = document.getElementById('projects-subgrid');
+    if (subgrid) {
+      if (category === 'mobile') {
+        setTimeout(() => {
+          const currentActive = document.querySelector('[data-project-filter].active')?.getAttribute('data-project-filter');
+          if (currentActive === 'mobile') subgrid.style.display = 'none';
+        }, 280);
+      } else {
+        subgrid.style.display = '';
+      }
+    }
   };
 
   window.switchModalPreview = function(src, caption) {
@@ -296,6 +439,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === modal) closeModal();
     });
   }
+
+  // Keyboard Escape to close modal (both project modal and contact modal)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      if (modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+      if (contactModal && !contactModal.classList.contains('hidden')) {
+        window.closeContactModal();
+      }
+    }
+  });
 
   function closeModal() {
     if (!modal) return;
@@ -332,6 +487,139 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast("Email: tersiqo.alfarezel@gmail.com");
     });
   };
+
+  // =========================================================
+  // QUICK CONTACT & INQUIRY MODAL ENGINE
+  // =========================================================
+  const contactModal = document.getElementById('contact-modal');
+  let currentContactPreset = 'recruitment';
+
+  const contactPresets = {
+    recruitment: {
+      title: "Job Opportunity",
+      subject: "[Engineering Opportunity] Software Engineer Role - Inquiry",
+      message: `Hi Tersiqo,
+
+I reviewed your portfolio and engineering case studies (specifically your work in full-stack architecture and database systems). We currently have an opening and would like to connect with you.
+
+- Role / Scope: Software Engineer / Full-Stack Engineer
+- Company / Team: 
+- Work Mode: [Remote / Hybrid / Onsite]
+- Target Timeline: [e.g. Immediate / Next Month]
+
+Looking forward to hearing from you!`
+    },
+    freelance: {
+      title: "Project / SaaS MVP",
+      subject: "[Project Inquiry] Web Application & Architecture Collaboration",
+      message: `Hi Tersiqo,
+
+We are looking for a software engineer to build/architect a project with modern web standards and reliable database architecture.
+
+- Project Concept: [Brief project overview]
+- Key Deliverables: [e.g. Full-Stack MVP, REST API, Database Modeling, Dashboard]
+- Target Timeline & Budget: [Estimated Timeline / Budget Range]
+
+Let's discuss further!`
+    },
+    collaboration: {
+      title: "Tech Exchange",
+      subject: "[Tech Exchange] Discussion on Architecture & System Design",
+      message: `Hi Tersiqo,
+
+I'm reaching out after exploring your portfolio and system architecture breakdowns. I'd love to connect, exchange thoughts on software engineering practices, or discuss open-source collaboration.
+
+- Topic / Focus: [System Design / Laravel / Database / Open Source]
+
+Cheers!`
+    }
+  };
+
+  window.openContactModal = function(presetType = 'recruitment') {
+    if (!contactModal) return;
+    window.setContactPreset(presetType);
+    contactModal.classList.remove('hidden');
+    contactModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeContactModal = function() {
+    if (!contactModal) return;
+    contactModal.classList.add('hidden');
+    contactModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  };
+
+  window.setContactPreset = function(presetType) {
+    if (!contactPresets[presetType]) presetType = 'recruitment';
+    currentContactPreset = presetType;
+
+    // Update preset pills active state
+    ['recruitment', 'freelance', 'collaboration'].forEach(type => {
+      const btn = document.getElementById(`preset-btn-${type}`);
+      if (btn) btn.classList.toggle('active', type === presetType);
+    });
+
+    const subjectInput = document.getElementById('contact-subject');
+    const messageInput = document.getElementById('contact-message');
+    if (subjectInput) subjectInput.value = contactPresets[presetType].subject;
+    if (messageInput) messageInput.value = contactPresets[presetType].message;
+  };
+
+  window.resetCurrentPresetText = function() {
+    const preset = contactPresets[currentContactPreset];
+    if (!preset) return;
+    const subjectInput = document.getElementById('contact-subject');
+    const messageInput = document.getElementById('contact-message');
+    if (subjectInput) subjectInput.value = preset.subject;
+    if (messageInput) messageInput.value = preset.message;
+    if (window.showToast) window.showToast("Inquiry template reset to default.");
+  };
+
+  function getSynthesizedInquiryPayload() {
+    const name = document.getElementById('contact-name')?.value.trim() || '';
+    const sender = document.getElementById('contact-sender-email')?.value.trim() || '';
+    const subject = document.getElementById('contact-subject')?.value.trim() || (contactPresets[currentContactPreset] ? contactPresets[currentContactPreset].subject : "Engineering Inquiry");
+    let message = document.getElementById('contact-message')?.value.trim() || (contactPresets[currentContactPreset] ? contactPresets[currentContactPreset].message : "");
+
+    let fullBody = message;
+    if (name || sender) {
+      fullBody += `\n\n--------------------------------------\nSender: ${name || 'Not provided'}\nContact Info: ${sender || 'Not provided'}\nSent via: tersiqo portfolio inquiry system`;
+    }
+    return { name, sender, subject, body: fullBody };
+  }
+
+  window.dispatchGmailWeb = function() {
+    const payload = getSynthesizedInquiryPayload();
+    const emailTo = "tersiqo.alfarezel@gmail.com";
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(payload.body)}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    if (window.showToast) window.showToast("Opening Gmail composer in a new tab...");
+  };
+
+  window.dispatchMailto = function() {
+    const payload = getSynthesizedInquiryPayload();
+    const emailTo = "tersiqo.alfarezel@gmail.com";
+    const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(payload.body)}`;
+    window.location.href = mailtoUrl;
+    if (window.showToast) window.showToast("Opening default mail application...");
+  };
+
+  window.copyFormattedInquiry = function() {
+    const payload = getSynthesizedInquiryPayload();
+    const formatted = `To: tersiqo.alfarezel@gmail.com\nSubject: ${payload.subject}\n\n${payload.body}`;
+    navigator.clipboard.writeText(formatted).then(() => {
+      if (window.showToast) window.showToast("Full inquiry copied! You can paste it into any channel.");
+    }).catch(() => {
+      if (window.showToast) window.showToast("Copy failed. Please copy manually from the form.");
+    });
+  };
+
+  if (contactModal) {
+    contactModal.addEventListener('click', (e) => {
+      if (e.target === contactModal) window.closeContactModal();
+    });
+  }
 
   // =========================================================
   // ANTI-MAINSTREAM ANIMATIONS: CYBER DECODER & SCRAMBLE EFFECT

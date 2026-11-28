@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tersiqo.my.id/sitemap.xml
