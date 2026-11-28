@@ -123,6 +123,7 @@
               "name": "BooyahHub — Banteng Squad",
               "applicationCategory": "MobileApplication",
               "operatingSystem": "Android, iOS",
+              "url": "https://booyahhub.pages.dev/",
               "description": "Real-time competitive esports ecosystem featuring live bracket synchronization, push notifications, and tournament roster management.",
               "programmingLanguage": "Dart, Flutter, Firebase, Cloud Functions",
               "codeRepository": "https://github.com/tersiqo"
@@ -149,6 +150,7 @@
               "name": "RentalBase Multi-Tenant SaaS",
               "applicationCategory": "WebApplication, BusinessApplication",
               "operatingSystem": "Web Browser",
+              "url": "https://rentalbase-88c9.onrender.com",
               "description": "Multi-tenant vehicle rental platform with tenant-isolated database scoping, atomic reservation locks, and Docker deployment.",
               "programmingLanguage": "PHP, Laravel Livewire, Alpine.js, PostgreSQL, Docker",
               "codeRepository": "https://github.com/tersiqo"
@@ -587,6 +589,78 @@
       box-shadow: none;
     }
 
+    /* =====================================================================
+       LIQUID ACTION BUTTONS (Live Demo & View Case Study)
+       ===================================================================== */
+    .liquid-btn-primary {
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+      color: #FFFFFF !important;
+      border: 1px solid rgba(147, 197, 253, 0.45) !important;
+      box-shadow:
+        0 4px 14px -3px rgba(37, 99, 235, 0.38),
+        0 0 0 1px rgba(37, 99, 235, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .liquid-btn-primary:hover {
+      background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%) !important;
+      border-color: rgba(191, 219, 254, 0.75) !important;
+      box-shadow:
+        0 8px 22px -3px rgba(37, 99, 235, 0.55),
+        0 0 0 1px rgba(59, 130, 246, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+      transform: translateY(-2px);
+    }
+    .liquid-btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px -2px rgba(37, 99, 235, 0.4) !important;
+    }
+
+    .liquid-btn-secondary {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.45) 100%) !important;
+      color: #0F172A !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      box-shadow:
+        0 2px 8px -2px rgba(15, 23, 42, 0.08),
+        0 0 0 1px rgba(148, 163, 184, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    html.dark .liquid-btn-secondary {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.65) 100%) !important;
+      color: #F8FAFC !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow:
+        0 2px 8px -2px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    }
+    .group:hover .liquid-btn-secondary {
+      border-color: rgba(147, 197, 253, 0.6) !important;
+      color: #2563EB !important;
+    }
+    html.dark .group:hover .liquid-btn-secondary {
+      border-color: rgba(96, 165, 250, 0.4) !important;
+      color: #60A5FA !important;
+    }
+    .liquid-btn-secondary:hover,
+    .group:hover .liquid-btn-secondary:hover {
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+      color: #FFFFFF !important;
+      border-color: rgba(147, 197, 253, 0.75) !important;
+      box-shadow:
+        0 8px 22px -3px rgba(37, 99, 235, 0.55),
+        0 0 0 1px rgba(37, 99, 235, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+      transform: translateY(-2px);
+    }
+    .liquid-btn-secondary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px -2px rgba(37, 99, 235, 0.4) !important;
+    }
+
     .liquid-subtile {
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.58) 0%, rgba(224, 242, 254, 0.24) 100%);
       border: 1px solid rgba(255, 255, 255, 0.88);
@@ -671,27 +745,21 @@
     }
 
     /* =====================================================================
-       LIQUID GLASS MODAL & FOOTER
+       CLEAN & SOLID MODAL SHEET (Apple / Stripe Premium Feel)
+       Pure solid white surface — Zero dirty gray bleed-through
        ===================================================================== */
     .liquid-modal-sheet {
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.84) 0%,
-        rgba(248, 250, 252, 0.72) 100%
-      );
-      backdrop-filter: blur(24px) saturate(185%);
-      -webkit-backdrop-filter: blur(24px) saturate(185%);
-      border: 1px solid rgba(255, 255, 255, 0.92);
+      background: #FFFFFF !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: 1px solid #E2E8F0 !important;
       box-shadow:
-        0 36px 90px -20px rgba(15, 23, 42, 0.36),
-        inset 0 1.5px 0 rgba(255, 255, 255, 1),
-        inset 0 -1px 2px rgba(186, 230, 253, 0.45);
+        0 25px 65px -12px rgba(15, 23, 42, 0.25),
+        0 0 0 1px rgba(15, 23, 42, 0.05) !important;
     }
     [data-theme-mode="original"] .liquid-modal-sheet {
-      background: #FFFFFF;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
-      border-color: #E2E8F0;
+      background: #FFFFFF !important;
+      border-color: #E2E8F0 !important;
     }
 
     .liquid-footer {
@@ -875,15 +943,13 @@
       box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
     }
     html.dark .liquid-modal-sheet {
-      background: linear-gradient(
-        145deg,
-        rgba(15, 23, 42, 0.96) 0%,
-        rgba(11, 15, 25, 0.96) 100%
-      ) !important;
-      border-color: rgba(255, 255, 255, 0.14) !important;
+      background: #0F172A !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
       box-shadow:
-        0 36px 90px -20px rgba(0, 0, 0, 0.85),
-        inset 0 1.5px 0 rgba(255, 255, 255, 0.18) !important;
+        0 30px 80px -15px rgba(0, 0, 0, 0.9),
+        0 0 0 1px rgba(255, 255, 255, 0.06) !important;
     }
     html.dark #modal-gallery {
       background: rgba(11, 15, 25, 0.75) !important;
@@ -976,75 +1042,77 @@
 
     /* Modal Navigation Tab Pills */
     .modal-tab-pill {
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(226, 232, 240, 0.85);
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
       color: #475569;
       cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .modal-tab-pill:hover {
       color: #2563EB;
-      border-color: rgba(37, 99, 235, 0.35);
-      background: rgba(255, 255, 255, 0.92);
+      border-color: #93C5FD;
+      background: #FFFFFF;
     }
     .modal-tab-pill.active {
-      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+      background: #2563EB !important;
       border-color: #2563EB !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.3) !important;
+      box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35) !important;
     }
     html.dark .modal-tab-pill {
-      background: rgba(15, 23, 42, 0.6);
+      background: #1E293B;
       border-color: rgba(255, 255, 255, 0.1);
       color: #94A3B8;
     }
     html.dark .modal-tab-pill:hover {
-      color: #38BDF8;
-      border-color: rgba(56, 189, 248, 0.35);
-      background: rgba(30, 41, 59, 0.8);
+      color: #60A5FA;
+      border-color: rgba(96, 165, 250, 0.4);
+      background: #334155;
     }
     html.dark .modal-tab-pill.active {
-      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
-      border-color: #38BDF8 !important;
+      background: #2563EB !important;
+      border-color: #60A5FA !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 14px -2px rgba(56, 189, 248, 0.3) !important;
+      box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.4) !important;
     }
 
     /* Contact Modal Preset Pills */
     .contact-preset-pill {
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(226, 232, 240, 0.9);
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
       color: #334155;
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .contact-preset-pill:hover {
       color: #2563EB;
-      border-color: rgba(37, 99, 235, 0.35);
-      background: rgba(255, 255, 255, 0.95);
+      border-color: #93C5FD;
+      background: #FFFFFF;
       transform: translateY(-1px);
     }
     .contact-preset-pill.active {
-      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+      background: #2563EB !important;
       border-color: #2563EB !important;
       color: #FFFFFF !important;
       box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.35) !important;
     }
     html.dark .contact-preset-pill {
-      background: rgba(15, 23, 42, 0.65);
+      background: #1E293B;
       border-color: rgba(255, 255, 255, 0.1);
       color: #CBD5E1;
-      box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
     html.dark .contact-preset-pill:hover {
-      color: #38BDF8;
-      border-color: rgba(56, 189, 248, 0.35);
-      background: rgba(30, 41, 59, 0.8);
+      color: #60A5FA;
+      border-color: rgba(96, 165, 250, 0.4);
+      background: #334155;
     }
     html.dark .contact-preset-pill.active {
-      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
-      border-color: #38BDF8 !important;
+      background: #2563EB !important;
+      border-color: #60A5FA !important;
       color: #FFFFFF !important;
-      box-shadow: 0 4px 16px -2px rgba(56, 189, 248, 0.3) !important;
+      box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.4) !important;
     }
 
     /* Project Cards Animated Filter Transition */
@@ -1648,10 +1716,14 @@
                   </div>
                 </div>
 
-                <div class="flex items-center gap-3 shrink-0 self-end md:self-center">
-                  <span class="text-xs font-mono font-bold text-blue-600 group-hover:text-blue-800 transition-colors">View Case Study</span>
-                  <div class="w-12 h-12 rounded-xl liquid-chip text-slate-800 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-400 transition-all">
-                    <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex flex-wrap items-center gap-2.5 shrink-0 self-end md:self-center">
+                  <a href="https://booyahhub.pages.dev/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="liquid-btn-primary group/demo inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-mono text-xs font-bold">
+                    <span>Live Demo</span>
+                    <span class="text-xs font-bold group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform">↗</span>
+                  </a>
+                  <div class="liquid-btn-secondary group/btn inline-flex items-center gap-2 px-3.5 py-2 rounded-xl font-mono text-xs font-bold">
+                    <span>View Case Study</span>
+                    <svg class="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                     </svg>
                   </div>
@@ -1701,9 +1773,12 @@
                 </div>
 
                 <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-white/5">
-                  <span class="text-xs font-mono font-bold text-blue-600 group-hover:text-blue-800 transition-colors">View Case Study</span>
-                  <div class="w-9 h-9 rounded-xl liquid-chip text-slate-800 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-400 transition-all shrink-0">
-                    <span class="text-sm font-bold">↗</span>
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Detailed Architecture</span>
+                  <div class="liquid-btn-secondary group/btn inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl font-mono text-xs font-bold">
+                    <span>View Case Study</span>
+                    <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -1746,10 +1821,19 @@
                   </div>
                 </div>
 
-                <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-100 dark:border-white/5">
-                  <span class="text-xs font-mono font-bold text-blue-600 group-hover:text-blue-800 transition-colors">View Case Study</span>
-                  <div class="w-9 h-9 rounded-xl liquid-chip text-slate-800 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-400 transition-all shrink-0">
-                    <span class="text-sm font-bold">↗</span>
+                <div class="px-6 pb-6 pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-white/5">
+                  <span class="text-xs font-mono text-slate-500 dark:text-slate-400 hidden sm:inline-block">Detailed Architecture</span>
+                  <div class="flex items-center gap-2 ml-auto">
+                    <a id="rentalbase-live-demo-btn" href="https://rentalbase-88c9.onrender.com" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="liquid-btn-primary group/demo inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-mono text-xs font-bold">
+                      <span>Live Demo</span>
+                      <span class="text-xs font-bold group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform">↗</span>
+                    </a>
+                    <div class="liquid-btn-secondary group/btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-mono text-xs font-bold">
+                      <span>View Case Study</span>
+                      <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1954,35 +2038,35 @@
   </footer>
 
 
-  <!-- ENHANCED PROJECT CASE STUDY MODAL (Liquid Glass Crystal Sheet) -->
-  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-900/50 backdrop-blur-md">
+  <!-- ENHANCED PROJECT CASE STUDY MODAL (Clean Solid Sheet) -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-950/40 backdrop-blur-sm">
     <div class="relative w-full max-w-5xl liquid-modal-sheet rounded-2xl overflow-hidden p-6 sm:p-8 max-h-[92vh] overflow-y-auto space-y-6">
       
       <!-- Top Action Bar (Header + Buttons) -->
-      <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-4 border-b border-white/80 dark:border-white/10">
+      <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-4 border-b border-slate-100 dark:border-white/10">
         <div class="space-y-1.5 max-w-2xl">
           <div class="flex flex-wrap items-center gap-2">
-            <span id="modal-tag" class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-blue-50/80 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60">Category</span>
-            <span id="modal-role" class="text-xs font-mono font-bold text-slate-700 uppercase tracking-wider px-2.5 py-0.5 rounded-md liquid-chip">Role</span>
+            <span id="modal-tag" class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/60">Category</span>
+            <span id="modal-role" class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-white/10">Role</span>
             <span id="modal-team" class="text-xs font-mono font-medium text-slate-500">Team</span>
           </div>
-          <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-display">Project Title</h3>
-          <p id="modal-tagline" class="text-sm text-slate-600 font-medium"></p>
+          <h3 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">Project Title</h3>
+          <p id="modal-tagline" class="text-sm text-slate-600 dark:text-slate-300 font-medium"></p>
         </div>
 
         <!-- Action Buttons -->
         <div class="flex items-center gap-2.5 shrink-0">
-          <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold font-mono rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs">
+          <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold font-mono rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-all shadow-xs">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <span>GitHub Repo</span>
           </a>
           
-          <a id="modal-demo" href="#" target="_blank" rel="noopener noreferrer" class="hidden inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold font-mono rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-xs">
+          <a id="modal-demo" href="#" target="_blank" rel="noopener noreferrer" class="hidden liquid-btn-primary inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold font-mono rounded-xl shadow-xs">
             <span>Live Demo</span>
-            <span>↗</span>
+            <span class="text-xs font-bold">↗</span>
           </a>
 
-          <button id="modal-close" class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white p-2 rounded-lg liquid-chip transition-colors" title="Close Modal">
+          <button id="modal-close" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" title="Close Modal">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
@@ -1991,24 +2075,24 @@
       </div>
 
       <!-- Main Showcase Image Preview -->
-      <div class="relative w-full h-[380px] sm:h-[460px] md:h-[500px] rounded-xl overflow-hidden bg-white/50 dark:bg-slate-950/60 border border-white/85 dark:border-white/10 shadow-inner group flex items-center justify-center p-2 sm:p-4">
+      <div class="relative w-full h-[380px] sm:h-[460px] md:h-[500px] rounded-2xl overflow-hidden bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-inner group flex items-center justify-center p-2 sm:p-4">
         <img id="modal-img" src="" alt="Project Preview" class="max-h-full max-w-full h-auto w-auto object-contain rounded-lg shadow-sm transition-all duration-300">
-        <div id="modal-img-caption" class="absolute bottom-3 left-3 liquid-droplet-dark text-white px-3 py-1 rounded-lg text-xs font-mono"></div>
+        <div id="modal-img-caption" class="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md text-white px-3 py-1 rounded-lg text-xs font-mono border border-white/10"></div>
       </div>
 
       <!-- Interactive Screenshot Gallery -->
       <div id="modal-gallery-section" class="space-y-2">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">📸 Application Screens &amp; Design Previews</span>
+          <span class="text-xs font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">📸 Application Screens &amp; Design Previews</span>
           <span class="text-[11px] font-mono text-slate-500">Click thumbnail to switch preview</span>
         </div>
-        <div id="modal-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 max-h-56 overflow-y-auto p-1.5 rounded-xl border border-white/80 dark:border-white/10 bg-white/45 dark:bg-slate-900/60">
+        <div id="modal-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 max-h-56 overflow-y-auto p-2 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-900">
           <!-- Dynamically populated thumbnails -->
         </div>
       </div>
 
       <!-- Modal Navigation Tabs (Case Study Overview vs Architecture & Data Flow) -->
-      <div class="flex items-center gap-2 pt-2 border-t border-white/80 dark:border-white/10">
+      <div class="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-white/10">
         <button type="button" onclick="switchModalTab('overview')" id="tab-btn-overview" class="modal-tab-pill active px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all">
           📋 Case Study Overview
         </button>
@@ -2026,22 +2110,31 @@
             
             <!-- Overview -->
             <div class="space-y-2">
-              <h4 class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">01 // PROJECT OVERVIEW &amp; CHALLENGE</h4>
-              <p id="modal-desc" class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal"></p>
+              <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200/80 dark:border-blue-800/60 font-extrabold text-[11px]">01</span>
+                <span>Project Overview &amp; Challenge</span>
+              </h4>
+              <p id="modal-desc" class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal"></p>
             </div>
 
             <!-- Key Features -->
             <div class="space-y-3">
-              <h4 class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">02 // KEY CAPABILITIES &amp; FEATURES</h4>
-              <div id="modal-features" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+              <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200/80 dark:border-blue-800/60 font-extrabold text-[11px]">02</span>
+                <span>Key Capabilities &amp; Features</span>
+              </h4>
+              <div id="modal-features" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700 dark:text-slate-300">
                 <!-- Dynamically populated feature cards -->
               </div>
             </div>
 
             <!-- My Role & Technical Contributions -->
             <div class="space-y-3">
-              <h4 class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">03 // MY LEADERSHIP &amp; ENGINEERING ROLE</h4>
-              <ul id="modal-contributions" class="space-y-2 text-sm text-slate-700 list-disc list-inside">
+              <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200/80 dark:border-blue-800/60 font-extrabold text-[11px]">03</span>
+                <span>Leadership &amp; Technical Contributions</span>
+              </h4>
+              <ul id="modal-contributions" class="space-y-2 text-sm text-slate-700 dark:text-slate-300 list-disc list-inside">
                 <!-- Dynamically populated contributions -->
               </ul>
             </div>
@@ -2049,16 +2142,16 @@
           </div>
 
           <!-- Right: Technical Sidebar (Span 4) -->
-          <div class="lg:col-span-4 space-y-6 bg-white/55 dark:bg-slate-900/60 p-5 rounded-xl border border-white/85 dark:border-white/10 shadow-xs h-fit">
+          <div class="lg:col-span-4 space-y-6 bg-slate-50 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-200 dark:border-white/10 shadow-xs h-fit">
             
             <div>
               <h4 class="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">Client / Organization</h4>
-              <p id="modal-client" class="text-sm font-bold text-slate-900"></p>
+              <p id="modal-client" class="text-sm font-bold text-slate-900 dark:text-white"></p>
             </div>
 
             <div>
               <h4 class="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">Architecture / Type</h4>
-              <p id="modal-architecture" class="text-sm font-semibold text-slate-700"></p>
+              <p id="modal-architecture" class="text-sm font-semibold text-slate-700 dark:text-slate-300"></p>
             </div>
 
             <div>
@@ -2077,10 +2170,13 @@
         <!-- Visual Architecture Topology -->
         <div class="space-y-3">
           <div class="flex items-center justify-between">
-            <h4 class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">01 // END-TO-END DATA FLOW TOPOLOGY</h4>
+            <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+              <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200/80 dark:border-blue-800/60 font-extrabold text-[11px]">01</span>
+              <span>End-to-End Data Flow Topology</span>
+            </h4>
             <span class="text-[11px] font-mono text-slate-500">Pipeline Stages</span>
           </div>
-          <div id="modal-arch-topology" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm text-slate-700">
+          <div id="modal-arch-topology" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm text-slate-700 dark:text-slate-300">
             <!-- Dynamically populated topology steps -->
           </div>
         </div>
@@ -2107,8 +2203,11 @@
         </div>
 
         <!-- Infrastructure & Runtime Specifications -->
-        <div class="p-5 rounded-xl bg-white/55 dark:bg-slate-900/60 border border-white/85 dark:border-white/10 space-y-3">
-          <h4 class="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">03 // DEPLOYMENT, RUNTIME &amp; INFRASTRUCTURE SPECS</h4>
+        <div class="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-white/10 space-y-3">
+          <h4 class="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+            <span class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 border border-blue-200/80 dark:border-blue-800/60 font-extrabold text-[11px]">02</span>
+            <span>Deployment, Runtime &amp; Infrastructure Specs</span>
+          </h4>
           <div id="modal-arch-infra" class="grid grid-cols-2 sm:grid-cols-4 gap-4">
             <!-- Dynamically populated runtime specs -->
           </div>
@@ -2119,15 +2218,15 @@
     </div>
   </div>
 
-  <!-- INTERACTIVE QUICK CONTACT / INQUIRY MODAL (Liquid Obsidian & Specular Sheet) -->
-  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-md">
+  <!-- INTERACTIVE QUICK CONTACT / INQUIRY MODAL (Clean Solid Sheet) -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-950/40 backdrop-blur-sm">
     <div class="relative w-full max-w-2xl liquid-modal-sheet rounded-2xl overflow-hidden p-6 sm:p-8 max-h-[92vh] overflow-y-auto space-y-6">
       
       <!-- Top Action Bar -->
-      <div class="flex items-start justify-between gap-4 pb-4 border-b border-white/80 dark:border-white/10">
+      <div class="flex items-start justify-between gap-4 pb-4 border-b border-slate-100 dark:border-white/10">
         <div class="space-y-1">
           <div class="flex items-center gap-2">
-            <span class="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-blue-50/80 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60">
+            <span class="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/60">
               ⚡ DIRECT DISPATCH
             </span>
             <span class="text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
@@ -2143,7 +2242,7 @@
           </p>
         </div>
 
-        <button id="contact-modal-close" onclick="closeContactModal()" class="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white p-2 rounded-lg liquid-chip transition-colors" title="Close Modal">
+        <button id="contact-modal-close" onclick="closeContactModal()" class="text-slate-400 hover:text-slate-700 dark:hover:text-white p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" title="Close Modal">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -2156,7 +2255,7 @@
           01 // CHOOSE INQUIRY TYPE
         </label>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <button type="button" onclick="setContactPreset('recruitment')" id="preset-btn-recruitment" class="contact-preset-pill active p-2.5 rounded-xl text-left transition-all">
+          <button type="button" onclick="setContactPreset('recruitment')" id="preset-btn-recruitment" class="contact-preset-pill active p-3 rounded-xl text-left transition-all">
             <div class="flex items-center gap-2 font-bold text-xs">
               <span>💼</span>
               <span>Job Opportunity</span>
@@ -2164,7 +2263,7 @@
             <div class="text-[10px] opacity-75 font-mono mt-0.5">Full-Time / Contract</div>
           </button>
 
-          <button type="button" onclick="setContactPreset('freelance')" id="preset-btn-freelance" class="contact-preset-pill p-2.5 rounded-xl text-left transition-all">
+          <button type="button" onclick="setContactPreset('freelance')" id="preset-btn-freelance" class="contact-preset-pill p-3 rounded-xl text-left transition-all">
             <div class="flex items-center gap-2 font-bold text-xs">
               <span>🚀</span>
               <span>Project / SaaS MVP</span>
@@ -2172,7 +2271,7 @@
             <div class="text-[10px] opacity-75 font-mono mt-0.5">Full-Stack &amp; DB Dev</div>
           </button>
 
-          <button type="button" onclick="setContactPreset('collaboration')" id="preset-btn-collaboration" class="contact-preset-pill p-2.5 rounded-xl text-left transition-all">
+          <button type="button" onclick="setContactPreset('collaboration')" id="preset-btn-collaboration" class="contact-preset-pill p-3 rounded-xl text-left transition-all">
             <div class="flex items-center gap-2 font-bold text-xs">
               <span>💬</span>
               <span>Tech Exchange</span>
@@ -2189,14 +2288,14 @@
             <label for="contact-name" class="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">
               Your Name / Organization
             </label>
-            <input type="text" id="contact-name" placeholder="e.g. Alex Morgan, Tech Lead" class="w-full bg-white/75 dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all font-sans">
+            <input type="text" id="contact-name" placeholder="e.g. Alex Morgan, Tech Lead" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none transition-all font-sans">
           </div>
 
           <div class="space-y-1">
             <label for="contact-sender-email" class="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">
               Your Email or Profile Link
             </label>
-            <input type="text" id="contact-sender-email" placeholder="e.g. alex@acme.com or linkedin.com/in/alex" class="w-full bg-white/75 dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all font-sans">
+            <input type="text" id="contact-sender-email" placeholder="e.g. alex@acme.com or linkedin.com/in/alex" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none transition-all font-sans">
           </div>
         </div>
 
@@ -2204,7 +2303,7 @@
           <label for="contact-subject" class="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider block">
             Subject
           </label>
-          <input type="text" id="contact-subject" class="w-full bg-white/75 dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all font-sans">
+          <input type="text" id="contact-subject" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none transition-all font-sans">
         </div>
 
         <div class="space-y-1">
@@ -2216,7 +2315,7 @@
               ↺ Reset Template
             </button>
           </div>
-          <textarea id="contact-message" rows="5" class="w-full bg-white/75 dark:bg-slate-900/80 border border-slate-300 dark:border-white/10 rounded-xl p-3.5 text-xs text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all font-mono leading-relaxed resize-y"></textarea>
+          <textarea id="contact-message" rows="5" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-xl p-3.5 text-xs text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:bg-white dark:focus:bg-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 focus:outline-none transition-all font-sans leading-relaxed resize-y"></textarea>
         </div>
       </div>
 
@@ -2228,7 +2327,7 @@
         
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
           <!-- Gmail Web Dispatch -->
-          <button type="button" onclick="dispatchGmailWeb()" class="btn-primary flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-white font-bold text-xs shadow-md">
+          <button type="button" onclick="dispatchGmailWeb()" class="liquid-btn-primary inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-mono text-xs font-bold shadow-sm">
             <svg class="w-4 h-4 fill-current relative z-10" viewBox="0 0 24 24">
               <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
             </svg>
@@ -2236,7 +2335,7 @@
           </button>
 
           <!-- Native Mail Client -->
-          <button type="button" onclick="dispatchMailto()" class="liquid-surface flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-slate-800 dark:text-white font-bold text-xs hover:text-blue-600 transition-all">
+          <button type="button" onclick="dispatchMailto()" class="liquid-btn-secondary inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-mono text-xs font-bold">
             <svg class="w-4 h-4 fill-none stroke-currentColor relative z-10" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
@@ -2244,7 +2343,7 @@
           </button>
 
           <!-- Copy Message -->
-          <button type="button" onclick="copyFormattedInquiry()" class="liquid-surface flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-slate-800 dark:text-white font-bold text-xs hover:text-blue-600 transition-all">
+          <button type="button" onclick="copyFormattedInquiry()" class="liquid-btn-secondary inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-mono text-xs font-bold">
             <svg class="w-4 h-4 fill-none stroke-currentColor relative z-10" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
@@ -2254,7 +2353,7 @@
       </div>
 
       <!-- Quick Direct Touchpoints & Verification -->
-      <div class="pt-3 border-t border-white/80 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="pt-3 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
         <div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 font-mono">
           <span>Direct:</span>
           <button type="button" onclick="copyEmail()" class="text-blue-600 dark:text-blue-400 font-bold hover:underline" title="Click to copy email">
@@ -2263,10 +2362,10 @@
         </div>
         
         <div class="flex items-center gap-2">
-          <a href="https://www.linkedin.com/in/tersiqo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg liquid-chip text-slate-700 dark:text-slate-300 font-mono text-[11px] hover:text-blue-600 transition-colors">
+          <a href="https://www.linkedin.com/in/tersiqo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] hover:text-blue-600 transition-colors">
             LinkedIn ↗
           </a>
-          <a href="https://github.com/tersiqo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg liquid-chip text-slate-700 dark:text-slate-300 font-mono text-[11px] hover:text-blue-600 transition-colors">
+          <a href="https://github.com/tersiqo" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-slate-50 hover:bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] hover:text-blue-600 transition-colors">
             GitHub ↗
           </a>
         </div>

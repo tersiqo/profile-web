@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       team: '👥 4-Member PBL Team',
       tagline: 'Mobile tournament and scrimmage management platform with real-time slot synchronization and automated payment verification.',
       github: 'https://github.com/azariaamanda/Mobile_BooyahHub.git',
-      demo: '',
+      demo: 'https://booyahhub.pages.dev/',
       client: 'Banteng Squad Esports / Polinema',
       architecture: 'Cross-Platform Mobile App + Supabase Backend',
       image: './assets/images/banteng_squad_mockup.png',
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       team: '👥 PBL Development Team',
       tagline: 'Multi-tenant modular SaaS platform automating equipment rentals, real-time inventory tracking, and dynamic billing workflows.',
       github: 'https://github.com/tersiqo/RentalBase',
-      demo: 'https://tersiqo.my.id',
+      demo: 'https://rentalbase-88c9.onrender.com',
       client: 'RentalBase SaaS Ecosystem',
       architecture: 'Multi-Tenant Modular Monolith with Docker',
       image: './assets/images/rentalbase_mockup.png',
@@ -291,12 +291,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const featuresContainer = document.getElementById('modal-features');
     if (data.features && data.features.length > 0) {
       featuresContainer.innerHTML = data.features.map(f => `
-        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/80 dark:border-white/10 space-y-1">
-          <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-            <span class="text-blue-600 dark:text-blue-400">✦</span>
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 space-y-1.5 hover:border-blue-300 dark:hover:border-blue-500/40 transition-colors">
+          <div class="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0"></span>
             <span>${f.title}</span>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${f.desc}</p>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-3.5">${f.desc}</p>
         </div>
       `).join('');
     } else {
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contribContainer = document.getElementById('modal-contributions');
     if (data.contributions && data.contributions.length > 0) {
       contribContainer.innerHTML = data.contributions.map(c => `
-        <li class="leading-relaxed pl-1"><span class="text-slate-800 dark:text-slate-200">${c}</span></li>
+        <li class="leading-relaxed pl-1"><span class="text-slate-700 dark:text-slate-300 text-xs">${c}</span></li>
       `).join('');
     } else {
       contribContainer.innerHTML = '';
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tech Chips
     const techContainer = document.getElementById('modal-tech');
     techContainer.innerHTML = data.tech.map(item => 
-      `<span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-2xs">${item}</span>`
+      `<span class="px-2.5 py-1 text-xs font-mono font-bold rounded-lg bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-2xs">${item}</span>`
     ).join('');
 
     // System Architecture Tab Population
